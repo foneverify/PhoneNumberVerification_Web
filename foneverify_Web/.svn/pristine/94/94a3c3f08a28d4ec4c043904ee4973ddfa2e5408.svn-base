@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>foneverify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="shortcut icon" href="images/icon.png" />
+
+    <link rel="Stylesheet" type="text/css" href="css/style.css" />
+    <link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/style.admin.css" />
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/dynamic.js"></script>
+	
+    <script type="text/javascript" src="js/fv.consts.js"></script>
+    <script type="text/javascript">
+        $(function () {
+        	Util.checkSession();
+            $("#afterLogin").append(dynamichtml.topnavafterlogin);
+            $("#afterloginfooter").append(dynamichtml.footernavdirafterlogin);
+            $("#_support").addClass('activenav');
+        });
+    </script>
+
+</head>
+<body onload="onloadCredis();">
+
+    <nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" class="img-responsive" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div id="afterLogin"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="gap-lg"></div>
+    <div class="maincont mainbanner">
+
+        <div class="wrapper">
+
+            <div class="wrap-in clearfix">
+
+                <div class="clearfix">
+                    <div class="ultabs">
+                        <ul class="">
+                            <li><a href="view-edit-ticket.html">View Ticket</a></li>
+                            <li class="current"><a href="raise-ticket.html">Raise a Ticket</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-7 padd20">
+                    <div class="col-sm-11">
+                        <div class="">
+                            <h3 class="color-main1">Raise new ticket</h3>
+                        </div>
+                        <div class="paddtop20 form-group-lg">
+                            <form action="" method="get" id="raisTicketForm">
+
+                                <div class="form-group clearfix padd0">
+                                    <input type="text" id="subject" class="form-control" placeholder="Subject" required="" />
+                                </div>
+
+                                <div class="form-group clearfix padd0">
+                                    <select class="form-control" id="appName" required="">
+                                        <option value="">Select app name</option>
+                                        <option value="1">FlipKart</option>
+                                        <option value="2">Quikr</option>
+                                        <option value="3">OLX</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group clearfix padd0">
+                                    <textarea cols="6"
+                                              rows="4"
+                                              id="message"
+                                              name="contactmessage"
+                                              class="form-control"
+                                              placeholder="Write your mssage"
+                                              required=""></textarea>
+                                </div>
+
+                                <div class="form-group clearfix padd0">
+                                    <div class="ifilepanel">
+                                        <a class="btn bg-main1 btn-lg2 color-default pos-relative" href='javascript:void(0)'>
+                                            Choose file..
+                                            <input type="file" class="ifile" accept=".xls,.doc,.pdf" id="uploadFile" onchange="$('#uploadfile').html($(this).val())" required="">
+                                        </a>
+                                        <span class="ifiletext" id="uploadfile" title="">Max file size 100 kb</span>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <button type="submit"
+                                            id="raiseNewTicket"
+                                            class="btn btn-block btn-lg bg-main1 color-default">
+                                        Send
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="border-TB hide"></div>
+
+                </div>
+
+
+                <div class="col-sm-5 padd20 fright">
+                    <div class="">
+                        <h3 class="color-main1 font20">Account ID: <span>xyz123</span></h3>
+                    </div>
+                    <div class="deskdisplay gap-xl"></div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="mobidisplay gap-lg"></div>
+    </div>
+
+    <div class="wrapper page-footer" id="afterloginfooter"></div>
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 943731266;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+    <script type="text/javascript" src="js/googleanalytics.js"></script>
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	  ga('create', 'UA-66501278-1', 'auto');
+	  ga('send', 'pageview');
+    </script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+    <script type="text/javascript" src="js/fv.apis.js"></script>
+</body>
+</html>

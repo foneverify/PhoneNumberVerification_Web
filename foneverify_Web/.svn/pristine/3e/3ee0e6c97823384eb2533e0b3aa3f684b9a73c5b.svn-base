@@ -1,0 +1,50 @@
+﻿function submitContactForm() {
+
+	var data = {};
+	var headerValue = {};
+	var contactForm = $("#contactForm");
+	var contactname = contactForm.find("#name");
+	var contactemail = contactForm.find("#emailId");
+	var contactsubject = contactForm.find("#subject");
+	var contactmessage = contactForm.find("#message");
+
+	var cName = contactname.val();
+	var cEmail = contactemail.val();
+	var cSubject = contactsubject.val();
+	var cMessage = contactmessage.val();
+
+	//  if (cName.length <= 3) { return true; }
+	// if (cSubject.length < 3) { return true; }
+	//if (cMessage.length < 20) { return true; }
+
+	data['fullName'] = cName;
+	data['email'] = cEmail;
+	data['mobileNumber'] = cSubject;
+	data['message'] = cMessage;
+	console.log(JSON.stringify(data));
+
+// url : 'http://54.169.205.184:9080/emailService/rest/v1/contact/contactUs',
+	$.ajax({
+		url : 'http://52.7.158.185:8080/fv-email-service/rest/v1/contact/contactUs',
+		contentType : 'application/json',
+		headers : headerValue,
+		data : JSON.stringify(data),
+		type : 'POST',
+		async : false,
+		success : function(data) {
+			var responseCode = data.headers.responseCode;
+			console.log(responseCode);
+			if (responseCode == '200') {
+				alert("Thank you for contacting foneverify.");
+				$('#contactForm')[0].reset();
+			} else {
+				alert(responseCode);
+			}
+			
+		},
+		error : function(data) {
+			alert("Please retry after some time");
+			$("#contactForm")[0].reset();
+		}
+	});
+}

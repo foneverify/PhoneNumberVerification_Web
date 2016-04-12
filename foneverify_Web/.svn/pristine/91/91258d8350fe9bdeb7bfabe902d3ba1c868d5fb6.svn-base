@@ -1,0 +1,153 @@
+
+.dataTables_wrapper {
+    position: relative;
+    clear: both;
+}
+
+    .dataTables_wrapper .dataTables_length, .dataTables_filter {
+        width: 50%;
+        display: inline-block;
+        padding: 10px 0;
+    }
+
+    .dataTables_wrapper .dataTables_length {
+        text-align: left;
+    }
+
+        .dataTables_wrapper .dataTables_length select {
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            width: 100px;
+        }
+
+table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled, table.dataTable thead .sorting_desc_disabled {
+    cursor: pointer !important;
+}
+
+
+table.dataTable thead .sorting {
+    background: url("../images/icon/sort_both.png") no-repeat right 50%;
+}
+
+table.dataTable thead .sorting_asc {
+    background: url("../images/icon/sort_asc.png") no-repeat right 50%;
+}
+
+table.dataTable thead .sorting_desc {
+    background: url("../images/icon/sort_desc.png") no-repeat right 50%;
+}
+
+table.dataTable thead .sorting_asc_disabled {
+    background: url("../images/icon/sort_asc_disabled.png") no-repeat right 50%;
+}
+
+table.dataTable thead .sorting_desc_disabled {
+    background: url("../images/icon/sort_desc_disabled.png") no-repeat right 50%;
+}
+
+
+.dataTables_wrapper .dataTables_filter {
+    padding: 10px 10px 5px 10px !important;
+    border-top: 1px solid #f0f0f0 !important;
+    width: 100% !important;
+}
+
+    .dataTables_wrapper .dataTables_filter input {
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+.dataTables_wrapper .dataTables_info, .dataTables_paginate {
+    width: 50%;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+.dataTables_wrapper .dataTables_info {
+}
+
+.dataTables_wrapper .dataTables_paginate {
+}
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        margin: 0 1px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 1px 7px;
+        font-weight: 700;
+        background: #aaa;
+        color: #fff !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #777;
+        transition: linear 0.1s;
+        cursor: pointer !important;
+    }
+
+.first, .previous, .next, .last {
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: #ddd;
+    border-bottom: 1px solid #6C265C;
+    color: #6C265C !important;
+    font-weight: bold;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    background: #ddd;
+    border-bottom: 1px solid #6C265C;
+    color: #6C265C !important;
+    font-weight: bold;
+}
+
+/*.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    border: 1px solid transparent;
+    background-color: #585858;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    outline: none;
+    background-color: #2b2b2b;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2b2b2b), color-stop(100%, #0c0c0c));
+}*/
+
+
+table.dataTable {
+    width: 1130px;
+}
+
+    table.dataTable thead th {
+        border-top: 1px solid #eee !important;
+        border-bottom: 1px solid #f9f9f9 !important;
+    }
+
+        table.dataTable thead th:nth-child(1) {
+            width: 7% !important;
+        }
+
+    table.dataTable thead th {
+        white-space: nowrap;
+        padding: 10px 10px !important;
+    }
+
+    table.dataTable tbody td {
+        border-bottom: 1px solid #eee !important;
+        padding: 10px 0 !important;
+    }
+
+
+.dataTables_paginate {
+    border-top: 1px solid #f0f0f0 !important;
+    text-align: right !important;
+    width: 1130px !important;
+    
+}
+
+
+
+@media screen and (min-width: 50px)and (max-width: 767px) {
+}

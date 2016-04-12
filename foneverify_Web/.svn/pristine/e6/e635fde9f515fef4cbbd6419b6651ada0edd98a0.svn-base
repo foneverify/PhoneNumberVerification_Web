@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Foneverify - Sign Up for free</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta id="viewport" name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, minimum-scale=1" />
+		<meta name="description" content="Use simple phone verification api to verify phone numbers. Checking and confirming mobile number is very easy using FoneVerify in 200+ countries. Click to know more.">
+		<meta name="keywords" content="Identify Genuine users,
+		mobile Identity, prevent fraud, sms verification service, missed call verification, online phone verification, Phone Number Verification, Mobile number verification online, Authenticate users, simple phone verification API">
+
+		<link rel="shortcut icon" href="images/icon.png" />
+		<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="Stylesheet" type="text/css" href="css/realperson.css" />
+		<link rel="stylesheet" href="css/animate.css">
+		<!--<link rel="stylesheet" href="css/input.min.css">-->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/realperson.plugin.js"></script>
+		<script type="text/javascript" src="js/realperson.js"></script>
+		<script type="text/javascript" src="js/googleJSSdKLoader.js"></script>
+		<!-- <script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script> -->
+		<script type="text/javascript">
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-66501278-1', 'auto');
+			ga('send', 'pageview');
+			// Track all buttons and form submission
+			//eventTracker.trackAll();
+			//eventTracker.trackOne('#next', 'Button', 'click', 'next');
+			//_gaq.push(['_trackEvent', 'form', 'submitted', 'contact us',, 'true']);
+		</script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-66501278-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		<script type="text/javascript">
+			_gaq.push(function() {
+				var pageTracker = _gat._getTrackerByName('myTracker');
+				var link = document.getElementById('next');
+				link.href = pageTracker._getLinkerUrl('http://foneverify.com/signup.html');
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(function() {
+
+				$('#captcha').realperson();
+				initSignin();
+				initSignup();
+				$('body').on('keydown', 'input', function(e) {
+					if (e.which === 32 && e.target.selectionStart === 0) {
+						return false;
+					} else if (e.which === 13) {
+						e.preventDefault();
+					} else if (e.which === 9) {
+						field = e.target;
+						validationCheckVar = LegacyValidation(field);
+						if (validationCheckVar === false) {
+							if (field.id != null && field.id != undefined) {
+								Util.displayErrorMessage(field);
+							}
+						} else {
+							$('#' + field.id).css('border', '1px solid #aaa');
+							$("#" + field.id + "Error").text("");
+						}
+					}
+				});
+				$("#beforeLogin").append(dynamichtml.topnavbeforelogin);
+				$("#beforeloginfooter").append(dynamichtml.footernavdirnotlogin);
+				$('.numbersOnly').keyup(function() {
+					this.value = this.value.replace(/[^0-9\.]/g, '');
+				});
+				$("#_signUp").addClass('activenav');
+			});
+		</script>
+
+		<script type="text/javascript">
+			function specialchar(e) {
+				var txt = $('#regpass').val();
+				var re = /^[ A-Za-z0-9_@./#&+-]*$/;
+				if (re.test(txt)) {
+					Util.alert_message('#alert_template', 'Please provide a valid text');
+				} else {
+					Util.alert_message('#alert_template', 'Please Enter Valid text');
+					return false;
+				}
+			}
+		</script>
+		<script type="text/javascript">
+			//Function to allow only alpha numeric to textbox
+			function validatealphanumeric(key) {
+				var keycode = (key.which) ? key.which : key.keyCode;
+				var phn = document.getElementById('mobile');
+				//comparing pressed keycodes
+				if ((keycode < 48 || keycode > 57) && (keycode < 97 || keycode > 122)) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		</script>
+
+		<script type="text/javascript">
+			var auth2 = auth2 || {};
+			(function() {
+				var po = document.createElement('script');
+				po.type = 'text/javascript';
+				po.async = true;
+				po.src = 'https://plus.google.com/js/client:plusone.js?onload=startApp';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(po, s);
+			})();
+		</script>
+		<script type="text/javascript" src="https://platform.linkedin.com/in.js">
+			api_key:75t149ifpp3b88 authorize:true
+		</script>
+
+	</head>
+	<body>
+
+		<script type="text/javascript" src="js/fbJSSdKLoader.js"></script>
+		<div class="se-pre-con"></div>
+		<div id="alert_template" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title">Alert</h4>
+					</div>
+					<div id="alert_message" class="modal-body"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Ok
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!-- Modal Start here-->
+		<div class="modal fade bs-example-modal-sm" id="signupWait" tabindex="-1"
+		role="dialog" aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title">Alert</h4>
+					</div>
+					<!--<div class="modal-header"><h4 class="modal-title"><span class="glyphicon glyphicon-time"></span>Please Wait</h4></div>-->
+					<div class="modal-body">
+						<div class="text-center" style="width: 100%">
+							<img src="images/Preloader.gif" />
+							<p class="color-main1 text-center"></p>
+						</div>
+						<!--<div class="progress"><div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 100%"></div></div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal ends Here -->
+		<!-- OTP VERIFICATION Modal Start here-->
+		<div id="signupMobileNumber" class="modal fade" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<!-- <button type="button" class="close"id="closeBtn" data-dismiss="modal" aria-hidden="true">
+						×
+						</button> -->
+						<h4 class="modal-title">Mobile No.Confirmation</h4>
+					</div>
+					<div class="modal-body padd12">
+						<div id="mobileNoVerificationDiv">
+							<p class="color-main1 text-left">
+								Please enter your mobile number
+							</p>
+
+							<div class="form-group clearfix">
+								<div class="col-xs-2 padd0">
+									<select class="form-control socialSignupMobile" id="ccode" style="padding-left:3px; padding-right:2px;">
+										<option value="in">+91</option>
+									</select>
+								</div>
+								<div class="col-xs-1 padd0">
+									&nbsp;
+								</div>
+								<div class="col-xs-9 padd0">
+									<input type="text" id="mobileNumber" name="mobile" class="socialSignupMobile form-control numbersOnly" placeholder="Mobile Number" />
+									<span class="timeout" id="mobileNumberError"></span>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div class="col-sm-12 padd5" data-dismiss="modal">
+							<button type="button" id="signupNavigation" class="btn btn-lg btn-block color-default bg-main1" data-dismiss="modal" aria-hidden="true">
+								Ok
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- OTP VERIFICATION Modal ends Here -->
+
+		<nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"> <img src="images/logo.png" class="img-responsive" /> </a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div id="beforeLogin"></div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="gap-lg"></div>
+
+		<div class="maincont mainbanner">
+			<div class="wrapper paddlr20">
+				<div class="wrap-in clearfix">
+					<div class="col-sm-7 padd20 relative">
+
+						<div class="col-sm-11">
+							<div class="">
+								<h3 class="color-main1">Go live with foneverify in minutes.</h3>
+
+							</div>
+							<div class="paddtop10 form-group-lg">
+								<form action="" method="post" id="signupform" autocomplete="off" >
+									<div class="formgroup">
+										<strong class="error" id="wrongloginErrorMsg"></strong>
+									</div>
+									<div class="form-group clearfix">
+										<input type="text" id="name" name="name" class="form-control" placeholder="Full Name"  autofocus />
+										<span class="timeout" id="nameError"></span>
+									</div>
+
+									<div class="form-group clearfix padd0">
+										<input type="email" id="emailId" name="email" class="form-control" placeholder="Email ID"   />
+										<span class="timeout" id="emailIdError"></span>
+									</div>
+
+									<!--<div class="form-group clearfix padd0">
+									<input type="text" id="companyName" name="company" class="form-control" placeholder="Company name (Optional)" />
+									<span class="timeout" id="companyNameError"></span>
+									</div>-->
+
+									<div class="form-group clearfix">
+										<input type="password" id="signUp-password" name="password_new" class="form-control"
+										onkeyup="isStrongPassword('signUp-password',event);" placeholder="Create password" readonly onfocus="$(this).removeAttr('readonly');" value="" />
+										<div id="progressbar" style="float:left;display:none;">
+											<div></div>
+										</div>
+										<span id="password_strength" style="vertical-align:-webkit-baseline-middle"></span>
+										<div class="col-sm-12">
+											<span class="timeout" id="signUp-passwordError"></span>
+										</div>
+									</div>
+
+									<div class="form-group clearfix">
+										<div class="col-xs-3 padd0">
+											<select class="form-control" id="ccode" style="padding-left:3px; padding-right:2px;">
+												<option value="in">+91</option>
+											</select>
+										</div>
+
+										<div class="col-xs-9 padd0">
+											<input type="text" id="mobile" name="mobile" class="form-control numbersOnly" placeholder="Mobile Number" />
+											<span class="timeout" id="mobileError"></span>
+										</div>
+									</div>
+
+									<div class="form-group clearfix">
+										<div class="col-sm-12 relative padd0">
+											<input type="text" id="captcha" name="captcha" class="form-control" placeholder="Captcha Verification"/>
+											<span class="timeout" id="captchaError"></span>
+
+										</div>
+									</div>
+
+									<div class="clearfix small">
+										<p class="">
+											By clicking the button you agree to the
+											<a href="docs/terms-of-use.html" target="_blank">Terms of Use</a>,
+											<br />
+											and <a href="docs/privacy-policy.html" target="_blank">Privacy Policy</a>.
+										</p>
+									</div>
+
+									<div class="clearfix paddtop10">
+										<div class="col-xs-12">
+											<button type="submit" onclick="_gaq.push(['_trackEvent', 'button', 'clicked', 'sign up',, 'true'])"
+											id="next"
+											class="btn btn-lg btn-block bg-main1 color-default">
+												Sign up
+											</button>
+										</div>
+									</div>
+								</form>
+
+							</div>
+
+						</div>
+						<div class="border-TB"></div>
+					</div>
+
+					<div class="col-sm-5 padd20 fright">
+						<div class="paddtop40 form-group-lg"></div>
+						<div class="paddtop40 form-group-lg">
+							<div class="text-center paddtop40">
+								<h1 class="color-main1 font35 f-bold">7500 FREE Successful Verifications.</h1>
+							</div>
+							<div class="col-xs-12 align-center">
+								<h4 class="color-main1">Already have an account? <a href="signin.html">Sign In</a></h4>
+							</div>
+							<div class="col-xs-12 align-center">
+								<div  class="paddtop15"  id="signupWithFB">
+									<a class="pointerCursor"><img width="270px" height="50px" style="border-radius: 0.3em;" src="images/SignUpWithFB.png"></img></a>
+								</div>
+								<div  class="paddtop15" id="signupWithGoogle">
+									<a class="pointerCursor"><img width="270px" height="50px" style="border-radius: 0.3em;" src="images/sign-up-with-google.png"></img></a>
+								</div>
+								<div  class="paddtop15" id="signupWithLinkedin">
+									<a class="pointerCursor"><img width="270px" height="50px" style="border-radius: 0.3em;" src="images/SignUpWithLinked.png"></img></a>
+								</div>
+							</div>
+							<!--<div class="col-xs-12 align-center" id="signupWithGoogle">
+							<img width="300px" src="images/signupWithFacebook.png"></img>
+							</div>-->
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mobidisplay gap-lg"></div>
+		</div>
+
+		<div class="wrapper page-footer" id="beforeloginfooter"></div>
+
+		<!--Verification Modal-->
+
+		<div id="userVerificationModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Please confirm</h4>
+					</div>
+					<div class="modal-body">
+						<div class="">
+							<form class="form-group-lg">
+								<div class="form-group clearfix">
+									<input id="emailConfirm" type="email" class="form-control" placeholder="Email ID" disabled="disabled" />
+								</div>
+								<div class="form-group clearfix">
+									<input id="msisdnConfirm" class="form-control" placeholder="Mobile Number" disabled="disabled" />
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer text-center">
+						<button type="button" class="btn bg-main3" data-dismiss="modal">
+							Cancel to edit
+						</button>
+						<button type="button" id="signupProceed" class="btn color-default bg-main1">
+							OK to proceed
+						</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Google Code for Remarketing Tag -->
+		<!--
+		Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+		-->
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			var google_conversion_id = 943731266;
+			var google_custom_params = window.google_tag_params;
+			var google_remarketing_only = true;
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+		<noscript>
+			<div style="display:inline;">
+				<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+			</div>
+		</noscript>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript" src="js/dynamic.js"></script>
+		<script type="text/javascript" src="js/fv.apis.js"></script>
+		<script type="text/javascript" src="js/fv.consts.js"></script>
+		<script type="text/javascript">
+			$(document).on('focus', 'textarea,input', function() {
+				$('.navbar.navbar-fixed-top').css('position', 'absolute');
+			}).on('blur', 'textarea,input', function() {
+				$('.navbar.navbar-fixed-top').css('position', '');
+			});
+		</script>
+
+	</body>
+</html>

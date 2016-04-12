@@ -1,0 +1,71 @@
+﻿/**
+			 * Called after the Google client library has loaded.
+			 */
+			function startApp() {
+				console.log("in startup.....");
+				gapi.load('auth2', function() {
+					// Retrieve the singleton for the GoogleAuth library and setup the client.
+					gapi.auth2.init({
+						client_id : '304800260409-rnhp3aaj1fd9m5k0tjnvhvtg84k8e3k4.apps.googleusercontent.com',
+						cookiepolicy : 'single_host_origin',
+						fetch_basic_profile : true,
+						scope : 'https://www.googleapis.com/auth/plus.login'
+					}).then(function() {
+						console.log('init...');
+						auth2 = gapi.auth2.getAuthInstance();
+						// Listen for sign-in state changes.
+						// auth2.isSignedIn.listen(signinChanged);
+
+						// Listen for changes to current user.
+						// auth2.currentUser.listen(userChanged);
+
+					});
+				});
+			}
+
+			/**
+			 * Either signs the user in or authorizes the back-end.
+			 */
+			/*
+			function signInClick() {
+			console.log("inside signinclick");
+			//console.log(auth2.isSignedIn.get());
+			console.log(auth2.currentUser.get());
+			auth2.signIn({
+			'scope': 'profile email'
+			}).then(
+			function(googleUser) {
+			console.log("google User");
+			// auth2.currentUser.get()
+			console.log(auth2.currentUser.get().getBasicProfile().getName());
+			socialLoginToFoneverify(auth2.currentUser.get());
+
+			}, function(error) {
+			alert(JSON.stringify(error, undefined, 2));
+			});
+
+			}*/
+
+			/**
+			 * Listener method for sign-out live value.
+			 *
+			 * @param {boolean} val the updated signed out state.
+			 */
+			/*var signinChanged = function (val) {
+			console.log('Signin state changed to ', val);
+			document.getElementById('signed-in-cell').innerText = val;
+			};*/
+
+			/**
+			 * Listener method for when the user changes.
+			 *
+			 * @param {GoogleUser} user the updated user.
+			 */
+
+			/*var userChanged = function (user) {
+			 console.log('User now: ', user);
+			 googleUser = user;
+			 updateGoogleUser();
+			 document.getElementById('curr-user-cell').innerText =
+			 JSON.stringify(user, undefined, 2);
+			 };*/

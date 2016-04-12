@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>foneverify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="shortcut icon" href="images/icon.png" />
+
+    <link rel="Stylesheet" type="text/css" href="css/style.css" />
+    <link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.admin.css" />
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!--Table Shorting-->
+    <link rel="stylesheet" type="text/css" href="css/datatable.css" />
+    <script type=" text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <!---->
+    <script type="text/javascript" src="js/googleanalytics.js"></script>
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	  ga('create', 'UA-66501278-1', 'auto');
+	  ga('send', 'pageview');
+    </script>
+    <script type="text/javascript" src="js/jquery.paging.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            loadSsTableData();
+        })
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+        <div class="container fullwrap">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" /></a>
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav navbar-right navbarnav">
+
+                    <li class=""><a class="navtoggle" href="dashboard.html">Home</a></li>
+                    <li><a href="summary.html" class="navtoggle">Analytics</a></li>
+                    <li><a href="manage-my-app.html" class="navtoggle">My Apps</a></li>
+                    <li><a href="view-edit-ticket.html" class="navtoggle activenav">Support</a></li>
+                    <li><a href="my-profile.html" class="navtoggle">My Account</a></li>
+                    <li class="editdropdown">
+                        <a class="dropdown-toggle selector" data-toggle="dropdown" href="#">
+                            <label class="credit">Credits:</label> <label class="creditval">10<i class="fa fa-caret-down"></i></label>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="my-wallet.html"><i class="fa fa-credit-card fa-fw"></i> My Wallet</a></li>
+                            <li><a href=""><i class="fa fa-plus fa-fw"></i> Add More</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="editdropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <div id="userlogo" class="user-img"><img src="images/user-logo.png" /> <i class="fa fa-caret-down"></i></div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a id="myAccount" href="my-profile.html"><i class="fa fa-user fa-fw"></i>&nbsp;My Account</a></li>
+                            <li class="divider"></li>
+                            <li><a id="logout" href="javascript:void(0)" onclick="logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+
+        </div>
+    </nav>
+
+    <div class="gap-lg"></div>
+
+    <div class="maincont mainbanner" id="body">
+        <div class="wrapper">
+
+            <div class="wrap-xs padd20">
+
+
+                <div class="gap-lg"></div>
+                <div class="gap-lg"></div>
+                <div class="gap-lg">
+
+                    <p class="margin0 bg-main3 color-main1 padd10 borderR5">Support</p>
+
+                </div>
+
+                <div class="form-group padd10">
+                    <div class="form-group">
+                        <a href="support-primary.html" class="">Support for Primary User</a>
+                    </div>
+                    <div class="form-group">
+                        <a href="support-secondary.html" class="">Support for Secondary User</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="mobidisplay gap-lg"></div>
+    </div>
+    <div class="wrapper page-footer">
+        <div class="container footer">
+            <ul class="footer-nav">
+                <li><a href="index.html">foneverify.com</a></li>
+                <li><a href="terms-of-use.html" target="_blank">Terms of Use</a></li>
+                <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <span class="copyright">&copy; Foneverify, 2015</span>
+        </div>
+    </div>
+
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 943731266;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <!-- <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript> -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Foneverify - Email and Mobile Number Verification </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="description" content="Use simple phone verification api to verify phone numbers. Checking and confirming mobile number is very easy using FoneVerify in 200+ countries. Click to know more.">
+	<meta name="keywords" content="Identify Genuine users, mobile Identity, prevent fraud, sms verification service, missed call verification, online phone verification, Phone Number Verification, Mobile number verification online, Authenticate users, simple phone verification API">
+	
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link rel="Stylesheet" type="text/css" href="css/style.css" />
+    <link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+   
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/fv.apis.js"></script>
+    <script type="text/javascript" src="js/fv.consts.js"></script>
+    <script type="text/javascript" src="js/dynamic.js"></script>
+	<script type="text/javascript" src="js/googleanalytics.js"></script>
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	  ga('create', 'UA-66501278-1', 'auto');
+	  ga('send', 'pageview');
+    </script>
+     <script type="text/javascript">
+        $(function () {
+          /*
+            var image = '<img src="images/icon-alert.png">';
+            $('.bttn-error').popover({
+                placement: 'top',
+                content: image,
+                html: true
+            });
+          */
+            $("#beforeLogin").append(dynamichtml.topnavbeforelogin);
+            $("#beforeloginfooter").append(dynamichtml.footernavnotlogin);
+			inituv();
+			$('#resendOtp').attr("disabled", true);
+        });
+    </script>
+</head>
+<body>
+   <div id="alert_template" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Alert</h4>
+          </div>
+          <div id="alert_message" class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+<div class="modal fade bs-example-modal-sm" id="signupWait" tabindex="-1"
+    role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <!--<div class="modal-header"><h4 class="modal-title"><span class="glyphicon glyphicon-time"></span>Please Wait</h4></div>-->
+            <div class="modal-body">
+                <!--<div class="progress"><div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 100%"></div></div>-->
+                <div class="text-center" style="width: 100%">
+                    <img src="images/Preloader.gif" />
+                    <p class="color-main1 text-center">Please Wait....</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" class="img-responsive" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div id="beforeLogin"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="gap-lg"></div>
+
+
+    <div class="maincont mainbanner">
+        <div class="wrapper paddtb20">
+            <div class="wrap-sm clearfix">
+
+                <div class="text-center">
+                    <h3 class="color-main1">Go live with foneverify in minutes</h3>
+                    <div class="gap-xs3"></div>
+                    <h5 class="color-main2">Please complete the steps mentioned below</h5>
+                    <div class="gap-xs"></div>
+                </div>
+
+
+                <div class="silver-border1 borderR5 clearfix padd20">
+                    <div class="col-xs-3 text-center padd0"><img src="images/phone-small.png" class="img-responsive" /></div>
+
+                    <div class="col-xs-9 padd0 clearfix">
+                        <p>Enter the code that we have sent to your mobile.</p>
+                        <div class="clearfix form-group-lg">
+                            <div class="col-sm-4 paddtb10">Verification code:</div>
+                            <div class="col-sm-5 form-group padd0">
+                                <div class="col-xs-3 paddlr2">
+                                    <input id="digit1" type="text" onkeyup="Util.jumpNext(this, 'digit2')" class="form-control text-center padd0" maxlength="1" placeholder="0" />
+                                </div>
+                                <div class="col-xs-3 paddlr2">
+                                    <input id="digit2" type="text" onkeyup="Util.jumpNext(this, 'digit3')" class="form-control text-center padd0" maxlength="1" placeholder="0" />
+                                </div>
+                                <div class="col-xs-3 paddlr2">
+                                    <input id="digit3" type="text" onkeyup="Util.jumpNext(this, 'digit4')" class="form-control text-center padd0" maxlength="1" placeholder="0" />
+                                </div>
+                                <div class="col-xs-3 paddlr2">
+                                    <input id="digit4" type="text" class="form-control text-center padd0" maxlength="1" placeholder="0" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix form-group-lg">
+                            <div class="mobidisplay gap-xs6"></div>
+                            <div class="col-sm-4 padd0"></div>
+                            <div class="col-sm-5 padd0">
+                                <div class="col-xs-6 padd0"><button id="verifyOtp" type="button" class="btn btn-lg btn-block bg-main1 color-default">Verify</button></div>
+                                <div class="col-xs-6 text-center padd0"><label id="countDown" class="farial btn-block padd10">1:59</label></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="">
+                            <div class="height20"><br /></div>
+                            <p>
+                               If code not received, press 
+                                <span id="resendOtp" class="color-main1 nounderline f-bold">Resend OTP.</span>
+                            </p>
+
+                            <div id="msisdnVerStatus" class="">
+                                <p><img src="images/check-tick.png" class="paddright" />Mobile number successfully verified</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="gap-xs"></div>
+
+                <div class="silver-border1 borderR5 clearfix padd20">
+                    <div class="col-xs-3 text-center padd0">
+                        <img src="images/mail-small.png" class="img-responsive" />
+                    </div>
+
+                    <div class="col-xs-9 padd0">
+                        <div class="paddtb20">
+                            We have sent the activation link to your email address. Please check your inbox folder. 
+                            <p class="small">(If not received in inbox please check your spam/junk folder)</p>
+                           <p><span id="resendEmail" class="color-main1 nounderline f-bold">Resend Email</span> </p>
+                        </div>
+                        <div id="emailVerStatus">
+                            <p><img src="images/check-tick.png" class="paddright" />EmailID successfully verified</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gap-xs"></div>
+
+                <div class="form-group text-center">
+                    <button type="button"
+                            data-toggle="popover"
+                            data-trigger="focus"
+                            data-placement="top"
+                            data-content="<img src='images/icon-alert.png'> Please complete your verification!"
+                            title=""
+                            id="foneverifying"
+                            class="btn btn-lg btn-shadow bttn-error">
+                        Start foneverify
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="mobidisplay gap-lg"></div>
+    </div>
+
+
+
+    <div class="wrapper page-footer" id="beforeloginfooter"></div>
+
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 943731266;
+		var google_conversion_language = "en";
+		var google_conversion_format = "3";
+		var google_conversion_color = "ffffff";
+		var google_conversion_label = "hjXYCOjArGMQwuSAwgM"; var google_remarketing_only = false;
+		/* ]]> */
+	</script>
+	<script type="text/javascript"  
+	  src="//www.googleadservices.com/pagead/conversion.js">
+	</script>
+	<noscript>
+		<div style="display:inline;">
+		   <img height="1" width="1" style="border-style:none;" alt=""  
+		   src="//www.googleadservices.com/pagead/conversion/943731266/?label=hjXYCOjArGMQwuSAwgM&amp;guid=ON&amp;script=0"/>
+	    </div>
+	</noscript>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+
+</body>
+</html>

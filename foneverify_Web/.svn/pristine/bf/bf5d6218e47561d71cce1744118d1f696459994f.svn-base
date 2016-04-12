@@ -1,0 +1,51 @@
+﻿<div class="col-sm-7 paddtb10">
+	<div class="col-sm-11">
+		<h3 id="fone_title" class="color-main1 paddtb20">Verification Request</h3>
+		<form id="verficationRequestForm" class="form-horizontal form-group-lg">
+
+			<div class="form-group clearfix">
+				<div class="col-sm-6 paddright">
+					<strong><label>Customer Id</label></strong>
+					<input type="text" id="customerId" class="form-control" placeholder="Customer Id" disabled/>
+					<span class="timeout" id="customerIdError"></span>
+				</div>
+				<div class="col-sm-6 paddleft">
+					<strong><label>Call Flow</label></strong>
+					<select id="callflow" class="form-control"></select>
+					<span class="timeout" id="callflowError"></span>
+				</div>
+			</div>
+			<div class="form-group clearfix">
+				<div class="col-sm-6 paddright">
+					<strong><label>App Secret</label></strong>
+					<input type="text" id="appSecret" class="form-control" placeholder="App Secret" disabled/>
+					<span class="timeout" id="appSecretError"></span>
+				</div>
+				<div class="col-sm-6 paddleft">
+					<strong><label>Country</label></strong>
+					<select id="ddlCountry" class="form-control" placeholder="SELECT"></select>
+					<span class="timeout" id="ddlCountryError"></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<strong><label>Mobile Number</label></strong>
+				<input type="text" id="number" class="form-control" placeholder="Enter Number" />
+				<span class="timeout" id="numberError"></span>
+			</div>
+			<div class="form-group clearfix paddtb10">
+				<div class="col-sm-12 padd5">
+					<button type="button" class="btn btn-lg btn-block color-default bg-main1" id="verificationReqBtn">
+						Submit
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		initVerificationRequest();
+	});
+
+</script>

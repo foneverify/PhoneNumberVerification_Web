@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body style="font-family:Arial; padding:0px; margin:0px; font-size:15px; color:#666">
+    <table style="max-width:800px; border-collapse:collapse; border:0px; margin:0 auto">
+        <tr>
+            <td colspan="2" style="background:#612253;">
+                <img src="../images/mailer-logo.png" style="float:left; display:block; width:100%;" />
+            </td>
+        </tr>
+
+       
+        <tr>
+            <td>
+                <div style="padding:3% 1% 2% 4%; width:auto;">
+                    <h4 style="line-height:21px; margin:0px">Hi <span style="color:#612253;">&lt;name&gt;</span>,</h4>
+                    <p style="line-height:21px;">Your Account ID: <strong style="color:#612253;">XXXXX</strong></p>
+                    <p style="line-height:21px;">Thank you for choosing Foneverify! We'd like to help you get familier with our service before you get started.</p>
+                    <p style="line-height:21px;">Getting started with Foneverify's 
+                    
+                        <a href="http://foneverify.com/api-docs.html" target="_blank" style="color:#612253; font-weight:bold;">REST API</a>
+
+</p>
+                    <p style="line-height:21px;">Use free credit for testing upto 
+                        10 numbers of your choice.
+</p>
+                    <p style="line-height:21px;">
+                        Find the basics of sending first verification in our 
+                        <a href="http://foneverify.com/faq.html" target="_blank" style="color:#612253; font-weight:bold;">How-To Guide.</a> 
+                        Our complete documentation can be found at
+                        <a href="http://docs.foneverify.com" style="color:#666; text-decoration:none;">docs.foneverify.com</a>.
+                    </p>
+                    <p style="line-height:25px;">For any question? Mail us at <a href="mailto://support@foneverify.com" style="color:#612253; text-decoration:none;"><strong>support@foneverify.com</strong></a></p>
+                    <p style="line-height:25px;">Happy Verifying!<br /><br />Regards,<br />Foneverify Team</p>
+                    <p style="color:#999; font-size:12px; padding-top:15px">Copyright &#169; 2014-2015, Foneverify. All right reserved</p>
+                </div>
+            </td>
+
+
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

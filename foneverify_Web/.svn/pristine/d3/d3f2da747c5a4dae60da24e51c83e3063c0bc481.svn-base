@@ -1,0 +1,20 @@
+{
+  "code": "200",
+  "status": "success",
+  "data": [
+    {
+      "appId": "Abc123",
+      "appName": "Flipkart",
+      "appDesc": "asw",
+      "actions": {
+        "create": true,
+        "update": false,
+        "delete": true,
+        "reports": true
+      },
+      "callFlowId": "1",
+      "callFlowName": "call flow name",
+      "lastUpdatedTime": "2015-02-22 08:33:56"
+    }
+  ]
+}

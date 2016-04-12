@@ -1,0 +1,11 @@
+{
+  "code": "200",
+  "status": "success",
+  "data": [
+    {
+      "rightId": "123",
+      "rightName": "anc",
+      "rightType": "SAd"
+    }
+  ]
+}

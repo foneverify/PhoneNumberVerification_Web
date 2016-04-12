@@ -1,0 +1,21 @@
+{
+  "code": "200",
+  "status": "success",
+  "data": {
+    "PROMOTIONAL": {
+      "creditType": "PROMOTIONAL",
+      "creditValue": "1",
+      "creditStatus": "ACTIVE"
+    },
+    "TRIAL": {
+      "creditType": "TRIAL",
+      "creditValue": "1",
+      "creditStatus": "INACTIVE"
+    },
+    "PURCHASED": {
+      "creditType": "PURCHASED",
+      "creditValue": "1",
+      "creditStatus": "ACTIVE"
+    }
+  }
+}

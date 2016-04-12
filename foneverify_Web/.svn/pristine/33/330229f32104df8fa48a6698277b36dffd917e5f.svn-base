@@ -1,0 +1,200 @@
+﻿var validEmail, validPassword;
+$(function () {
+    //$('body').append("<div class='se-pre-con'></div>");
+    $(window).load(function () {
+        $(".se-pre-con").fadeOut("slow");
+    });
+});
+
+$(function () {
+    $('dropdown-toggle').dropdown();
+    $('.tabs li').click(function () {
+        var tab_id = $(this).attr('data-tab');
+        $('.tabs li').find('button').removeClass('current');
+        $('.tab-content').removeClass('current');
+
+        $(this).find('button').addClass('current');
+        $("#" + tab_id).addClass('current');
+    });
+});
+
+
+function generateChart() {
+    $('#container').highcharts({
+        chart: { zoomType: 'xy' }, title: { text: '' }, subtitle: { text: '' },
+        xAxis: [{ categories: ['Flipkart', 'Mantra'], crosshair: true }],
+        yAxis: [{ labels: { format: '{value}' }, title: { text: '' }, min: 0, },
+        {
+            title: {
+                text: '', style: { color: Highcharts.getOptions().colors[0] }
+            },
+            labels: {
+                format: '{value} %', style: { color: Highcharts.getOptions().colors[0] }
+            }, opposite: true
+        }],
+        tooltip: { shared: true }, legend: {},
+        series: [
+        { name: 'Flipkart', type: 'column', yAxis: 1, data: [94, 94], tooltip: { valueSuffix: ' mm' } },
+        { name: 'Myntra', type: 'spline', data: [94, 9400], tooltip: { valueSuffix: '%' } }]
+    });
+}
+
+function logout() {
+    sessionStorage.clear();
+}
+
+
+function selectCountry() {
+    $("#Other").hide();
+    $("#selectCountry").change(function () {
+        if ($(this).val() == 1) {
+            $("#India").show();
+            $("#Other").hide();
+        }
+        else {
+            $("#India").hide();
+            $("#Other").show();
+        }
+    });
+}
+
+//selectCountry();
+
+
+function httpMethodChange() {
+    $("#methodPost").hide();
+    $("#methodGet").hide();
+    $("#httpMethod").change(function () {
+        if ($(this).val() == 0) {
+            $("#methodPost").hide();
+            $("#methodGet").hide();
+        }
+
+        if ($(this).val() == 1) {
+            $("#methodPost").hide();
+            $("#methodGet").show();
+            $("#otpCode").attr("disabled", true);
+        }
+
+        if ($(this).val() == 2) {
+            $("#methodPost").show();
+            $("#methodGet").hide();
+        }
+
+    });
+
+    $("#postApi").click(function () {
+        $("#httpMethod").val('1');
+        $("#methodPost").hide();
+        $("#methodGet").show();
+        $("#otpCode").attr("disabled", false);
+    })
+}
+
+
+function loadSsTableData() {
+    var tr = "<tr>";
+    var serial = 0;
+    $.ajax({
+        url: "db/secondary.json",
+        Type: "text/json",
+        success: function (data) {
+           // console.log(data);
+            for (var i in data) {
+                serial = serial + 1;
+                tr += "<td>" + serial + "</td>";
+                tr += "<td>" + data[i].ticket_ID + "</td>";
+                tr += "<td>" + data[i].ticket_Raised_Date + "</td>";
+                tr += "<td>" + data[i].subject_of_ticket + "</td>";
+                tr += "<td>" + data[i].app_name + "</td>";
+                tr += "<td>" + data[i].status + "</td>";
+                tr += "<td>" +
+                    "<a href=" + data[i].action.view + " class='tbl-btn-view'>View</a>" +
+                    "<a href=" + data[i].action.view + " class='tbl-btn-edit'>Edit</a>" +
+                    "</td>";
+                tr += "</tr>";
+            }
+            $("#SsTrackTicket").append(tr).DataTable({
+                'aoColumnDefs': [
+                    {
+                        'bSortable': false,
+                        'aTargets': [-1]
+                    }],
+                "iDisplayLength": 5,
+                "bLengthChange": false,
+                "bInfo": false,
+                "oLanguage": {
+                    "oPaginate":
+                        {
+                            "sFirst": "<",
+                            "sPrevious": "<<",
+                            "sNext": ">>",
+                            "sLast": ">"
+                        },
+                }
+            });
+        }
+    });
+}
+
+function loadSpTableData() {
+    var tr = "<tr>";
+    var serial = 0;
+    $.ajax({
+        url: "db/primary.json",
+        Type: "text/json",
+        success: function (data) {
+           // console.log(data);
+            for (var i in data) {
+                serial = serial + 1;
+                tr += "<td>" + serial + "</td>";
+                tr += "<td>" + data[i].ticket_ID + "</td>";
+                tr += "<td>" + data[i].registered_email_id + "</td>";
+                tr += "<td>" + data[i].user_type + "</td>";
+                tr += "<td>" + data[i].user_name + "</td>";
+                tr += "<td>" + data[i].ticket_Raised_Date + "</td>";
+                tr += "<td>" + data[i].subject_of_ticket + "</td>";
+                tr += "<td>" + data[i].app_name + "</td>";
+                tr += "<td>" + data[i].status + "</td>";
+                tr += "<td>" +
+                    "<a href=" + data[i].action.view + " class='tbl-btn-view'>View</a>" +
+                    "<a href=" + data[i].action.view + " class='tbl-btn-edit'>Edit</a>" +
+                    "</td>";
+                tr += "</tr>";
+            }
+            $("#SpTrackTicket").append(tr).DataTable({
+                'aoColumnDefs': [
+                    {
+                        'bSortable': false,
+                        'aTargets': [-1]
+                    }],
+                "iDisplayLength": 5,
+                "bLengthChange": false,
+                "bInfo": false,
+                "oLanguage": {
+                    "oPaginate": {
+                        "sFirst": "<",
+                        "sPrevious": "<<",
+                        "sNext": ">>",
+                        "sLast": ">"
+                    },
+                }
+            });
+        }
+    });
+}
+
+function scrollToTop() {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('#scrollToTop').fadeIn();
+        } else {
+            $('#scrollToTop').fadeOut();
+        }
+    });
+
+    $('#scrollToTop').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+    });
+}

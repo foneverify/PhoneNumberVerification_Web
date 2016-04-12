@@ -1,0 +1,839 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Fonverify - FAQs- Start using Foneverify to verify users</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="description" content="Quick reference guide to help integrate REST APIs and flow of the Fonverify solution">
+	<meta name="keywords" content="SMS OTP, Sign up for free trial credits, duration to verify mobile number">
+
+    <link rel="shortcut icon" href="../images/icon.png" />
+    <link rel="Stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/responsive.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+
+    
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/dynamic.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/googleanalytics.js"></script>
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	  ga('create', 'UA-66501278-1', 'auto');
+	  ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#accordion").find("li>ul>li").click(function () {
+                $(this).find("ul > li").toggle();
+                $("ul > li", this).find('span').toggleClass('active');
+            });
+            $("#beforeLogin").append(dynamichtml.topnavdirbeforelogin);
+            $("#beforeloginfooter").append(dynamichtml.footernavnotlogin);
+            $("#_faq").addClass("footernav")
+        });
+
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../images/logo.png" class="img-responsive" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div id="beforeLogin"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="gap-lg"></div>
+
+    <!------------------------------------->
+
+    <div class="maincont mainbanner">
+        <div class="wrapper clearfix">
+
+            <div class="wrap-xs">
+
+                <div class="search-panel hide">
+                    <h3 class="sp-head">How can we help?</h3>
+                    <div class="form-group-lg">
+                        <div class="right-icon-seach">
+                            <input type="text" placeholder="Search" class="form-control" />
+                            <img src="images/icon-search.png" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paddtop30">
+                    <h3 class="padd5 color-main1"> Welcome to foneverify's Quick Answers.</h3>
+                    <div class="gap-xs6"></div>
+                </div>
+
+                <ul id="accordion">
+                    <li>
+                        <strong>Account</strong>
+
+                        <ul style="display:block!important;">
+                            <li>
+                                <span>
+                                    When does foneverify sign-up complete?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            foneverify sign up process is considered complete once both your email and mobile number have been verified. After the completion of sign up, you will be notified of your unique account ID for foneverify.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    How do I verify my email address?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Once you submit your email address along with other details on “Sign Up” page, you will receive an activation link on the aforesaid email address. You must click on this activation link within 24 hours. <br />
+                                            <span>If you couldn't click on the link within 24 hours, please visit the “Sign Up” page again and follow the steps. </span>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    How do I verify my mobile number?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>Once you submit your mobile number along with other details on “Sign Up” page, you will be asked to enter OTP (one-time password) sent on the aforesaid mobile number. OTP must be entered on web page within 180 seconds. If you couldn't enter correct OTP within 180 seconds, please click on “resend OTP” button, shown alongside.</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    I have forgotten my password. How can I reset the same?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p><b>If you've forgotten your password.</b></p>
+                                        <p>1. Go to “Sign in” page and click on “Forgot your password”.</p>
+                                        <p>2. Enter your foneverify Email address and click SUBMIT.</p>
+                                        <p>3. Check your email for the reset link and follow the instructions. If you don't receive an email, check your spam or junk folder.</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    My email address is already in use?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p> If you try to set up a foneverify account but get a message that the email address is already taken, it's likely you've signed up for an account before.</p>
+                                        <p>We only allow one foneverify account per email address.</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    Can I sign out of account if I am signed in on another device?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p> Forgot to log out of foneverify on your friend's computer or any other device? Don't worry! With the click of a button, you can sign out of foneverify wherever you're logged on.</p>
+
+                                        <p>1. Log in to your account</p>
+                                        <p>2. Click log out under 'my account' tab</p>
+
+                                        <p>
+                                            ​If you are worried about the security of your account, you can also reset your password or contact the support team,
+                                            <a href="mailto://support@foneverify.com" class="color-main2 underline">support@foneverify.com</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+
+                            <li>
+                                <span>
+                                    Can I have one foneverify account for multiple products (app, mobile website, WAP site with same name)?
+                                </span>
+                                <ul>
+                                    <li>Yes. You can create multiple apps within one account.  Go to ‘Add new app’ section, create new apps by entering the app URL/domain name correctly, select the call flow and click on create new app tab. You can manage all existing apps under manage my apps section.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    I purchased foneverify credits yesterday. But my users haven’t been able to verify their numbers for the last four hours.
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            While this is highly unlikely to happen, just drop a line to <a href="mailto:support@foneverify.com" class="color-main2 underline" target="_top">support@foneverify.com</a> mentioning your account ID and anything else that helps explain the situation.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <strong> Getting Started</strong>
+                        <ul>
+                            <li>
+                                <span>
+                                    I want to get started with foneverify in less than 24 hours. Is it possible?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>Yes, sure. Sign up on foneverify website. Your account will be created immediately. Buy credits for verification on the site itself. These credits will be allocated to your account within five minutes of payment. Good to go!</p>
+                                        <p>If you want to test the service before taking it live, you can test the service using the test API, Secret Key and App ID displayed on the home page. You can test the application for up to 10 successful verifications. Once the testing is successful and you are satisfied with the results,  create new apps under add apps section, a new app ID and secret key would be shared with you; then proceed to “Make Payments” section and buy credits for verification.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                           <li>
+							  <span>How can I redeem 7500 free successful verifications?</span>
+							  <ul>
+							    <li>
+								   <p>Please write email to <a href="mailto:sales@foneverify.com" class="color-main2 underline" target="_top">sales@foneverify.com</a> or <a href="mailto:support@foneverify.com" class="color-main2 underline" target="_top">support@foneverify.com</a>specifying the 7500 free promo code and bill plan. We will activate the bill plan and allocate 7500 credits to your account.</p>
+								</li>
+							  </ul>
+							</li>
+							<li>
+							  <span>
+							     Terms for availing 7500 free successful verification?
+							  </span>
+							  <ul>
+							    <li>
+								  <p>Offer of 7500 successful verifications is valid on an agreement term of 12 months. In case, customer terminates this agreement without cause before 12 months from the date of execution, the free verifications offer provided would be withdrawn i.e. billed up to the consumed successful verifications by the customer. But in case, customer terminates this agreement due to lack of service efficiency, non-performance or failure to support at U2opia’s end, winding up of operations or bankruptcy of U2opia, then the customer will not be liable to pay for free verification offer.</p>
+								</li>
+							  </ul>
+							</li>
+                            <li>
+                                <span>
+                                    Do I need to make changes to my app to integrate with foneverify?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>While great care has been taken to provide you a hassle-free integration, some of your selections may require you to make minor changes on the app front-end to upkeep a positive user experience. For more details, <a href="api-docs.html" class="color-main2 underline">click here</a></p>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    What if, the end-user, clicks on mobile website & app (with same names) at the same time? Will both the requests be rejected because of duplication?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            No. The request which comes in first will be processed earlier.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    How can I shore up conversions; i.e. number of users verifying successfully against number of user attempts made?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            foneverify is designed to maximize conversions. Apart from verification via OTP (one time password) sent through SMS, we enable verification via DID (Direct Inward Dialling) number. You can combine the two modes, or use one mode alone; depending on the market you serve, historical data, user behaviour etc. Your selections can significantly influence the % of conversions.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    My app is still under development; it might take six months to put it up on App Store. Will the promotional offer of $99 be vaild even after six months?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p> The promotional codes are time bound. We would be running promotions from time to time. You can avail the ongoing promotion at the time of creating apps and selecting the plan.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    Does foneverify provide global coverage?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            foneverify offers its services across the globe in 200+ countries.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+
+                        <strong>
+                            Verification Work flow
+                        </strong>
+                        <ul>
+                            <li>
+                                <span>
+                                    How do I ensure that my foneverify workflow implementation is as per my selection?
+                                </span>
+                                <ul>
+
+                                    <li>
+                                        <p> After account creation, you will be able to test workflow implementation via trial credits allocated.  If you detect issues with workflow behaviour, write in to <a href="mailto:support@foneverify.com" class="color-main2 underline" target="_top">support@foneverify.com</a> to provide a resolution.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    What counts as a user attempt to verify number?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>foneverify server generates OTP/DID to carry out verifications; each time this happens; user attempt is counted, regardless of the outcome.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    Will failed verifications be charged?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            All charges are only for successful verifications. The count of successful verification would be as per U2opia Logs.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    What is the expected time to verify a number?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            The total time is influenced by a variety of factors including some related to the usability of app/website being verified. Typically, it takes 30 seconds. In extreme situations it might get stretched to three minutes.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    How can I stop an ongoing verification request and try again?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            By default, foneverify blocks an attempt to initiate another verify request for the same number while there is already one ongoing –therefore DO NOT implement a retry button with another verify call – this would be rejected outright.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    Is there a maximum number of concurrent foneverify requests per account?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Throughput is set at account-level? If you need a higher throughput please contact your account manager or 
+                                            <a href="mailto://support@foneverify.com"  target="_top" class="color-main2 underline">support@foneverify.com</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>
+                                    I have purchased foneverify credits. But my users haven’t been able to verify their numbers for the last two hours.
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            While this is highly unlikely to happen, just drop a line to <a href="mailto:support@foneverify.com" class="color-main2 underline" target="_top">support@foneverify.com</a> mentioning your account ID and specify the issue and our support team will address the concern to your satisfaction.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+
+                        </ul>
+
+                    </li>
+                    <li>
+                        <strong>
+                            foneverify Technical FAQ
+                        </strong>
+                        <ul>
+                            <li>
+                                <span>
+                                    Can we change SMS Template?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            We have a standard SMS template in which we have only one variables - App name of the developer.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                       
+                            <li>
+                                <span>
+                                    What are the modes of verification and their flows?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p><strong>There are two modes of verification; SMS and VOICE.</strong></p>
+                                        <p><strong>SMS mode: </strong> Client application initiates verification request with end-user’s msisdn to foneverify system .In turn foneverify system allocates an OTP to this msisdn and sends this OTP to the end user (msisdn) via SMS. Client application/user types in the received OTP; application sends back this OTP to the foneverify system. foneverify matches the received OTP with the one it has allocated to this msisdn from which verification request has been initiated.</p>
+                                        <p><strong>VOICE mode:</strong>Client application initiates verification request with end-user’s msisdn to foneverify system .In turn foneverify system allocates a DID to this msisdn and sends this DID (Direct inward Dialing) to application in API’s response. End-user gives missed call to the allocated DID. foneverify system acknowledges the missed call and matches the combination of caller number (msisdn) and called number (DID).</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li>
+                                <span>
+                                    What are fallback mechanisms?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Fallback mechanism is the process where verification mode switches from SMS to VOICE and vice-versa (depends upon the flow opted) in cases where the user does not get verified in the primary flow.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li>
+                                <span>
+                                    Does the foneverify system call users?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            The foneverify platform does not call users.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    Is the end user charged?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            End user is not charged for verification. He/she would be receiving the SMS or in the case of DID, they would give a missed call on the assigned DID number.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    Can I change the sender id of SMS?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            The sender ID of SMS is uniform across all our developers.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    How long does it take to switchover?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Switchover to fallback takes place as soon as update verification request is received from client application after initial timeout expires.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li>
+                                <span>
+                                    How will DID number be sent to the user if SMS sending fails?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            foneverify system provides DID number back to client application through API response. It is the responsibility of application developers to display this DID to end users through respective views. The DID number will be displayed on the screen of the device. In case of mobile the number will be displayed on the device screen for user to give a missed call and in case of desktop, the DID number is displayed on the website for the user to give a missed call on that number.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    Is there an IVR available where a user can call?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            We do not  have IVR facility.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    Can a user be verified more than once on the same number?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            The user can be verified more than once depending upon the different verification cycle(s).
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    How do I get the app key and app id?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Once application is registered with FoneVerify account, a system generated unique appKey and app ID gets generated which is shared with developer.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    What are the languages supported?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            we support multiple languages - English, French, Spanish, German, Portuguese and Italian. Please write to  <a href="mailto:support@foneverify.com" class="color-main2 underline" target="_top">support@foneverify.com</a> to opt for a particular language.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    Does the user need to input the Country code?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Country code input is necessary. Our system requires an ISO two character country code for example IN for India which the application interface which can either show as a drop down or ask the user to type in the country code.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    How will I know the SMS delivery status?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            SMS delivery status can be fetched by sending update request API call, foneverify appliaction will send the response code - 706 / 707 / or 708. Details of these codes can be found in our API document.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    How do I know that a switchover from primary to fallback mechanism has happened?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            In response to update request API hit, application will get any of the response codes 701, 705, 706. Please refer API document for all the available error/response codes.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    What happens when the SMS times out?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>In VOICE/SMS flow, the complete verification cycle ends and final verification status is shown as failed.</p>
+                                        <p>In SMS/VOICE flow, this will trigger the fall-back and a DID would be assigned to the user for giving a missed call.</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    What happens when the missed call is not received within time out window?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>In SMS/VOICE flow, the complete verification cycle ends and final verification status is shown as failed.</p>
+                                        <p>In VOICE/SMS flow, this will trigger the fall-back and a SMS OTP would be sent to the user.</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    What if the fall back verification also fails?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>If the fallback verification also fails, the current verification cycle will end. The final verification status will show verification failed.</p>
+                                        <p>However, the application may re-initiate a new verification request.</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    Can the OTP be alphanumeric?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            OTP are numeric only.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- <li>
+                                <span>
+                                    Can we use foneverify to verify landline numbers?
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            No.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li> -->
+
+                            <li>
+                                <span>
+                                    What all are the business messages/error codes and corresponding next steps to be taken?
+                                </span>
+                                <ul>
+                                    <li class="padd0">
+                                        <div class="responsive-table">
+                                            <table class="table table-bordered small">
+                                                <tr>
+                                                    <th>Error Business Message codes</th>
+                                                    <th>Code Description</th>
+                                                    <th>Next Step</th>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>200</td>
+                                                    <td>Success (Request Received / VERIFICATION_COMPLETED)	</td>
+                                                    <td>Verification Success Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>500	</td>
+                                                    <td>Unknown Response. Please Try again later.	</td>
+                                                    <td>Display Error Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>501	</td>
+                                                    <td>INVALID_CUSTOMER_ID	</td>
+                                                    <td>Display Error Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>502	</td>
+                                                    <td>INVALID_APP_KEY	Display</td>
+                                                    <td>Error Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>503	</td>
+                                                    <td>INVALID_ISOCOUNTRYCODE	</td>
+                                                    <td>Display Message "Invalid Country Code - Please enter the correct ISO Country Code and Try Again"</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>504	</td>
+                                                    <td>INVALID_MOBILE_NUMBERFORMAT	</td>
+                                                    <td>Display Message "Invalid Number - Please enter the correct Number and Try Again"</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>505	</td>
+                                                    <td>INVALID_VERIFICATION_ID	</td>
+                                                    <td>Display Error Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>506	</td>
+                                                    <td>REQUEST_ALREADY_EXISTS	</td>
+                                                    <td>Send Update Request - Initiate Fall back</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>507	</td>
+                                                    <td>NO_ACTIVE_DID_FOUND	</td>
+                                                    <td>Display Error Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>700	</td>
+                                                    <td>VERIFICATION_FAILED	</td>
+                                                    <td>Verification Failed Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>701	</td>
+                                                    <td>TRYING_FALLBACK	</td>
+                                                    <td>This is not an Error</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>702	</td>
+                                                    <td>WRONG_OTP_PROVIDED	</td>
+                                                    <td>Display Message "Wrong OTP - Please enter the correct OTP"</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>703	</td>
+                                                    <td>ALREADY_VERIFIED	</td>
+                                                    <td>Verification Success Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>704	</td>
+                                                    <td>NOT_VALID_TYPE_REQUEST	</td>
+                                                    <td>Display Error Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>705	</td>
+                                                    <td>TRYING_FALLBACK_SMS_DELIVERED	</td>
+                                                    <td>This is not an Error</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>706	</td>
+                                                    <td>TRYING_FALLBACK_SMS_NOT_DELIVERED	</td>
+                                                    <td>This is not an Error</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>707	</td>
+                                                    <td>SMS_DELIVERED_SUCCESSFULLY	</td>
+                                                    <td>This is not an Error</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>708	</td>
+                                                    <td>SMS_DELIVERY_REPORT_PENDING	</td>
+                                                    <td>This is not an Error</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>709	</td>
+                                                    <td>WRONG_DID_PROVIDED	</td>
+                                                    <td>Display Error Screen</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>710	</td>
+                                                    <td>DID_VERIFICATION_PENDING</td>
+                                                    <td>This is not an Error</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>711	</td>
+                                                    <td>COUNTRY_NOT_SUPPORTED_OTP_SENT</td>
+                                                    <td>DID is not available in the country, Flow has been switched to SMS. Display enter OTP screen to the customer</td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span>
+                                    I am getting 30 sec time through API while in OTP message get 90 seconds.
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p> We have sent the Flow timeout at 90 seconds.</p>
+                                        <p>The Timeout parameter received in the first API (i.e. 30) is the suggested time post which application should send an update request to server (without any display to the user).</p>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- <li>
+                                <span>
+                                    What happens when user tap on the OTP submit button with blank OTP multiple times with in time frame.
+                                </span>
+                                <ul>
+                                    <li>
+                                        <p>Ideally the blank text (OTP) field validation should be there at client side; thus it should not result into a server hit.</p>
+                                        <p>However, even if the blank OTP reaches the foneverify servers, it will pass on the hit to the developer as in it will display incorrect OTP message .</p>
+                                    </li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="mobidisplay gap-lg"></div>
+        </div>
+
+        <div class="gap-sm"></div>
+
+    </div>
+    <!------------------------------------->
+
+    <div class="wrapper page-footer" id="beforeloginfooter">
+
+    </div>
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 943731266;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <!-- <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript> -->
+    
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+
+</body>
+</html>

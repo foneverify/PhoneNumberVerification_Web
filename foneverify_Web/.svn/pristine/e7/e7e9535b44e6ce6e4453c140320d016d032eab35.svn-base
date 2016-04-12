@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Foneverify - Terms of use</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="description" content="User authentication platform for identifying genuine users">
+		<meta name="keywords" content="Identify genuine users, user verification platform, SMS and Voice based verification">
+
+		<link rel="shortcut icon" href="images/icon.png" />
+
+		<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/dynamic.js"></script>
+
+		<script type="text/javascript" src="js/fv.consts.js"></script>
+		<script type="text/javascript">
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-66501278-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script type="text/javascript">
+			
+			$(function() {
+				Util.checkSession();
+				$("#afterLogin").append(dynamichtml.topnavafterlogin);
+				$("#afterloginfooter").append(dynamichtml.footernavdirafterlogin);
+				$("#_termsofUse").addClass('footernav');
+				initUserProfile();
+			});
+		</script>
+	</head>
+	<body onload='onloadCredis();'>
+		<!-- Modal ends Here -->
+		<div id="alert_template" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title">Alert</h4>
+					</div>
+					<div id="alert_message" class="modal-body"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Ok
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="dashboard.html"> <img src="images/logo.png" class="img-responsive" /> </a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div id="afterLogin"></div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="gap-lg"></div>
+
+		<div class="maincont mainbanner" id="body">
+			<div class="wrapper">
+
+				<div class="wrap-sm">
+					<div class="gap-xs6"></div>
+					<h3 class="color-main1">Terms of Use</h3>
+
+					<div class="gap-xs6"></div>
+
+					<h4 class="color-main1 f-italic paddtb25"> Welcome to foneverify services! </h4>
+
+					<div class="gap-xs6"></div>
+					<p class="text-justify">
+						By using this application or any service offered by U2opia, you confirm that you have read the following terms ("Terms of Use") and agree to be bound by them. Please read these Terms of Use (together with U2opia’s <a href="privacy-policy.html" class="color-main2 underline">Privacy Policy</a> which are incorporated herein by this reference, the "Terms of Use" (and also referred to as "Services Agreement")) fully and carefully before using www.Foneverify.com and the services, features, content, applications, and other media offered from time to time by U2opia ("U2OPIA", "U2opia", "we", "us" or "our") (together with the Site, the "Services"). These Terms of Use set forth the legally binding terms and conditions for your use of the Site and the Services. If you are accepting these terms on behalf of a company, you represent and warrant that you have the authority to do so.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>1. Acceptance of Terms of Use</h3>
+					<p class="text-justify">
+						<strong>A. Binding Terms. </strong>B<span class="lowercase">Y REGISTERING FOR AND/OR USING THE SERVICES IN ANY MANNER, YOU AGREE THAT YOU HAVE READ, UNDERSTAND AND ACCEPT THESE TERMS OF USE AND EACH OF WHICH MAY BE UPDATED FROM TIME TO TIME AS SET FORTH BELOW, TO THE EXCLUSION OF ALL OTHER TERMS. You may not use the Services if you do not unconditionally accept these Terms of Use</span>.
+					</p>
+					<p class="text-justify">
+						<strong>B. Scope.</strong> These Terms of Use apply to all users of the Site, including, without limitation, users who send or submit content, information, and other materials or services, registered or otherwise, through the Services.
+					</p>
+					<p class="text-justify">
+						<strong>C. A<span class="lowercase">RBITRATION NOTICE AND CLASS ACTION WAIVER</span></strong> E<span class="lowercase">XCEPT FOR CERTAIN TYPES OF DISPUTES DEFINED IN THE ARBITRATION SECTION BELOW, YOU AGREE THAT DISPUTES BEWTEEN YOU AND US SHALL BE RESOLVED BY BINDING, INDIVIDUAL ARBITRATION AND YOU WAIVE YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR CLASS-WIDE ARBITRATION</span>.
+					</p>
+
+					<div class="gap-xs6"></div>
+
+					<h3>2. Modifications</h3>
+					<p class="text-justify">
+						Changes in the industry, carrier and other partner requirements, applicable law and regulations may require us to make changes to our Terms of Use and Services from time to time. We endeavour to timely provide notice of such material modifications, however, it is your responsibility to check these Terms of Use periodically for changes and we encourage you to do so. We reserve the right, in our sole discretion, to modify or replace any of these Terms of Use, or change, suspend, or discontinue the Site and Services (including without limitation, the availability of any feature, database, or content) at any time by posting a notice on the Site or by sending you notice through the Services, or by another appropriate means of electronic communication. We may also impose limits on certain features and services or restrict your access to parts or all of the Services without liability or advance notice. You acknowledge that your continued use of the Services following notification of any changes to these Terms of Use constitutes acceptance of those changes.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>3. Our Services</h3>
+					<p>
+						foneverify – User Authentication platform for identifying genuine users. foneverify is a mobile authentication tool which is meant for developers to verify user’s phone numbers, with one simple integration developers can verify numbers in 200+ countries & pay only for successful verifications.
+					</p>
+					<ul class="treetirelist">
+						<li>
+							<strong>We have two calls flows</strong>
+							<ul>
+								<li>
+									SMS – SMS: SMS Primary and SMS Fall-back
+								</li>
+								<li>
+									SMS – VOICE: SMS Primary and Voice Fall-back
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>There are two modes of verification; SMS and VOICE.</strong>
+							<ul>
+								<li>
+									<b>SMS mode: </b> Client application initiates verification request with end-user’s MSISDN to foneverify system. In turn foneverify system allocates an OTP to this MSISDN and sends this OTP to the end user (MSISDN) via SMS. Client application picks or user manually types in the received OTP. Application sends back this OTP to the foneverify system. foneverify matches the received OTP with the one it has allocated to this MSISDN from which verification request has been initiated.
+								</li>
+								<li>
+									<b>VOICE mode :</b> Client application initiates verification request with end-user’s MSISDN to foneverify system. In turn foneverify system allocates a DID (Direct Inward Dialing Number) to this MSISDN and sends this DID number to application in API’s response. The Application prompts the same to the End user. The end-user then manually gives (or application automatically initiates) a missed call to the allocated DID. foneverify system acknowledges the missed call and matches the combination of caller number (MSISDN) and called number (DID Number).
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong> Primary to Secondary Fall-back:
+							Based on Application Vendor’s requirements one of the modes can be assigned as primary mode of verification and another as fall-back. For e.g. a vendor could chose to have SMS as the primary mode of verification and voice as secondary. In such a scenario in case the SMS verification fails to happen in a predefined time window then the end user will be automatically switched to the voice verification flow & a DID number will be assigned to him. </strong>
+						</li>
+					</ul>
+
+					<div class="gap-xs6"></div>
+					<h3>4. User Account</h3>
+					<p class="text-justify">
+						To access and use certain of our Services, you will need to create a membership account on the Site (an "Account"). You must provide accurate and complete information and keep your Account information updated. You are solely responsible for the activity that occurs on your Account, and for keeping your Account password secure; we will not be liable for losses caused by any unauthorized use of your Account by a third party. You may never use a third party’s account, registration information, or password on the Services without permission. You must notify us immediately of any change in your eligibility to use the Services (including any changes to or revocation of any licenses from state authorities), breach of security or unauthorized use of your Account. You should never publish, distribute or post login information for your Account. You have the ability to delete your Account by emailing <a href="mailto://supportFoneverify.com" class="color-main2 underline">supportFoneverify.com</a>. 
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>5. Eligibility</h3>
+					<p class="text-justify">
+						You represent and warrant that you are at least 18 years of age and are legally authorized and competent to enter into and bind yourself or the company you represent to these Terms of Use. We may, in our sole discretion, refuse to offer the Services to any person or entity and change our eligibility criteria at any time. You will inform us if you are aware that these Terms of Use are not in compliance with any laws, rules and regulations applicable to you and the right to access the Services is revoked where these Terms of Use or use of the Services is prohibited or to the extent offering, sale or provision of the Services conflicts with any applicable law, rule or regulation. Further, the Services are offered only for your use, and not for resale or otherwise on behalf of any third party except as otherwise expressly provided in these Terms of Use. In any event, there are no third party beneficiaries to this Agreement.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>6. License; Ownership; and Intellectual Property</h3>
+
+					<p class="text-justify">
+						<strong>A. Limited License to Services Restrictions.</strong> Subject to your compliance on a continuing basis with all of the terms and conditions of these Terms of Use, we hereby grant you permission, on a limited, non-exclusive, non-transferable, non-sub-licenceable basis until these Terms of Use or your account is terminated ("Term"), to use of proprietary software and also /or application service. The User is not permitted, directly or indirectly, to reverse engineer, de-compile, disassemble or otherwise make any attempt to establish the source code or the underlying ideas or algorithms of the software; to modify, translate, or to create distinctive and derivative works based on the software/ application; or to copy (except for archival purposes), to rent, lease, to distribute, assign, or otherwise transfer rights to the software/application; to use the software/application for timesharing or otherwise to the benefit of a third party; or to remove any proprietary notices or label/s that identify U2opia’s services.
+					</p>
+					<p class="text-justify">
+						<strong>B. Ownership of Our Services</strong> We retain and own propriety applications, software, intellectual property "IP" (Intellectual Property), all right, title and interest in and to the Services and all improvements, modifications and derivative works thereof; and you hereby do and shall make all assignments necessary to effectuate the foregoing. Upon the termination of this Terms of Use for any reason, this License will be terminated and the User shall destroy and cease using all the software and applications. This software is provided and the applications are offered, "AS IS" and are subject to the disclaimers of warranty and the limitations of liability as found in this terms of service.
+					</p>
+					<p class="text-justify">
+						<strong>C. Notices and Restrictions.</strong> The Services may contain Content specifically provided by us, our partners or our users that is protected by copyrights, trademarks, service marks, patents, trade secrets or other proprietary rights and laws. You shall abide by and maintain all copyright notices, information, and restrictions contained in any Content accessed through the Services.
+					</p>
+					<p class="text-justify">
+						<strong>D. Reservation of Rights.</strong> We reserve the right, in our sole good faith discretion, but without any obligation, to reject, refuse to transmit or post, or remove any posting (including User Content) by you, or to restrict, suspend or terminate your access to all or any part of the Services at any time. Notwithstanding the foregoing, we assume no responsibility for monitoring the Site, Services, or User Content, for inappropriate conduct, or modifying or removing such conduct, Content or User Content from the Site or Services. We also reserve the right to access, read, preserve, and disclose any information that we reasonably believe is necessary (i) to satisfy any applicable law, regulation, legal process or governmental or agency request, (ii) to enforce these Terms of Use, including investigation of potential violations hereof, (iii) to detect, prevent, or otherwise address fraud, security or technical issues, (iv) in accordance with our Privacy Policy, (v) to respond to user support requests, or (vi) to protect the rights, property or safety of us, our users and the public.
+					</p>
+					<p class="text-justify">
+						<strong>E. Trademarks.</strong> You may not include or make reference to us, the name foneverify or U2opia, or any of our trademarks in connection with your use of the Services or otherwise without our prior written consent in each instance, and you hereby disclaim any and all right of ownership of or license to our trademarks. Without limiting the foregoing, in any event, U2opia owns and shall own all goodwill generated from or associated with its trademarks, including any use thereof. You hereby grant us a limited, non-exclusive, non-transferable, license during the Term to display and have displayed your trade names, trademarks, service marks, logos, domain names and the like for the purpose of promoting or advertising that you use the Services. You may not issue any press releases or other publications that mention U2opia or the Services, or otherwise in connection with these Terms of Use without our prior written consent.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>7. Fees and Payment</h3>
+
+					<p class="text-justify">
+						<strong>A. Paid Services.</strong> Our services are subject to payments now or may be in the future (the "Paid Services"). Please see our pricing page  and Services descriptions for information regarding the current Paid Services. The pricing set forth on our Site or otherwise communicated to you in writing by us shall apply to your use of the applicable Services. Please note that any payment terms presented to you in the process of using or signing up for a Paid Service are deemed part of these Terms of Use. Unless otherwise indicated by us on the Services, or in a writing executed by an authorized signatory for foneverify, you agree to pay us in advance for the Services in the currency invoiced by us, without the right of set-off, deductions, or counterclaim. We will not be obliged to perform any Services under these Terms of Use if you have not provided payments when due.
+					</p>
+					<p class="text-justify">
+						<strong>B. Billing.</strong> We use a third-party payment processor ("Payment Processor") to facilitate your payments through a payment account linked to your Account on the Services ("Billing Account") for use of the Paid Services. The processing of payments will be subject to the terms, conditions and privacy policies of the Payment Processor in addition to these Terms of Use. We are not responsible for error by the Payment Processor. By choosing to use Paid Services, you agree to pay us, through the Payment Processor, all charges at the prices then in effect for any use of such Paid Services in accordance with the applicable payment terms referenced in Section 7(a) above, and you authorize us, through the Payment Processor, to obtain payment from your chosen payment provider ("Payment Method").
+					</p>
+					<p class="text-justify">
+						<strong>C. Payment Method.</strong> Subject to Section 7(a) above, the terms of your payment will be based on your Payment Method and may be determined by agreements between you and the financial institution, credit card issuer or other provider of your chosen payment method. To change your payment method, go to your foneverify wallet.
+					</p>
+					<p class="text-justify">
+						<strong>D. Auto – Reload.</strong> Paid Services may accept recurring period charges as agreed to by you on the Site. By choosing such auto-reload payment plan, you acknowledge that such Services have a recurring payment feature and you accept responsibility for all recurring charges prior to cancellation. W<span class="lowercase">E MAY SUBMIT PERIODIC CHARGES (E.G., MONTHLY) WITHOUT FURTHER AUTHORIZATION FROM YOU, UNTIL YOU PROVIDE PRIOR NOTICE (RECEIPT OF WHICH IS CONFIRMED BY US) THAT YOU HAVE TERMINATED THIS AUTHORIZATION OR WISH TO CHANGE YOUR PAYMENT METHOD. SUCH NOTICE WILL NOT AFFECT CHARGES SUBMITTED BEFORE WE REASONABLY COULD ACT. TO TERMINATE YOUR AUTHORIZATION OR CHANGE YOUR PAYMENT METHOD, GO TO YOUR foneverify WALLET</span>.
+					</p>
+					<p class="text-justify">
+						<strong>E. Current Information Required.</strong> Y<span class="lowercase">OU MUST PROVIDE CURRENT, COMPLETE AND ACCURATE INFORMATION FOR YOUR BILLING ACCOUNT. IF YOU HAVE REQUESTED AUTO-RELOAD PAYMENTS, YOU MUST PROMPTLY UPDATE ALL INFORMATION TO KEEP YOUR BILLING ACCOUNT CURRENT, COMPLETE AND ACCURATE (SUCH AS A CHANGE IN BILLING ADDRESS, CREDIT CARD NUMBER, OR CREDIT CARD EXPIRATION DATE), AND YOU MUST PROMPTLY NOTIFY US OR OUR PAYMENT PROCESSOR IF YOUR PAYMENT METHOD IS CANCELED (E.G., FOR LOSS OR THEFT) OR IF YOU BECOME AWARE OF A POTENTIAL BREACH OF SECURITY, SUCH AS THE UNAUTHORIZED DISCLOSURE OR USE OF YOUR USER NAME OR PASSWORD. CHANGES TO SUCH INFORMATION CAN BE MADE IN YOUR foneverify DASHBOARD. IF YOU FAIL TO PROVIDE ANY OF THE FOREGOING INFORMATION, YOU AGREE THAT WE MAY CONTINUE CHARGING YOU FOR ANY USE OF PAID SERVICES UNDER YOUR BILLING ACCOUNT UNLESS YOU HAVE CANCELLED AUTO-RELOAD OR TERMINATED YOUR PAID SERVICES AS SET FORTH ABOVE</span>.
+					</p>
+					<p class="text-justify">
+						<strong>F. Free Trials and Other Promotions.</strong> Any free trial or other promotion that provides access to a Paid Service must only be used within the specified time of the trial or the exhaustion of credits whichever is earlier.
+					</p>
+					<p class="text-justify">
+						<strong>G. Changes.</strong> You acknowledge that we reserve the right to change our fees from time to time, in our sole discretion. Your continued use of the Services after a price change becomes effective constitutes your agreement to pay the changed amount.
+					</p>
+					<p class="text-justify">
+						<strong>H. Taxes.</strong> Unless otherwise provided on the pricing page, all charges and fees for the Services are exclusive of any country, province, federal, state or local taxes, including without limitation, use, sales, value-added, privilege, or other taxes, levies, imports, duties, fees, surcharges, governmental assessments and withholdings ("Taxes"). You will be solely liable for and will pay upon demand all Taxes associated with your access to and use of the Services and shall not deduct any such amounts, or any other withholdings, set-offs or deductions, from amounts you owe us. Without limiting the foregoing, if either you or foneverify (or its applicable affiliated entity) is compelled to pay any such Taxes or make such deductions or withholdings, then you shall pay foneverify such additional amounts as are necessary to ensure receipt by foneverify of the full amounts which foneverify would have received but for such deductions, withholding and/or the payment of such Taxes. Subject to the foregoing terms, foneverify shall remain responsible for its own income taxes. Upon our request, you will provide us with all information relevant to your payment or owing of all applicable Taxes.
+					</p>
+					<p class="text-justify">
+						<strong>I. Refund Policy.</strong> Any fees paid by you to foneverify are non-refundable. Without limiting the foregoing, any billing disputes must be initiated within thirty (30) days of payment (or invoice if sooner) to be considered, by contacting us at billingFoneverify.com, and upon expiration of such thirty (30) day period you will not be entitled to dispute any fees paid or payable to foneverify. The parties will work together to attempt to resolve any applicable dispute. Any disputes that cannot be resolved in accordance with the foregoing shall be handled in accordance with Section 14 below. foneverify reserves the rights to: (i) except with respect to Termination Refunds, issue any mutually agreed refunds in the form of a credit to your Account; (ii) deduct the costs of issuing any refund from any amounts otherwise payable (e.g. bank transfer fees and Payment Processor charges); (iii) issue any refunds in foneverify’s sole discretion either in the same currency that payment was originally made. (iv) negatively adjust any refundable amounts to reflect foreign currency exchange changes since the payment date, for which you bear the sole responsibility and risk; (v) withhold payment to the extent that foneverify determines in its reasonable discretion that payment to a country, individual or entity is illegal or reasonably impractical; and (vi) determine in its sole reasonable discretion the means by which it will issue any refunds.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>8. Customer Obligations and Responsibilities</h3>
+
+					<p class="text-justify">
+						<strong>A. Account Activity and Use of Services.</strong> You are responsible for all of your activity and all activity on your Account in connection with the Services. You agree to handle your Account credentials (login/password) carefully and take responsibility for any and all use of your credentials. You shall notify us immediately if you have reason to believe that there has been or is likely to be an unauthorized or impermissible use of your Account or the Service. You will be solely liable for the accuracy, completeness and appropriateness of the content transmitted by you or anyone else using the Services on your behalf. As between you and us, you are solely responsible for (i) the User Content transmitted by you, on your behalf, or in connection with your Account, (ii) the acts or omissions of your users with respect to your User Content, and (iii) ensuring that your User Content complies with the specifications and guidance posted on our Site and policies. You shall not create any liability or obligations on behalf of us to any third party and you shall have a written and enforceable agreement with each of your users that allow us to perform the Services and that shall be at least as protective of us and the Services as these Terms of Use (including, without limitation, all license restrictions, terms regarding our intellectual property rights, warranty disclaimers, liability limitations, privacy notifications and consents, the Acceptable Use Policy, and arbitration provisions), and you shall enforce such terms and notify us of any violation that may affect our rights.
+					</p>
+					<p class="text-justify">
+						<strong>B. Compliance with Law.</strong> You represent, warrant, and agree that you shall abide by all applicable local, state, province, national and international laws and regulations then in effect at the time of your use of the Services, and you will not directly or indirectly use the Services for any illegal, immoral or improper purpose or in any manner which contravenes these Terms of Use and you will not allow any third party to do so. You shall retain documentation evidencing your compliance with these Terms of Use (including without limitation documentation establishing that you have obtained all required consents, authorizations and approvals relating to your use of the Service) throughout all applicable limitations periods. We reserve the right, but without any obligation, to monitor and audit your use of our Services for any reason or no reason, without notice, to ensure your compliance with these Terms of Use. You agree to provide us with any information we reasonably request to investigate and resolve problems relating to your Account. We reserve the right in our sole discretion to investigate and take appropriate legal action against anyone who, we believe in our sole discretion, violates our Terms of Use.
+					</p>
+					<p class="text-justify">
+						<strong>C. Additional Representations.</strong> You represent and warrant that: (i) the information you provide in connection with your registration for the Services is accurate and complete, (ii) you are duly authorized to do business in the jurisdiction where you operate, and (iii) you are an authorized representative of your entity, duly authorized to access the Services and to legally bind the entity you represent to these Terms of Use and all transactions conducted under your Account. In connection with your User Content, you affirm, represent, and warrant that (and that you can and will demonstrate to our full satisfaction upon our request that): (A) you own or have the necessary licenses, rights, consents, and permissions to use the Services (B) you have all written consents, releases, and/or permissions required in connection with your User Content in the manner contemplated by the Services and the Terms of Use. You agree to pay all royalties, fees, and other monies owing any person or entity by reason of your User Content.
+					</p>
+					<p class="text-justify">
+						<strong>D. Indemnity.</strong> You shall defend, indemnify, and hold harmless us, our affiliates, suppliers, and partners, and each of our and their respective employees, contractors, directors, officers, and representatives from and against any and all damages, liabilities, claims, demands, obligations, losses, fines, penalties, and expenses, including without limitation reasonable attorneys’ fees and costs, that arise from or relate to (i) your User Content, (ii) your use or misuse of, or access to, the Services or Content, and/or (iii) your violation of these Terms of Use, or violation or infringement by you, or any third party using your Account, of any intellectual property, privacy, or other right of any person or entity. We agree to promptly notify you of any such claim, to permit you to control the defence and/or settlement thereof (except to the extent such claim relates to our platform, other Services, or intellectual property or other rights, in which case we reserve the right to assume the exclusive defence and control of such matters and you will assist and cooperate with us in asserting any available defences), and to reasonably assist you at your expense and reasonable request in connection therewith; provided that (i) we may participate in the defence of any such claim through counsel of our own choosing, (ii) you shall not admit liability or responsibility on our behalf, or settle or compromise any claim without our prior written consent (which shall not be unreasonably withheld).
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>9. Confidentiality</h3>
+					<p class="text-justify">
+						"Confidential Information" means any information or data, regardless of whether it is in tangible form, disclosed by either party that is marked or otherwise designated as confidential or proprietary or that should otherwise be reasonably understood to be confidential given the nature of the information and the circumstances surrounding disclosure. "Confidential Information" does not include any information which: (i) is publicly available through no fault of receiving party, (ii) was properly known to receiving party, without restriction, prior to disclosure by the disclosing party, (iii) was properly disclosed to receiving party, without restriction, by another person without violation of disclosing party’s rights, or (iv) is independently developed by the receiving party without use of or reference to the disclosing party’s Confidential Information. Each party agrees that it will use the Confidential Information of the other party solely in accordance with the provisions of this Agreement (and for us to provide the Services) and it will not disclose such information to any third party without the other party’s prior written consent, except as otherwise permitted hereunder or for us to provide the Services. Each party agrees to exercise due care in protecting the Confidential Information from unauthorized use and disclosure. Each party may also disclose the Confidential Information of the other party, in whole or in part to its employees, representatives, actual or potential investors and subcontractors who have a need to know in connection with the Services and are bound to keep such information confidential consistent with the terms of this Section. For the avoidance of doubt, either party may disclose the Confidential Information of the other party as required by law, legal process or court order.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>10. Disclaimer</h3>
+					<p class="text-justify">
+						T<span class="text-lowercase">O THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICES AND CONTENT ARE PROVIDED "AS IS", "AS AVAILABLE" AND WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, QUALITY AND FITNESS FOR A PARTICULAR PURPOSE, AND ANY WARRANTIES IMPLIED BY ANY COURSE OF PERFORMANCE OR USAGE OF TRADE, ALL OF WHICH ARE EXPRESSLY DISCLAIMED. WE, AND OUR SUPPLIERS, PARTNERS AND LICENSORS, AND EACH OF OUR AND THEIR RESPECTIVE OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS, DO NOT WARRANT (AND HEREBY EXPRESSLY DISCLAM ALL WARRANTIES) THAT: (I) THE SERVICES WILL BE SECURE OR AVAILABLE AT ANY PARTICULAR TIME OR LOCATION, (II) ANY DEFECTS OR ERRORS WILL BE CORRECTED, (III) ANY CONTENT OR SOFTWARE AVAILABLE ON OR THROUGH THE SERVICES IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS, (IV) THE CONTENT ON THE SITES OR SERVICES (OR ANY THIRD PARTY SITES OR SERVICES LINKED THERETO) IS ACCURATE, ERROR-FREE, OR COMPLETE, OR (V) THE RESULTS OF USING THE SERVICES WILL MEET YOUR REQUIREMENTS. YOUR USE OF THE SERVICES IS SOLELY AT YOUR OWN RISK. WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY CONTENT OF, COMMUNICATION BY, OR PRODUCT OR SERVICE ADVERTISED OR OFFERED BY, A THIRD PARTY THROUGH THE SERVICES, AND WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND THIRD-PARTIES.</span>
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>11. Suspensions and Terminations</h3>
+
+					<p class="text-justify">
+						<strong>A. Term and Termination.</strong>
+					</p>
+					<p class="text-justify">
+						<strong>i. Term: </strong> This Terms of Use shall remain in full force and effect at all times relevant to your use of the Services. We have a minimum term period of 24 months.
+					</p>
+					<p class="text-justify">
+						<strong>ii. Termination for Convenience: </strong> You may terminate your use of the services or account at any time for any reason by following the instructions for closing your Account on the Site or by contacting us at supportFoneverify.com. We may suspend your right to use any or all Services or terminate these Terms of Use as between you and us in its entirety (and, accordingly, cease providing all Services to you), in our discretion at any time by providing you thirty (30) days’ advance notice.
+					</p>
+					<p class="text-justify">
+						<strong>iii. Termination for Cause: </strong> In addition, we may suspend your right to use the Services or terminate these Terms of Use as between you and us in its entirety (and, accordingly, your right to use the Service), for cause: (A) if you are in breach of this Agreement and have failed to cure such breach within ten (10) days after written notice thereof, or (B) immediately if (i) we have reason to believe that you have violated any provision of these Terms of Use, (ii) if we reasonably believe that your other use of the Services is materially adversely affecting our facilities, other customers, or reputation, (iii) we determine, in our sole discretion, that our provision of any of the Services to you is fraudulent or otherwise prohibited by applicable law, or has become impractical or unfeasible for any legal or regulatory reason, (iv) if your User Content or use of your Account is found to be offensive or unacceptable by third parties, (v) upon your liquidation, commencement of dissolution proceedings, disposal of your assets, failure to continue your business in the ordinary course, assignment for the benefit of creditors, or if you become the subject of a voluntary or involuntary bankruptcy or similar proceeding, or (vi) if you are in default of any payment obligation with respect to any of the Services or if any payment mechanism you have provided to us is invalid or charges are refused for such payment mechanism.
+					</p>
+					<p class="text-justify">
+						<strong>B. Effect of Suspension.</strong>
+					</p>
+					<p class="text-justify">
+						Upon our suspension of your use of any Services, in whole or in part, for any reason: (i) fees will continue to accrue for any Services that are still in use by you, notwithstanding the suspension, (ii) you remain liable for all fees, charges and any other obligations you have (or your Account has) incurred through the date of suspension with respect to the Services, and (iii) all of your rights with respect to the Services will be terminated during the period of the suspension.
+					</p>
+					<p class="text-justify">
+						<strong>C. Effect of Termination and Survival.</strong>
+					</p>
+					<p class="text-justify">
+						Upon termination of these Terms of Use for any reason: (i) you remain liable for all fees, charges and any other obligations accrued and owed by you through the termination, (ii) except as expressly set forth herein, all of your rights and licenses under these Terms of Use will immediately terminate and you shall cease using the Services, and (iii) any balance on your Account remaining after termination of these Terms of Use stands forfeited. All amounts accrued or owed to us in connection with these Terms of Use and Sections 6(a)(iii) (restrictions only); 6(b), (c), (d), (e), (f), (h); 7(k); 7(l); 8(a), (b), (d), (e); 9; 10(b), (c), (d), (e), (f), (g); 11(c); 12; 13; 14; and 15 shall survive any termination of these Terms of Use. Following any suspension or termination of this these Terms of Use or your Account other than for breach, you may request any post-termination assistance that we may elect to make generally available with respect to the Services such as data retrieval arrangements, subject to and conditioned upon your advance payment of fees and acceptance of all terms and conditions that we specify in writing with respect thereto.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>12. Limitation of Liability</h3>
+					<p class="text-justify">
+						N<span class="lowercase">OTWITHSTANDING ANYTHIG ELSE, TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL WE OR OUR PARTNERS, SUPPLIERS, LICENSORS, OR CONTENT PROVIDERS, OR ANY OF OUR OR THEIR RESPECTIVE DIRECTORS, OFFICERS, EMPLOYEES, OR AGENTS, BE LIABLE UNDER ANY CONTRACT, TORT, WARRANTY, STRICT LIABILITY, NEGLIGENCE OR ANY OTHER LEGAL OR EQUITABLE THEORY WITH RESPECT TO THE SERVICES OR OTHER SUBJECT MATTER OF THIS AGREEMENT FOR ANY SPECIAL, INDIRECT, INCIDENTAL, PUNITIVE, COMPENSATORY OR CONSEQUENTIAL DAMAGES OF ANY KIND WHATSOEVER, LOST PROFITS, REVENUE, INCOME OR BUSINESS, DATA LOSS, INTERRUPTION OF BUSINESS, COST OF PROCUREMENT OF SUBSTITUTE GOODS, TECHNOLOGY, RIGHTS OR SERVICES (HOWEVER ARISING AND EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES)</span>.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>13. Governing Law and Disputes</h3>
+
+					<p class="text-justify">
+						<strong>A. Good Faith efforts to resolve disputes.</strong> If either party intends to seek arbitration under this Agreement, the party seeking arbitration must first notify the other party of the dispute in writing at least thirty (30) days in advance of initiating the arbitration. The notice must describe the nature of the claim and the relief being sought. If you and we are unable to resolve our dispute within thirty (30) days, either party may then proceed to file a claim for arbitration in accordance with the following terms.
+					</p>
+					<p class="text-justify">
+						<strong>B. Arbitration.</strong> YOU AGREE THAT ALL DISPUTES BETWEEN YOU AND US (WHETHER OR NOT SUCH DISPUTE INVOLVES A THIRD PARTY) WITH REGARD TO YOUR RELATIONSHIP WITH US, INCLUDING WITHOUT LIMITATION DISPUTES RELATED TO THESE TERMS OF USE, YOUR USE OF THE SERVICES, AND/OR RIGHTS OF PRIVACY AND/OR PUBLICITY, WILL BE RESOLVED BY BINDING, INDIVIDUAL ARBITRATION BY A SINGLE ARBITRATOR, IN THE ENGLISH LANGUAGE, AND YOU AND WE HEREBY EXPRESSLY WAIVE TRIAL BY JURY. The location of arbitration will be in accordance with the Arbitration and Conciliation Act, 1996. Discovery and rights to appeal in arbitration are generally more limited than in a lawsuit, and other rights that you and we would have in court may not be available in arbitration. You may bring claims only on your own behalf. Neither you nor we will participate in a class action or class-wide arbitration, or bring claims under class, representative, private attorney general or similar theories of liability or prayers for relief for any claims covered by this agreement to arbitrate. YOU ARE GIVING UP YOUR RIGHT TO PARTICIPATE AS A CLASS REPRESENTATIVE OR CLASS MEMBER ON ANY CLASS CLAIM YOU MAY HAVE AGAINST US INCLUDING ANY RIGHT TO CLASS ARBITRATION OR ANY CONSOLIDATION OF INDIVIDUAL ARBITRATIONS. You also agree not to participate in claims brought in a class action, private attorney general or representative capacity, or consolidated claims involving another person’s account, if we are a party to the proceeding. This dispute resolution provision will be governed by the Arbitration and Conciliation Act, 1996. Judgment on the award rendered by the arbitrator may be entered in any court having competent jurisdiction. Any provision of applicable law notwithstanding, the arbitrator will not have authority to award damages, remedies or awards that conflict with these Terms of Use. The prevailing party in any action or proceeding to enforce this Agreement shall be entitled to recover its reasonable attorney's fees and costs.
+					</p>
+					<p class="text-justify">
+						<strong>C. Governing Law and Jurisdiction.</strong>This Agreement shall be interpreted, enforced and governed in all respects by the laws of India and under exclusive jurisdiction of the Courts of India. The Parties shall use their efforts in good faith to settle by way of direct negotiations any difference, which may arise between them in connection with this Agreement. All unresolved disputes will be subject to Arbitration and conducted in accordance with the rules of Indian Arbitration Centers.
+					</p>
+
+					<div class="gap-xs6"></div>
+					<h3>14. Miscellaneous</h3>
+					<p class="text-justify">
+						<strong>A. Entire Agreement: </strong> These Terms of Use are the entire agreement between you and us with respect to the Site and Services, and supersede all prior or contemporaneous communications and proposals (whether oral, written or electronic) between you and us with respect to thereto; provided that if you and we have previously executed a written addendum referencing a Agreement between you and us or these Terms of Use, such the specific amended terms expressly included in such addendum shall remain in effect together with these Terms of Use.
+					</p>
+					<p class="text-justify">
+						<strong>B. Sever ability </strong> If any provision of these Terms of Use, or any part of such provision, is found to be unenforceable or invalid, that provision will be (to the minimum extent necessary) be replaced by a valid and enforceable provision the effect of which comes as close as possible to the intended economical effect of the unenforceable or invalid provision, so that these Terms of Use will otherwise remain in full force and effect and enforceable.
+					</p>
+					<p class="text-justify">
+						<strong>C. Force Majeure</strong> We shall not be liable for any delays or failures caused by occurrences beyond our reasonable control, including, without limitation, acts of God, natural disasters, flood, fire, accidents, decrees or restraints or other actions of governments, strikes or other labor disturbances, war, sabotage, outages of third party connections, utilities, or telecommunications networks, including, without limitation, carrier-related problems or issues, internet-access issues, shortage or unavailability of supplies, and other mechanical, electronic or communications failures or degradation.
+					</p>
+					<p class="text-justify">
+						<strong>D. Notices</strong> You hereby authorize us to send notices to you relating to this Agreement (e.g., notices of breach and/or suspension and regarding our Services) via a e-mail to the e-mail address you provide to us in your Account or otherwise on the Services, in addition to the other means and methods set forth in this Agreement. It is your responsibility to keep your e-mail address current, and you will be deemed to have received any e-mail sent to the last known e-mail address we have on record for you. Notices that we send to you via e-mail will be deemed effective upon our sending of the e-mail.
+					</p>
+					<p class="text-justify">
+						Unless otherwise specified in these Term of Use, all notices under these Terms of Use will be in writing and will be deemed to have been duly given when received, if personally delivered or sent by certified or registered mail, return receipt requested; when receipt is electronically confirmed, if transmitted by facsimile or e-mail; or the day after it is sent, if sent for next day delivery by recognized overnight delivery service.
+					</p>
+					<p class="text-justify">
+						<strong>E. No agency, JV, third party beneficiaries</strong> No agency, partnership, joint venture, or employment relationship is created as a result of these Terms of Use and neither party has any authority of any kind to bind the other in any respect (except as necessary for us to perform the Services on your behalf).
+					</p>
+					<p class="text-justify">
+						<strong>F. Assignment</strong> These Terms of Use are personal to you, and are not assignable, transferable or sub-licensable by you except with our prior written consent; provided that you may assign this Agreement to a successor to all or substantially all of your business or assets with prior written notice to us; provided that such successor and its affiliates do not provide services that compete with us, such assignment may not constitute or result in a violation of applicable trade control or export or other law, such successor shall remain liable for all of your obligations that accrued prior to such assignment. We may assign, transfer or delegate any of our rights and obligations hereunder without consent to an affiliate or successor to all or substantially all of our business or assets to which this Agreement relates.
+					</p>
+					<p class="text-justify">
+						<strong>G. Questions</strong> If you have any questions about these Terms of Use or our Services,
+						<br />
+						you may contact us at: <a href="mailto://support@Foneverify.com>" class="color-main2 underline">Support@Foneverify.com</a>
+					</p>
+
+					<h3>Supplemental Terms of Service</h3>
+
+					<p class="text-justify">
+						<strong>A .</strong> By using Verify Services in any manner, you agree that you are bound by these Supplemental Terms in addition to the Terms of Use. These Supplemental Terms form a part of, and are hereby incorporated into, our Terms of Use by this reference.
+					</p>
+					<p class="text-justify">
+						<strong>a .</strong> we will determine: (i) the number of successful verifications that have occurred in our sole reasonable discretion based upon the use by your message recipients of the PIN Codes provided by you to such users through the Services ("Successful Verifications"); and (ii) the number of unsuccessful verifications that have occurred in our sole reasonable discretion based upon the lack of use by your message recipients of the PIN Codes provided by you to such users through the Services within a reasonable period of time.
+					</p>
+					<p class="text-justify">
+						<strong>b .</strong> You can track and find additional information about your Successful Verifications on your Account dashboard. You may not use the Services in any manner that circumvents payment obligations that would otherwise be owed to us, or engage in any fraudulent, inappropriate or deceitful behaviour in connection with the Services. We reserve the right to audit your use of these Services if we suspect the foregoing misuse is occurring, and adjust your invoices to bill you for any such verification messages improperly sent as if such requests were Successful Verifications, without limiting our suspension, termination, and other rights and remedies set forth in the Terms of Use.
+					</p>
+					<p class="text-justify">
+						<strong>B .</strong> Party Information Sources. These Services use proprietary algorithms designed to reduce time to market by using one API that connects to multiple data sources, and to increase the accuracy of information provided to you by consolidating information received from multiple portability, telecommunications, and other databases. These Services inherently rely upon data derived from third party and public sources that are not under our control. Although our proprietary algorithm is designed to detect conflicts in and increase the accuracy of reported information, we do not verify or evaluate each piece of data, and neither we nor our suppliers make any guarantees or warranties, express or implied, about any of the information offered or provided, including, without limitation, warranties relating to accuracy, availability, or results of use. We also have no control over and accept no liability in connection with the telephone numbers submitted for verification purposes on our customers’ websites. We prohibit use of our services to impersonate others and for other fraudulent purposes (see our Acceptable Use Policy) but we do not accept responsibility for third party actions. You acknowledge and agree that we have no fiduciary duty to you and you acknowledge that we have no duty to take any action regarding what which users gain access to the Services, the Content you or others access via the Services, or how you or others may interpret or use the Content provided through the Services. You release us from all liability for you or others having (or not having) acquired through the Services. Your use of and reliance upon the Content provided through the Services is solely at your own risk.
+					</p>
+					<p class="text-justify">
+						<strong>C .</strong> Representations and Warranties. You further covenant, represent and warrant that you will only use Verify Services and exercise your rights under the Terms of Use (i) for lawful purposes in compliance with our Terms of Use; (ii) incident to your authorized provision of services relevant to your users; (iii) in compliance with any and all location-based data laws, rules and regulations that may be relevant to you (such as the Electronic Communications Privacy Act in the United States, the Regulation of Investigatory Powers Act in the United Kingdom, or any analogous law in jurisdictions relevant to your use of the Services); and (iv) in compliance with any and all other applicable laws, rules and regulations and that you have any and all authorizations and permissions as may be necessary, including privacy-related consents, to obtain and use data obtained in connection with these Services.
+					</p>
+
+				</div>
+
+				<div class="deskdisplay gap-sm"></div>
+
+			</div>
+		</div>
+
+		<div class="wrapper page-footer" id="afterloginfooter"></div>
+
+		<!-- Google Code for Remarketing Tag -->
+		<!--------------------------------------------------
+		Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+		--------------------------------------------------->
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			var google_conversion_id = 943731266;
+			var google_custom_params = window.google_tag_params;
+			var google_remarketing_only = true;
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+		<!-- <noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+		</div>
+		</noscript> -->
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript" src="js/fv.apis.js"></script>
+
+	</body>
+</html>

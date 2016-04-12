@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>foneverify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link rel="Stylesheet" type="text/css" href="css/style.css" />
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="Stylesheet" type="text/css" href="css/realperson.css" />
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/realperson.plugin.js"></script>
+    <script type="text/javascript" src="js/realperson.js"></script>
+    <script type="text/javascript" src="js/dynamic.html.js"></script>
+    <script src="js/fv.apis.js"></script>
+    <script src="js/fv.consts.js"></script>
+    <script type="text/javascript" src="js/googleanalytics.js"></script>
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	  ga('create', 'UA-66501278-1', 'auto');
+	  ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('#captcha').realperson();
+            initSecSignup();
+            $("#beforeLogin").append(dynamichtml.topnavbeforelogin);
+            $("#beforeloginfooter").append(dynamichtml.footernavnotlogin);
+        });
+    </script>
+	<script type="text/javascript">
+     function isStrongPassword(e) 
+        {
+		   var myString= $("#regpass").val(); 
+		   var Stringlen = myString.length;
+		   var digitString = myString.match(/\d+/g);
+		   var charString = myString.match(/[a-zA-Z0-9]/g);
+		   var specialString = myString.match(/[$@$!%*#?&]/g);
+		   var color = "";
+           var strength = "";
+		   var password_strength = document.getElementById("password_strength");
+		   if (myString.length == 0) {
+            password_strength.innerHTML = "";
+			validPassword = false;
+            return false;
+           } else {
+			validPassword = true;
+		   }
+		   if(parseInt(Stringlen) < 8)
+		   {
+		   Util.alert_message('#alert_template','Password must be at least 8 characters.');
+		   strength = "Weak";
+           color = "red";
+		   password_strength.innerHTML = 'Your Password is ' + strength + '.' ;
+           password_strength.style.color = color;
+		   validPassword = false;
+		   return false;
+		   } else {
+			validPassword = true;
+		   }
+		   if(specialString < 1)
+		   {
+		   Util.alert_message('#alert_template', 'Passwords must include at least 1 special (#,@,&,$ etc) character.');
+		   strength = "Good";
+           color = "darkorange";
+		   password_strength.innerHTML = 'Your Password is ' + strength + '.' ;
+           password_strength.style.color = color;
+		   validPassword = false;
+		   return false;
+		   } else {
+			validPassword = true;
+		   }
+		   if(digitString < 1)
+		   {
+		   Util.alert_message('#alert_template','Passwords must include at least 1 numeric character.');
+		   strength = "Strong";
+           color = "green";
+		   password_strength.innerHTML = 'Your Password is ' + strength + '.' ;
+           password_strength.style.color = color;
+		   validPassword = false;
+		   return false;
+		   } else {
+			validPassword = true;
+		   }
+		   return false;
+		} 
+    </script>
+</head>
+<body>
+    <div id="alert_template" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Alert</h4>
+                </div>
+                <div id="alert_message" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Modal Start here-->
+    <div class="modal fade bs-example-modal-sm" id="signupWait" tabindex="-1"
+         role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <!--<div class="modal-header"><h4 class="modal-title"><span class="glyphicon glyphicon-time"></span>Please Wait</h4></div>-->
+                <div class="modal-body">
+                    <div class="text-center" style="width: 100%">
+                        <img src="images/Preloader.gif" />
+                        <p class="color-main1 text-center">Please Wait....</p>
+                    </div>
+                    <!--<div class="progress"><div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 100%"></div></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal ends Here -->
+
+    <nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" class="img-responsive" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div id="beforeLogin"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="gap-lg"></div>
+    <div class="maincont mainbanner">
+        <div class="wrapper">
+
+            <div class="wrap-in fullwrap clearfix">
+
+
+                <div class="col-sm-7 padd20">
+                    <div class="col-sm-12 padd0">
+                        <h3 class="color-main1">Secondary User Sign-up</h3>
+                    </div>
+
+                    <div class="col-sm-11 padd0">
+                        <div class="paddtop10 form-group-lg">
+                            <form action="dashboard.html" method="post" id="signupform">
+
+                                <div class="form-group clearfix padd0">
+                                    <input type="email" id="emailid" name="email" class="form-control" placeholder="Email ID" required="" disabled="disabled" />
+                                </div>
+
+                                <div class="form-group clearfix">
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Full Name" required="" />
+                                </div>
+
+
+                                <div class="form-group clearfix padd0">
+                                    <input type="text" id="addCompany" name="company" class="form-control" placeholder="Company name (Optional)" />
+                                </div>
+                                <div class="form-group clearfix">
+								<input type="password" id="regpass" name="password" class="form-control" onblur="isStrongPassword(this);" 
+									placeholder="Create password"  required="" autocomplete="off" value="" />
+									<span id="password_strength"></span>
+                                </div>
+
+
+                                <div class="form-group clearfix">
+                                    <div class="col-xs-3 padd0">
+                                        <select class="form-control" name="isdcode" style="padding-left:3px; padding-right:2px;">
+                                            <option>+91</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-xs-9 padd0">
+                                        <input type="number" id="mobile" name="mobile" class="form-control" placeholder="Mobile Number (Optional)" />
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group clearfix">
+                                    <div class="col-sm-12 relative padd0">
+                                        <input type="text" id="captcha" name="captcha" class="form-control" placeholder="Captcha Verification" required="" />
+                                    </div>
+                                </div>
+
+                                <div class="clearfix">
+                                    <p class="">
+                                        By clicking the button you agree to the
+                                        <a href="#">Terms of Use</a>,<br />
+                                        and <a href="#">privacy Policy</a>.
+                                    </p>
+                                </div>
+
+                                <div class="clearfix">
+                                    <button type="submit" id="signup"
+                                            class="btn btn-block btn-lg bg-main1 color-default">
+                                        Sign Up
+                                    </button>
+                                </div>
+
+
+
+                            </form>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-5 padd0 fright">
+
+                    <div class="deskdisplay gap-xl"></div>
+                    <div class="deskdisplay gap-lg"></div>
+
+                    <div class="text-center clearfix">
+                        <h1 class="color-main1 font35 f-bold">7500 FREE Successful Verifications</h1>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="mobidisplay gap-lg"></div>
+        </div>
+        <div class="mobidisplay gap-lg"></div>
+    </div>
+
+
+
+    <div class="wrapper page-footer" id="beforeloginfooter"></div>
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 943731266;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <!-- <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript> -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+
+</body>
+</html>

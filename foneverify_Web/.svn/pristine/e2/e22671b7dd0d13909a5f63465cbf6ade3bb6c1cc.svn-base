@@ -1,0 +1,10 @@
+{
+  "code": "200",
+  "status": "success",
+  "data": [
+    {
+      "appId": "Abc123",
+      "appName": "Flipkart"  
+  }
+  ]
+}

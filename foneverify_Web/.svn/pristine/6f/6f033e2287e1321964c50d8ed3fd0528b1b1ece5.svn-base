@@ -1,0 +1,23 @@
+[
+	{
+		"imageName": "Deccan-Chronicle-logo.jpg",
+		"title": "Deccan Chronicle",
+		"alink": "http://www.deccanchronicle.com/technology/mobiles-and-tabs/190216/top-five-security-holes-in-mobile-apps.html",
+		"topLine": "Top five security holes in mobile apps..."
+	}, {
+		"imageName": "techgig.gif",
+		"title": "Online News Base",
+		"alink": "http://www.techgig.com/tech-news/editors-pick/6-ways-to-keep-away-fake-users-from-your-website-and-app-42682",
+		"topLine": "6 ways to keep away fake users from your website and app..."
+	}, {
+		"imageName": "the-financial-express.jpg",
+		"title": "The Financial Express",
+		"alink": "http://www.financialexpress.com/article/industry/tech/verify-apps-for-your-own-safety/215700/ ",
+		"topLine": "U2opia Mobiles Foneverify eases mobile verification process for startups..."
+	}, {
+		"imageName": "BWCIO.png",
+		"title": "Online News Base",
+		"alink": "http://bwcio.com/the-next-big-thing-in-authentication-and-security/ ",
+		"topLine": "The Next Big Thing in Authentication and Security..."
+	}
+]

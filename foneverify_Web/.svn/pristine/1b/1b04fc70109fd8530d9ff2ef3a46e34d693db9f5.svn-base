@@ -1,0 +1,12 @@
+{
+  code 200,
+  status success,
+  data [
+    {
+      sessionId jkgd,
+      userId 1,
+      userName SAd,
+      groupId1
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Foneverify - A Mobile / Web, authentication tool meant for developers to verify users numbers</title>
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="description" content="Foneverify is mobile / web authentication tool meant for developers to verify users numbers and U2opia Mobile is a mobile technology company that derives connectivity.">
+		<meta name="keywords" content="verify mobile number, telephone number verification, verify mobile number, number verification, user authentication">
+
+		<link rel="shortcut icon" href="images/icon.png" />
+		<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/dynamic.js"></script>
+		<script type="text/javascript" src="js/validation/validate.min.js"></script>
+		<script type="text/javascript" src="js/validation/additional.validate.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#beforeLogin").append(dynamichtml.topnavbeforelogin);
+				$("#beforeloginfooter").append(dynamichtml.footernavdirnotlogin);
+				$("#_aboutUs").addClass('activenav');
+			});
+		</script>
+		<script type="text/javascript">
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-66501278-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<div class="se-pre-con"></div>
+		<nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"> <img src="images/logo.png" class="img-responsive" /> </a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div id="beforeLogin"></div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="gap-lg"></div>
+		<div class="maincont mainbanner" id="body">
+			<div class="wrapper">
+
+				<div class="wrap-sm">
+					<div class="gap-xs6"></div>
+					<h2 class="color-main1">About Us</h2>
+
+					<div class="gap-xs6"></div>
+
+					<h3 class="color-main1 f-italic paddtb10"><img style="width: 160px; height: 100px;" src="images/logos/u2opiamobile_logo.png"></img></h3>
+
+					<div class="gap-xs6"></div>
+					<p class="text-justify">
+						U2opia mobile is a mobile technology company that enables technology that drives connectivity, fuels transformation and helps companies grow and innovate.
+					</p>
+					<p class="text-justify">
+						Since its pioneering launch in May 2011, its flagship product, Fonetwish, that enables ubiquitous and customized access to the social internet on USSD, U2opia Mobile now offers data driven solutions. U2opia Mobile’s solutions include Fonepass, a sponsored data platform that excites customers with possibilities of data and Foneverify, a user authentication tool for businesses application economy. The solutions engage a variety of customers, across generations of handsets.
+					</p>
+					<p class="text-justify">
+						U2opia Mobile works with the largest and most innovative mobile operators in Asia, Africa & Latin America and is managed by an experienced team with deep understanding of consumer, internet and mobile ecosystems. The company addresses a global user base of 1 Billion users in emerging markets with its innovative mobile data solutions.
+					</p>
+					<p class="text-justify">
+						Over the span of 5 years , U2opia Mobile has inked strategic relationships with over 75 MNO’s globally. The company is backed by marquee investors Matrix Partners and Omidyar Network, who provide strategic market reach as well as strong financial support. U2opia Mobile runs operations from Singapore, Delhi, Dubai and San Francisco.
+					</p>
+					<h3 class="color-main1 f-italic paddtb10"><img style="width: 100px; height: 50px;" src="images/logo.png"></img></h3>
+
+					<div class="gap-xs6"></div>
+					<p class="text-justify">
+						One of the major concern today for app developers across platforms is how to alleviate fraud on the application. Verifying phone numbers is a mission-critical process that is typically used to protect app developers against spam, non-genuine downloads and hacking. foneverify was designed keeping these concerns at the core of our solution.
+						<br/>
+					</p>
+					<p class="text-justify">
+						A mobile verification tool, foneverify is meant for app developers to verify and validate user’s mobile numbers. With its global reach, easy integration, flexible call flows and robust cloud based architecture, foneverify gives business a powerful tool to mitigate fraud and reduce drop off. It also helps to optimize marketing spends and retarget effectively.
+						<br/>
+					</p>
+					<p class="text-justify">
+						Our REST based phone number verification API was developed to offer flexible methods to developers which can offer authentication across app, web and WAP.
+					</p>
+
+				</div>
+
+				<div class="deskdisplay gap-sm"></div>
+				<div class="wrap-lg">
+					<div class="wrap-sm">
+						<div class="align-center
+						paddtb25">
+							<p class="paddtb10">
+
+								To know more about U2opia mobile, visit : <a href="http://www.u2opiamobile.com" target="_blank" class="color-main1">www.u2opiamobile.com</a>
+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper page-footer" id="beforeloginfooter"></div>
+		<!-- Google Code for Remarketing Tag -->
+		<!--------------------------------------------------
+		Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+		--------------------------------------------------->
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			var google_conversion_id = 943731266;
+			var google_custom_params = window.google_tag_params;
+			var google_remarketing_only = true;
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+		<!-- <noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+		</div>
+		</noscript> -->
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
+	</body>
+</html>

@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+<head>
+    <title>Foneverify - Manage registered apps</title>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<meta name="description" content="Use simple phone verification api to verify phone numbers. Checking and confirming mobile number is very easy using FoneVerify in 200+ countries. Click to know more.">
+	<meta name="keywords" content="Identify Genuine users, mobile Identity, prevent fraud, sms verification service, missed call verification, online phone verification, Phone Number Verification, Mobile number verification online, Authenticate users, simple phone verification API">
+		
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link rel="Stylesheet" type="text/css" href="css/style.css" />
+    <link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="Stylesheet" type="text/css" href="css/input.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.admin.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-multiselect.css" />
+    <link rel="Stylesheet" type="text/css" href="css/input.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/dataTables.tableTools.min.css" />
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/script.js"> </script>
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="js/jquery.paging.js"></script>
+    
+    <script type="text/javascript" src="js/fv.consts.js"></script>
+    <script type="text/javascript" src="js/countries.js"></script>
+    <script type="text/javascript" src="js/dynamic.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.tableTools.min.js"></script>
+	<script type="text/javascript" src="js/googleanalytics.js"></script>
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	  ga('create', 'UA-66501278-1', 'auto');
+	  ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+        	Util.checkSession();
+		    initManageMyApp();
+			initUserProfile();
+            $("#whenjoined").datepicker();
+            $('#appnameuser').multiselect({ 
+				includeSelectAllOption: true
+			},'selectAll');
+            $('#appnamemanageapp').multiselect({
+                includeSelectAllOption: true,
+                onDropdownHide: function () {
+                    var guiData = { tableid: 'tbAppDetails', callback: FvApiCallbacks.getAppDetailsApi.updateAppDetailsTable };
+                    var evData = { guiData: guiData, getPostData: FvApiCallbacks.getAppDetailsApi.getPostData };
+                    FvApis.getDetailsForApps({ data: evData });
+                }
+            });
+            $(".btn-group button").find("span").css({ "font-weight": "bold" });
+            $("#tabs").tabs();
+            $("#afterLogin").append(dynamichtml.topnavafterlogin);
+            $("#afterloginfooter").append(dynamichtml.footernavdirafterlogin);
+            $("#_myApp").addClass('activenav');
+			$('body').on('keydown', 'input', function(e) {
+			console.log(this.value);
+			if (e.which === 32 &&  e.target.selectionStart === 0) {
+			  return false;
+			}  
+		  });
+        });
+    </script>
+</head>
+<body onload="onloadCredis();">
+<div class="se-pre-con"></div>
+    <div class="modal fade bs-example-modal-sm" id="signupWait" tabindex="-1"
+         role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <!--<div class="modal-header"><h4 class="modal-title"><span class="glyphicon glyphicon-time"></span>Please Wait</h4></div>-->
+                <div class="modal-body">
+                    <div class="text-center" style="width: 100%">
+                        <img src="images/Preloader.gif" />
+                        <p class="color-main1 text-center">Please Wait....</p>
+                    </div>
+                    <!--<div class="progress"><div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 100%"></div></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal ends Here -->
+    <div id="alert_template" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <h4 class="modal-title">Alert</h4>
+                </div>
+                <div id="alert_message" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" class="img-responsive" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div id="afterLogin"></div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="gap-lg"></div>
+      <div class="maincont mainbanner">
+        <div class="wrapper">
+            <div class="wrap-in fullwrap padd20 clearfix">
+                <div class="clearfix">
+                    <div class="ultabs">
+                        <ul class="">
+                            <li><a href="add-apps.html">Register App</a></li>
+                            <li class="current"><a id="verLink" href="manage-my-app.html">Manage App</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="clearfix">
+                        <div class="col-sm-12 padd5">
+                            <div class="paddtb10">
+                                <h4 class=" color-main1">Manage Apps</h4>
+                            </div>
+                            <div class="clearfix form-group-lg bg-main3 padd10 borderR3">
+                                <div class="col-sm-6 padd0">
+                                    <label class="col-sm-3 padd10" for="appname">App Name</label>
+                                    <div class="col-sm-9">
+                                        <div class="select-control form-control">
+                                            <select id="appnamemanageapp" multiple="multiple"></select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 padd0">
+                                    <label class="col-sm-3 padd10" for="accountid">Customer ID</label>
+                                    <div class="col-sm-9"><input type="text" id="accountid" class="form-control" disabled="disabled" value="" /></div>
+                                </div>
+                            </div>
+                            <!--<button type="button" id="manageMyApp">manageMyApp</button>
+                            <button type="button" id="addSecUser">addSecUser</button>
+                            <button type="button" id="addApps">addApps</button>-->
+                        </div>
+                    </div>
+
+
+                    <div class="paddtb10 clearfix">
+                        <div class="col-sm-12 padd5">
+                            <div class="tablecont margin0">
+                                <div class="scrolltable">
+                                    <table id="tbAppDetails" class="table table-bordered table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th style="vertical-align: middle;">App ID</th>
+                                                <th>App Name</th>
+                                                <th>App Description</th>
+                                                <th>App Secret Key</th>
+                                                <th style="vertical-align:inherit;">APP/Web URL</th>
+                                                <th>Call Flow</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <a href="javascript:void(0)" class="btn btn-sm tbl-btn-view" data-toggle="modal" data-target="#editApps">Edit</a>
+                                                    <a href="javascript:void(0)" class="btn btn-sm tbl-btn-view" data-toggle="modal" data-target="#deleteApp">Delete</a>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobidisplay gap-sm"></div>
+                    <div class="clearfix paddtop10">
+                        <div class="col-md-12 text-center">
+                            <p><strong class="color-main1">Disclaimer:</strong></p>
+                            <p class="small">
+                                Your call flow selection is of highest importance to us. But in select countries, due to business limitations we have
+                                to switch over to SMS-only call flow. We assure you that this won't have
+                                any impact on your expenses towards usage of Foneverify services
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--  ---------------------------  -->
+
+    <div id="editApps" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <h4 class="modal-title">Edit App</h4>
+                </div>
+                <form class="form-group-lg">
+                    <div class="modal-body">
+					    <label for="" class="control-label">App ID</label>
+                        <div class="form-group disabled"><input type="text" class="form-control appid" id="appIDModal" placeholder="App ID" disabled="disabled" required="" /></div>
+						<label for="" class="control-label">App name</label>
+                        <div class="form-group disabled"><input type="text" class="form-control appserect" placeholder="app name"  disabled="disabled" required=""></div>
+						<label for="" class="control-label">App description</label>
+                        <div class="form-group"><input type="text" id="appDescription" class="form-control descrp" placeholder="app description"  required="" /></div>
+						<label for="" class="control-label">App secret key</label>
+                        <div class="form-group disabled"><input type="text" class="form-control secretkey" placeholder="app secret key" disabled="disabled" required="" /></div>
+						<label for="" class="control-label">App web url</label>
+                        <div class="form-group"><input type="url" id="urlWeb" class="form-control appweb" placeholder="app web url (Optional)"  required="" />
+						<span style="color:#6C265C;padding:10px 10px 10px 17px;"><b>Eg-http://www.example.com</b></span></div>
+						<label for="" class="control-label">Callflow</label>
+                        <div class="form-group">
+                            <select id="callflow" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg2 bg-main1 color-default" onclick="dataSaveEdit();">Save</button>
+                        <button type="button" class="btn btn-lg2 bg-main3" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteApp" class="modal fade" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+                    <h4 class="modal-title">Delete App</h4>
+                </div>
+                <div class="modal-body">
+                Would you like to delete this app. By deleting, all the details of this app will be removed from the foneverify platform.
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="confirmDelete" class="btn btn-lg2 bg-main1 color-default">Confirm</button>
+                    <button type="button"  id="cancelDelete" class="btn btn-lg2 bg-main3" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  ---------------------------  -->
+
+    <div class="wrapper page-footer" id="afterloginfooter"></div>
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 943731266;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/fv.apis.js"></script>
+	
+</body>
+</html>

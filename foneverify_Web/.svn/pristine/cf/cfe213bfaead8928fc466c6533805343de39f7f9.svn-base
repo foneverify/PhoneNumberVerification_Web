@@ -1,0 +1,596 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Phone number verification software | Online phone verification</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="description" content="Automated cell phone number verification service is used to authenticate users phone. FoneVerify's API is easy to use and maintain. Try it Now.">
+	<meta name="keywords" content="phone number verification software, service verification phone call, online phone verification, automated phone verification, cell phone verification, authenticate users">
+	
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link rel="Stylesheet" type="text/css" href="css/style.css" />
+    <link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/style.admin.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/dynamic.js"></script>
+	
+    <script type="text/javascript" src="js/fv.consts.js"></script>
+	<script type="text/javascript" src="js/googleanalytics.js"></script>
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	  ga('create', 'UA-66501278-1', 'auto');
+	  ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#afterLogin").append(dynamichtml.topnavafterlogin);
+			$("#afterloginfooter").append(dynamichtml.footernavdirafterlogin);
+            $("#_apidocs").addClass('footernav');
+        })
+    </script>
+</head>
+<body onload="onloadCredis();">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" class="img-responsive" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div id="afterLogin"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="gap-lg"></div>
+
+    <div class="maincont mainbanner" id="body">
+        <div class="wrapper">
+
+            <div class="wrap-in padd10">
+
+                <div class="docs-panel">
+
+                    <div class="docsleft">
+
+                        <ul class="docs-ullist">
+                            <li><a href="api-docs.html">Introduction</a></li>
+                            <li><a href="verify-request.html">Number Verification through SMS</a></li>
+                            <li><a href="check-request.html">Number Verification through VOICE</a></li>
+                            <li><a class="ullistactive" href="search-request.html">Verification Update Status API</a></li>
+							<li><a href="status_code.html">Status Code</a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="docsright">
+                        <div class="mobidisplay gap-sm"></div>
+                        <h2 class="margin0 color-main1">Verification Update Status API</h2>
+                        <div class="gap-xs"></div>
+                        <p>
+                            Once the application receives verificationId along with timeout, it can request for status update of verification cycle using update API. Please be informed that this API is common for both SMS and Voice flows with a tweak in request parameters.
+                        </p>
+                        <div class="responsive-table">
+                            <table class="table">
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>API End Point</td>
+                                    <td>http://apifv.foneverify.com/U2opia_Verify/v1.0/flow/update</td>
+                                    <td><a href="#"></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Request Method</td>
+                                    <td>GET</td>
+                                    <td><a href="#"></a></td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+
+                                        <p class="paddtb10"><strong>Case 1:</strong> Requesting delivery report status after timeout interval provided in SMS initial request</p>
+
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory) <br /> customerId</td>
+                                    <td>Provided by U2opia for every account</td>
+                                    <td>XXXXXXXXXX</td>
+                                </tr>
+                                <tr>
+                                    <td> (Mandatory) <br /> verificationId</td>
+
+                                    <td>
+                                        Specific to each verification cycle.<br />
+                                        Provided at the time of initial verification request.
+                                    </td>
+                                    <td>
+                                        7
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory) <br /> appKey</td>
+                                    <td>App Secret of Application shared by U2opia</td>
+                                    <td>ANKDH234</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10"><strong>Response when Delivery Report either Pending or Successfully Delivered(JSON FORMAT)</strong></p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>verificationId</td>
+                                    <td>Unique ID generated for each verification cycle</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>verificationStatus</td>
+                                    <td>Verification Status depicting status of verification</td>
+                                    <td>SMS_DELIVERY_REPORT_PENDING</td>
+                                </tr>
+                                <tr>
+                                    <td>responseCode</td>
+                                    <td>Response code depicting status</td>
+                                    <td>708</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10"><strong>Response when SMS delivery fails on end-user’s msisdn (JSON FORMAT)</strong></p>
+
+                                        <p>In this scenario, after receiving update request, server will automatically switch to fallback state based upon quota available. If quota for selected flow exhausts, server will fail currently ongoing verification and application needs to re-initiate verification.</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                <tr>
+                                <tr>
+                                    <td>verificationId</td>
+                                    <td>Unique ID generated for each verification cycle</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>verificationStatus</td>
+                                    <td>Verification Status depicting status of verification</td>
+                                    <td>TRYING_FALLBACK_SMS_DELIVERED</td>
+                                </tr>
+                                <tr>
+                                    <td>mobileNumber</td>
+                                    <td>MSISDN for which verification cycle exists</td>
+                                    <td>9XXXXXXXX (Without country code)</td>
+                                </tr>
+                                <tr>
+                                    <td>responseCode
+                                    <td>Response code depicting status
+                                    <td>705-TRYING_FALLBACK_SMS_DELIVERED</br>
+                                         706-TRYING_FALLBACK_SMS_NOT_DELIVERED
+									</td>
+                                </tr>
+                                <tr>
+                                    <td>smsCLI</td>
+                                    <td>Short Code CLI from which the user will get the SMS (when fallback state is SMS)</td>
+                                    <td>VERIFY</td>
+                                </tr>
+                                <tr>
+                                    <td>didAssigned	</td>
+                                    <td>DID number along with country code assigned to msisdn provided in request</td>
+                                    <td>+13403601844</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10"><strong>Response at time of validation failure or other error (JSON FORMAT)</strong></p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>responseCode	</td>
+                                    <td>The response code depicting status of processing	</td>
+                                    <td>501</td>
+                                </tr>
+
+                                <tr>
+                                    <td>errorMessage</td>
+                                    <td>Type of error occurred for request</td>
+                                    <td>INVALID_CUSTOMER_ID</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10"><strong>Case 2:</strong> Requesting update status with OTP entered by user over application after timeout interval provided in SMS initial request</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+
+                                <tr>
+                                    <td>(Mandatory)<br />customerId</td>
+                                    <td>Provided by U2opia for every account</td>
+                                    <td>XXXXXXXXXX</td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory)<br />verificationId</td>
+                                    <td>
+                                        Specific to each verification cycle.<br />
+                                        Provided at the time of initial verification request.
+                                    </td>
+                                    <td>7</td>
+                                </tr>
+
+                                <tr>
+                                    <td>(Mandatory)<br />code	</td>
+                                    <td>OTP entered by user over application</td>
+                                    <td>5649</td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory)<br /> appKey</td>
+                                    <td>App Secret of Application shared by U2opia</td>
+                                    <td>ANKDH234</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10">
+                                            <strong>
+                                                Response when OTP provided matches with shared to end-user within stipulated time (JSON Format)
+                                            </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+
+                                <tr>
+                                    <td>verificationId</td>
+                                    <td>Unique ID generated for each verification cycle</td>
+                                    <td>7</td>
+                                </tr>
+
+                                <tr>
+                                    <td>verificationStatus</td>
+                                    <td>Verification Status depicting status of verification</td>
+                                    <td>VERIFICATION_COMPLETED</td>
+                                </tr>
+
+                                <tr>
+                                    <td>mobileNumber</td>
+                                    <td>MSISDN for which verification cycle exists</td>
+                                    <td>9XXXXXXXX (Without country code)</td>
+                                </tr>
+
+                                <tr>
+                                    <td>responseCode</td>
+                                    <td>Response code depicting status</td>
+                                    <td>200</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10"><strong>Response at time of validation failure or other error (JSON FORMAT)</strong></p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>responseCode</td>
+                                    <td>The response code depicting status of processing</td>
+                                    <td>501</td>
+                                </tr>
+                                <tr>
+                                    <td>errorMessage</td>
+                                    <td>Type of error occurred for request</td>
+                                    <td>INVALID_CUSTOMER_ID</td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10"><strong>Case 3: </strong>Requesting update status after timeout interval provided in VOICE initial request</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+
+                                <tr>
+                                    <td>(Mandatory)<br />customerId</td>
+                                    <td>Provided by U2opia for every account</td>
+                                    <td>XXXXXXXXXX</td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory)<br />verificationId</td>
+                                    <td>
+                                        Specific to each verification cycle.<br />
+                                        Provided at the time of initial verification request.
+                                    </td>
+                                    <td>7</td>
+                                </tr>
+
+                                <tr>
+                                    <td>(Mandatory)<br />code	</td>
+                                    <td>OTP entered by user over application</td>
+                                    <td>5649</td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory)<br /> appKey</td>
+                                    <td>App Secret of Application shared by U2opia</td>
+                                    <td>ANKDH234</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10">
+                                            <strong>
+                                                Response when end user has called over DID provided within stipulated time(JSON Format)
+                                            </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+
+                                <tr>
+                                    <td>verificationId</td>
+                                    <td>Unique ID generated for each verification cycle</td>
+                                    <td>7</td>
+                                </tr>
+
+                                <tr>
+                                    <td>verificationStatus</td>
+                                    <td>Verification Status depicting status of verification</td>
+                                    <td>VERIFICATION_COMPLETED</td>
+                                </tr>
+
+                                <tr>
+                                    <td>mobileNumber</td>
+                                    <td>MSISDN for which verification cycle exists</td>
+                                    <td>9XXXXXXXX (Without country code)</td>
+                                </tr>
+                                <tr>
+                                    <td>responseCode</td>
+                                    <td>Response code depicting status</td>
+                                    <td>200</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10"><strong>Response at time of validation failure or other error (JSON FORMAT)</strong></p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>responseCode</td>
+                                    <td>The response code depicting status of processing</td>
+                                    <td>501</td>
+                                </tr>
+                                <tr>
+                                    <td>errorMessage</td>
+                                    <td>Type of error occurred for request</td>
+                                    <td>INVALID_CUSTOMER_ID</td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10"><strong>Case 4: </strong>When user hasn’t entered provided OTP or hasn’t called on DID assigned</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+
+                                <tr>
+                                    <td>(Mandatory)<br />customerId</td>
+                                    <td>Provided by U2opia for every account</td>
+                                    <td>XXXXXXXXXX</td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory)<br />verificationId</td>
+                                    <td>
+                                        Specific to each verification cycle.<br />
+                                        Provided at the time of initial verification request.
+                                    </td>
+                                    <td>7</td>
+                                </tr>
+
+                                <tr>
+                                    <td>(Mandatory)(In case current flow is SMS)<br />code	</td>
+                                    <td>OTP entered by user in the application (in SMS verification mode)</td>
+                                    <td>5649</td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory)<br /> appKey</td>
+                                    <td>Secret key specific to each app registered</td>
+                                    <td>KLHJ789Y6HT348957Y25H</td>
+                                </tr>
+                                
+								<tr>
+                                    <td>(Mandatory) (In case current flow is VOICE)<br /> did</td>
+                                    <td>Complete DID number assigned to this verification cycle (in Voice verification mode)</td>
+                                    <td>+13403601844</td>
+                                </tr>
+								
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10">
+                                            <strong>
+                                                Response (JSON FORMAT)
+                                            </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+
+                                <tr>
+                                    <td>(Mandatory)<br />customerId</td>
+                                    <td>Provided by U2opia for every account</td>
+                                    <td>XXXXXXXXXX</td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory)<br />verificationId</td>
+                                    <td>
+                                        Specific to each verification cycle.<br />
+                                        Provided at the time of initial verification request.
+                                    </td>
+                                    <td>7</td>
+                                </tr>
+
+                                <tr>
+                                    <td>(Mandatory)<br />code	</td>
+                                    <td>OTP entered by user over application</td>
+                                    <td>5649</td>
+                                </tr>
+                                <tr>
+                                    <td>(Mandatory)<br /> appKey</td>
+                                    <td>App Secret of Application shared by U2opia</td>
+                                    <td>ANKDH234</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10">
+                                            <strong>
+                                                Response at time of validation failure or other error (JSON FORMAT)
+                                            </strong>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                                <tr class="bg-main3">
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <td>responseCode</td>
+                                    <td>The response code depicting status of processing</td>
+                                    <td>501</td>
+                                </tr>
+                                <tr>
+                                    <td>errorMessage</td>
+                                    <td>Type of error occurred for request</td>
+                                    <td>INVALID_CUSTOMER_ID</td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="border0 padd0">
+                                        <p class="paddtb10">
+                                            <strong>Example Response</strong>
+                                        </p>
+                                        <p class="code-panel">
+                                            <code>
+                                                HTTP/1.1<br />
+                                                Status: 200 OK<br />
+                                                Content-Type: application/json; charset=utf-8<br />
+                                                Content-Encoding: gzip<br />
+                                                {"verificationId" : xxxxxxx, ”mobileNumber”:”9xxxxxxxxx”, “responseCode” : “200”}
+                                            </code>
+                                        </p>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper page-footer" id="afterloginfooter"></div>
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 943731266;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/fv.apis.js"></script>
+
+</body>
+</html>

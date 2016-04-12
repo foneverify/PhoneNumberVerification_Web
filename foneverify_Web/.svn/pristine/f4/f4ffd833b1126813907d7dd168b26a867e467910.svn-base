@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body style="font-family:Arial; padding:0px; margin:0px; font-size:15px; color:#666">
+    <table style="max-width:800px; border-collapse:collapse; border:0px; margin:0 auto">
+        <tr>
+            <td style="background:#612253;">
+                <img src="../images/mailer-logo.png" style="float:left; display:block; width:100%;" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width:100%;">
+                <div style="padding:3% 1% 2% 4%; width:auto;">
+                    <h4 style="line-height:21px; margin-top:0px">Hi,</h4>
+                    <p style="line-height:21px;">
+                        <strong style="color:#612253;">&lt;name&gt;</strong> has nominated you in the Foneverify account for the following apps:
+                    </p>
+                    <p>
+                    <p style="line-height:21px;"><strong style="color:#612253;">[App 1]</strong></p>
+                    <p style="line-height:21px;"><strong style="color:#612253;">[App 2]</strong></p>
+                    <p style="line-height:21px;"><strong style="color:#612253;">[App 3]</strong></p>
+
+
+                    <p style="line-height:21px;">You have been assigned the following permissions: </p>
+                    <p style="line-height:21px;"><b>Manage apps:</b> [if checked YES by primary user while nominating]</p>
+                    <p style="line-height:21px;"><b>View report:</b> [if checked YES by primary user while nominating]</p>
+
+                    <p style="line-height:21px;">
+                        Just click on this link
+                        <a style="color:#612253; padding:5px; white-space:nowrap; text-align:center; font-weight:bold;"
+                           href="http://www.foneverify.com/secondary-user-signup.html" target="_blank">Secondary User Signup</a>
+                        to complete the sign up.
+                    </p>
+                    <p style="line-height:25px;">It will take you less than a minute.</p>
+                    <p style="line-height:25px;">Looking forward to serve you.</p>
+                    <p style="line-height:25px;">Thank you<br />Foneverify Team</p>
+
+
+                    <p style="color:#999; font-size:12px; padding-top:15px">Copyright &#169; 2014-2015, Foneverify. All right reserved</p>
+
+                </div>
+            </td>
+
+
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

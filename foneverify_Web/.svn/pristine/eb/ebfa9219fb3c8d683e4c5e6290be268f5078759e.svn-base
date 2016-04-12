@@ -1,0 +1,268 @@
+FvConsts = function() {
+	return {
+		getGuestDetailsTO : 10000,
+		otpCountDown : 90,
+
+		apiBaseUrl : "http://52.7.158.185:8080/Foneverify_Web/v1.0/",
+		trialApiBaseUrl : "http://52.7.158.185:8080/U2opia_Verify/v1.0/trial/",
+		socialLoginApiBaseUrl : "http://52.7.158.185:8080/Foneverify_Web/v1.0/",
+		//apiBaseUrl : "http://172.21.29.229:8081/Foneverify_Web/v1.0/",
+		//socialLoginApiBaseUrl : "http://172.21.29.229:8081/Foneverify_Web/v1.0/",
+		paymentTransactionTimeout : 20000,
+		socialLoginType : '',
+		supportNewTicketNoAttachment : 'support/createTicket',
+		supportNewTicketWithAttachment : 'support/createTicketWithAttchment',
+		fetchAllTicketsOfUser : 'support/fetchAllTicketsOfUser',
+		viewTicket : 'support/viewTicket',
+		updateTicket : 'support/updateTicket',
+	};
+}();
+
+FvVariables = function() {
+	return {
+		endPoint : [],
+		currentScreen : "",
+		verificationId : "",
+		selectedEndPoint : null,
+		selectedCallFlowId : null,
+		messageRegrex : new RegExp("_", "g"),
+		otpUpdateTimer : 5,
+		intervalTimer : null,
+		intervalForTimeout : null,
+		intervalForUpdateReq : null,
+		isDidCheck : false,
+		didToBeDisplayed : null,
+		appSecretKey : null,
+		getAllAppsIncludingDeletedForUserData : null,
+		errorMessage : "",
+		progressBarStatus : '',
+		payflowJSONObject : null,
+		subscriptionPaln : null,
+		totalCredit : 0,
+		appGeneratedArr : [],
+		signupFields : ['name', 'emailId', 'signUp-password', 'mobile', 'captcha'],
+		target : '',
+		planSelected : null,
+		googleSignedIn : false,
+		linkedinAuth : false,
+		supportAction : '',
+		fileName : ''
+	};
+}();
+
+FvAlerts = function() {
+	return {
+		"USER NOT FOUND" : "Username or Password is invalid. Please try again",
+		"OTP_VERIFICATION_FALLBACK" : "You have entered wrong OTP. We have sent a new OTP.",
+		"WRONG_OTP_PROVIDED" : " You have entered wrong OTP. Please enter the correct OTP or press resend OTP.",
+		"MSISDN_VERIFICATION_PENDING" : "You have entered wrong OTP. Please enter the correct OTP or press resend OTP.",
+		"ERROR_IN_OTP_VERIFICATION" : "Some error has occured. Please try again later.",
+		"Success" : " OTP has been verified successfully.",
+		"APP_DETAILS_UPDATED" : " App details have been updated successfully.",
+		"INVALID_EMAIL_PROVIDED" : "Please provide valid email address.",
+		"INVALID_SERVICE_CODE" : "Email link has expired or already used.",
+		"REQUEST_ALREADY_EXIST" : "Email is already sent. Please check your mailbox.",
+		"EMAIL_ALREADY_EXISTS" : "This email already exists.",
+		"PAYMENT_REQUEST_TIMEDOUT" : "Payment request timeout.",
+		"WRONG_OTP" : "Wrong OTP - Please try again.",
+		"SUCCESS_VERIFICATION" : "Verification successful !",
+		"VERIFICATION_OK_TEXT" : 'Clicking Ok will close the pop up.',
+		"VERIFICATION_FAILED" : "Verification failed !",
+		"SYSTEM_ERROR" : "System Error - Please try again later.",
+		"DID_MESSAGE" : 'Please give a missed call to the above mentioned DID and click submit.',
+		"PRICE_TEXT_FOR_INDIA" : '*Price applicable for verification in India only<br/>For international verifications charges of $0.09 apply.',
+		"PRICE_TEXT_FOR_INDIA_2" : "Please get in touch with <a id='emailToSales' href='mailto:sales@foneverify.com'  class='color-main2 underline'>sales@foneverify.com</a>,<br/>pertaining to any query regarding the purchase.",
+		"PAY_FLOW_TEXT" : "For any pricing related queries, contact us on <a href='skype:foneverify?chat' class='color-main2 underline'>Skype</a>  or mail us at <a id='emailToSales' href='mailto:sales@foneverify.com' class='color-main2 underline'>sales@foneverify.com</a>.",
+		"VERIFICATION_REPORT_NOTFOUND" : "No verification done in the provided dates",
+		"VERIFICATION_REPORT_APPID_NULL" : "App name should note be blank",
+		"VERIFICATION_REPORT_COUNTRY_NULL" : "No country list exists for selected App List",
+		"SOCIAL_LOGIN_EMAIL_NOT_FOUND" : "Registration was unsuccessful due to privacy constraints. Please register with a different account."
+	};
+}();
+
+FvMedia = function() {
+	return {
+		data : {
+			"0" : {
+				"imageName" : 'economic-times1.jpg',
+				"title" : 'The Economic Times',
+				"alink" : 'http://economictimes.indiatimes.com/tech/software/u2opia-mobile-launches-mobile-authentication-solution-foneverify/articleshow/50958681.cms',
+				'topLine' : 'U2opia Mobile launches mobile authentication solution Foneverify...'
+			},
+			"1" : {
+				"imageName" : 'business-standard-logo.png',
+				"title" : 'Business Standard',
+				"alink" : "http://www.business-standard.com/article/news-ians/u2opia-mobile-s-foneverify-eases-mobile-verification-process-for-startups-116021200739_1.html",
+				"topLine" : "U2opia Mobile's Foneverify eases mobile verification process for startups..."
+			},
+			"2" : {
+				"imageName" : 'img-ettelecom-logo-sep.png',
+				"title" : 'ET Telecom',
+				"alink" : "http://telecom.economictimes.indiatimes.com/news/u2opia-launches-mobile-authentication-solution-for-startups/50945967",
+				"topLine" : "U2opia launches mobile authentication solution for startups...",
+			},
+			"3" : {
+				"imageName" : 'the-times-of-india.png',
+				"title" : 'The Times of India',
+				"alink" : "http://www.ians.in/index.php?param=category/10004/10004",
+				"topLine" : "U2opia Mobile launches mobile authentication solution Foneverify..."
+			},
+			"4" : {
+				"imageName" : 'Deccan-Chronicle-logo.jpg',
+				"title" : 'Deccan Chronicle',
+				"alink" : "http://www.deccanchronicle.com/technology/mobiles-and-tabs/190216/top-five-security-holes-in-mobile-apps.html",
+				"topLine" : "Top five security holes in mobile apps..."
+			},
+			"5" : {
+				"imageName" : 'the-financial-express.jpg',
+				"title" : 'The Financial Express',
+				"alink" : "http://www.financialexpress.com/article/companies/u2opia-mobiles-foneverify-eases-mobile-verification-process-for-startups/210854/",
+				"topLine" : " U2opia Mobile’s Foneverify eases mobile verification process for startups..."
+			},
+			"6" : {
+				"imageName" : 'ITVoice.png',
+				"title" : 'IT Voice',
+				"alink" : "http://www.itvoice.in/index.php/it-voice-news/mobile-verification-process-made-easy-for-startups-with-u2opia-mobiles-foneverify",
+				"topLine" : "Mobile Verification Process Made Easy For Startups With U2opia Mobile’s Foneverify..."
+			},
+			"7" : {
+				"imageName" : 'IANS.gif',
+				"title" : 'IANS',
+				"alink" : "http://www.ians.in/index.php?param=category/10004/10004",
+				"topLine" : "U2opia Mobile's Foneverify eases mobile verification process for startups..."
+			},
+			"8" : {
+				"imageName" : 'Inc42-Magazine-Logo1.png',
+				"title" : ' Inc 42',
+				"alink" : "http://inc42.com/buzz/news-roundup-67/",
+				"topLine" : "U2opia Mobile Launches Foneverify..."
+			},
+			"9" : {
+				"imageName" : 'yahoo_finance_logo.png',
+				"title" : 'Yahoo Finance',
+				"alink" : "https://in.finance.yahoo.com/news/u2opia-mobiles-foneverify-eases-mobile-115403248.html",
+				"topLine" : "U2opia Mobile's Foneverify eases mobile verification process for startups..."
+			},
+			"10" : {
+				"imageName" : 'telecomtalk.png',
+				"title" : 'Telecom Talk',
+				"alink" : "http://telecomtalk.info/u2opia-launches-mobile-authentication-solution-for-startups/149517/",
+				"topLine" : " U2opia launches mobile authentication solution for startups..."
+			},
+			"11" : {
+				"imageName" : 'moneycoltrol_logo.png',
+				"title" : 'Money Control',
+				"alink" : "http://www.moneycontrol.com/news/sme/u2opia-makes-mobile-verification-simplified-for-startups_5442201.html?utm_source=ref_article",
+				"topLine" : "U2opia makes mobile verification simplified for startups..."
+			},
+			"12" : {
+				"imageName" : 'daily world.png',
+				"title" : 'Daily World',
+				"alink" : "http://dailyworld.in/u2opia-mobiles-foneverify-eases-mobile-verification-process-for-startups/",
+				"topLine" : "U2opia Mobile’s Foneverify eases mobile verification process for startups..."
+			},
+			"13" : {
+				"imageName" : 'Dailyhunt-Logo-White.png',
+				"title" : 'Daily Hunt',
+				"alink" : "http://m.dailyhunt.in/news/india/english/telecomtalk-epaper-telecom/u2opia-launches-mobile-authentication-solution-for-startups-newsid-49647206",
+				"topLine" : "U2opia launches mobile authentication solution for startups..."
+			},
+			"14" : {
+				"imageName" : 'Networked-India-Final-Logo-3.png',
+				"title" : 'Networked India',
+				"alink" : "http://www.networkedindia.com/2016/02/13/now-an-app-that-verifies-smartphone-users-in-real-time/",
+				"topLine" : "Now, An App That Verifies Smartphone Users In Real Time..."
+			},
+			"15" : {
+				"imageName" : 'telecomtalk.png',
+				"title" : 'Telecom Live',
+				"alink" : "http://telecomtalk.info/u2opia-launches-mobile-authentication-solution-for-startups/149517/",
+				"topLine" : "U2opia Mobile launches mobile authentication solution Foneverify..."
+			},
+			"16" : {
+				"imageName" : 'varindia-logo.gif',
+				"title" : 'VAR India',
+				"alink" : "http://www.varindia.com/mobile-number-authentication-solution-foneverify-revealed/",
+				"topLine" : "Mobile number authentication solution Foneverify revealed  ..."
+			},
+			"17" : {
+				"imageName" : 'sme-times-logo.png',
+				"title" : 'SME Times',
+				"alink" : "http://www.smetimes.in/smetimes/news/industry/2016/Feb/12/u2opia-mobile-s-foneverify-eases-mobile-verification-process-for.html",
+				"topLine" : "U2opia Mobile's Foneverify eases mobile verification process for startups..."
+			},
+			"18" : {
+				"imageName" : 'mobility_logo.png',
+				"title" : 'Mobilty India',
+				"alink" : "http://mobilityindia.com/mobile-verification-made-easy-for-startups-with-u2opia-mobiles-foneverify/",
+				"topLine" : "Mobile verification made easy for startups with U2opia Mobile’s Foneverify..."
+			},
+			"19" : {
+				"imageName" : 'sifynews_logo.gif',
+				"title" : 'Sify',
+				"alink" : "http://www.sify.com/news/u2opia-mobile-s-foneverify-eases-mobile-verification-process-for-startups-news-others-qcmrEkbjcedig.html",
+				"topLine" : "U2opia Mobile's Foneverify eases mobile verification process for startups..."
+			},
+			"20" : {
+				"imageName" : 'Chennaionline_Logo_jpeg (1).jpg',
+				"title" : 'Chennai Online',
+				"alink" : "http://news.chennaionline.com/newsitem.aspx?NEWSID=7da0d687-014e-4ce8-a163-80c90d832cb6&CATEGORYNAME=BIZ",
+				"topLine" : "U2opia Mobile's Foneverify eases mobile verification process for startups..."
+			},
+			"21" : {
+				"imageName" : 'NewsNow.png',
+				"title" : 'News Now',
+				"alink" : "http://newsnow.in/news/u2opia-mobile-launches-mobile-authentication-solution-foneverify",
+				"topLine" : "U2opia Mobile's Foneverify eases mobile verification process for startups..."
+			},
+			"22" : {
+				"imageName" : 'dailyindianews.png',
+				"title" : 'Daily India News',
+				"alink" : "http://www.dailyindianews.com/news/china-launches-website-to-aid-76-billion-ezubao-fraud-probe",
+				"topLine" : "U2opia Mobile launches mobile authentication solution Foneverify..."
+			},
+			"23" : {
+				"imageName" : 'breakingnewsheadlines24.png',
+				"title" : 'Breaking News',
+				"alink" : "http://www.breakingnewsheadlines24.com/headlines/1583535/u2opia-mobile-launches-mobile-authentication-solution-foneverify.html",
+				"topLine" : "U2opia Mobile launches mobile authentication solution Foneverify..."
+			},
+			"24" : {
+				"imageName" : 'safaqana.jpg',
+				"title" : 'Shafaqana',
+				"alink" : "http://in.shafaqna.com/EN/01701381",
+				"topLine" : "U2opia Mobile s Foneverify eases mobile verification process for startups..."
+			},
+			"25" : {
+				"imageName" : 'onlineNewsPlanetLogo.png',
+				"title" : 'Online News Planet',
+				"alink" : "http://www.onlinenewsplanet.com/news/1881678/u2opia-mobile-launches-mobile-authentication-solution-foneverify.html",
+				"topLine" : "Mobile Verification Process Made Easy For Startups With U2opia Mobile’s Foneverify..."
+			},
+			"26" : {
+				"imageName" : 'digitalnewsworld.png',
+				"title" : 'Digital News India',
+				"alink" : "http://www.digitalnewsworld.com/news/u2opia-mobile-launches-mobile-authentication-solution-foneverify.html",
+				"topLine" : " U2opia Mobile launches mobile authentication solution Foneverify..."
+			},
+			"27" : {
+				"imageName" : 'storyclash.jpg',
+				"title" : 'Story Clash',
+				"alink" : "http://en.storyclash.com/U2opia-Mobile-launches-mobile-authentication-solution-Foneverify-8179132",
+				"topLine" : "U2opia Mobile launches mobile authentication solution Foneverify..."
+			},
+			"28" : {
+				"imageName" : 'onlinenewsbase.png',
+				"title" : 'Online News Base',
+				"alink" : "http://www.onlinenewsbase.com/headlines/1570081/u2opia-mobile-launches-mobile-authentication-solution-foneverify.html",
+				"topLine" : "U2opia Mobile launches mobile authentication solution Foneverify..."
+			},
+			"29" : {
+				"imageName" : 'techgig.gif',
+				"title" : 'Online News Base',
+				"alink" : "http://www.techgig.com/tech-news/editors-pick/6-ways-to-keep-away-fake-users-from-your-website-and-app-42682",
+				"topLine" : "6 ways to keep away fake users from your website and app..."
+			}
+		}
+	};
+}();

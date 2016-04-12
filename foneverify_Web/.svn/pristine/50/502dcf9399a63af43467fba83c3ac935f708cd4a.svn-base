@@ -1,0 +1,16 @@
+﻿$(function() {
+	var mediaPanel = '';
+	$.each(FvMedia.data, function(key, value) {
+		console.log(FvMedia.data[key].title);
+		mediaPanel = mediaPanel + "<div class='col-sm-3 padd20'><div class='mediabox'>";
+		mediaPanel = mediaPanel + '<div class="col-sm-12 presslogo"><img src="images/logos/' + FvMedia.data[key].imageName + '" class="img-responsive paddtb10" alt=""></div>';
+		mediaPanel = mediaPanel + '<p class="col-sm-12 paddtop30 "><span class="">' + FvMedia.data[key].topLine + '</span></p><p class="col-sm-12 readmorebg"><strong><a href="' + FvMedia.data[key].alink + '" target="_blank" class="underline color-main1 pointerCursor">Read more</a></strong></p>';
+		mediaPanel = mediaPanel + "</div></div>";
+	});
+	$('#media_panel_div').html(mediaPanel);
+	$("#afterLogin").append(dynamichtml.topnavafterlogin);
+	$("#afterloginfooter").append(dynamichtml.footernavdirafterlogin);
+	$("#beforeLogin").append(dynamichtml.topnavbeforelogin);
+	$("#beforeloginfooter").append(dynamichtml.footernavdirnotlogin);
+	$("#_media").addClass('footernav');
+}); 

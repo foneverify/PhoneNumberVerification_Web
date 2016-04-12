@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Mobile number verification API | Mobile Identity solution</title>
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="description" content="Simple to use rest based APIs which can be integrated with any call flow for mobile number verification.">
+		<meta name="keywords" content="mobile identity solution, mobile number verification online, mobile number validation on wap, mobile number verification, mobile number verification api">
+
+		<link rel="shortcut icon" href="images/icon.png" />
+
+		<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/dynamic.js"></script>
+
+		<script type="text/javascript" src="js/fv.consts.js"></script>
+		<script type="text/javascript">
+			
+			$(function() {
+				Util.checkSession();
+				$("#afterLogin").append(dynamichtml.topnavafterlogin);
+				$("#afterloginfooter").append(dynamichtml.footernavdirafterlogin);
+				$("#_apidocs").addClass('footernav');
+				initUserProfile();
+			});
+		</script>
+		<script type="text/javascript" src="../js/googleanalytics.js"></script>
+		<script type="text/javascript">
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-66501278-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	</head>
+	<body onload='onloadCredis();'>
+		<!-- Modal ends Here -->
+		<div id="alert_template" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title">Alert</h4>
+					</div>
+					<div id="alert_message" class="modal-body"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Ok
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="dashboard.html"> <img src="images/logo.png" class="img-responsive" /> </a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div id="afterLogin"></div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="gap-lg"></div>
+
+		<div class="maincont mainbanner" id="body">
+			<div class="wrapper">
+
+				<div class="wrap-in padd10">
+					<!--<div class="pageroot">
+					<div class="gap-xs"></div>
+					<a href="dashboard.html">Dashboard</a> <b>&gt;</b> <span>Introduction</span>
+					</div>-->
+					<div class="docs-panel">
+
+						<div class="docsleft">
+
+							<ul class="docs-ullist">
+								<li>
+									<a class="ullistactive" href="api-docs.html">Introduction</a>
+								</li>
+								<li>
+									<a href="verify-request.html">Number Verification through SMS</a>
+								</li>
+								<li>
+									<a href="check-request.html">Number Verification through Voice</a>
+								</li>
+								<li>
+									<a href="search-request.html">Verification Update Status API</a>
+								</li>
+								<li>
+									<a href="status_code.html">Status Code</a>
+								</li>
+							</ul>
+
+						</div>
+
+						<div class="docsright">
+							<div class="mobidisplay gap-sm"></div>
+							<h2 class="margin0 color-main1">Introduction</h2>
+							<div class="gap-xs"></div>
+							<div class="font16">
+								<p>
+									Mobile phone number serves as the ultimate user identity in digital universe. Digital applications whether on web or on mobile; verify mobile numbers of their users to ensure their authenticity. To address this growing need, U2opia has developed a reliable, quick and cost-effective mobile number verification service called foneverify.
+								</p>
+								<p>
+									This document will give you an overview of APIs that website and mobile app developers can integrate to make foneverify work for them. These APIs will support accurate identification of end-users’ mobile numbers.
+									In order that your applications take advantage of foneverify interfaces, follow these steps:
+								</p>
+								<ol>
+									<li>
+										Register as a User on foneverify website. If you haven’t already registered, you can do so by selecting the “Sign Up” button on foneverify site. Once registered, you will receive a unique “Customer ID”.
+									</li>
+									<li>
+										Register the app that you want on foneverify site. Once registered, the app will be assigned an “App Key”
+									</li>
+									<li>
+										Take note of the following items as they will be passed frequently during API calls:
+										<div class="responsive-table">
+											<table class="table">
+												<tr class="bg-main3">
+													<th>Parameter</th>
+													<th>Description</th>
+													<th>Example</th>
+												</tr>
+
+												<tr>
+													<td>Customer ID</td>
+													<td>Unique string that identifies each user registered with foneverify</td>
+													<td>345TWXYZ</td>
+												</tr>
+
+												<tr>
+													<td>App Key</td>
+													<td>Secret key specific to each app registered</td>
+													<td>KLHJ789Y6HT348957Y25H</td>
+												</tr>
+											</table>
+										</div>
+									</li>
+									<li>
+										Learn how to make foneverify API calls. Once you have registered on the website, you are allowed up to ten free trial verifications.
+									</li>
+									<ol>
+
+										<p>
+											These APIs will help 3rd Party App Developers to integrate verification(unique identification) of various end users through their msisdns in a cost effective manner. This will be done in secure and safe way, where disclosing the private information will be discouraged.
+										</p>
+										<p>
+											foneVerify supports verification of msisdns in different ways. They are categorized as the following :
+										</p>
+
+										<ul>
+											<li>
+												<p>
+													Verification through OTP ( One Time Password over SMS)
+												</p>
+												<p class="small tooltipview">
+													<cite>Verification happens at foneVerify server by sending an OTP via SMS to User’s Mobile Number</cite>
+												</p>
+											</li>
+											<li>
+
+												<p>
+													Verification through calling over DID ( Direct Inward Dial)
+												</p>
+												<div class="">
+													<p class="small tooltipview">
+														<cite>Here, a DID number (country specific) will be assigned to end-user and shared to application in response for display. The end-user will make a call over DID, server will automatically disconnect the call and verify his/her unique msisdn.</cite>
+													</p>
+												</div>
+											</li>
+										</ul>
+
+							</div>
+
+							<div class="mobidisplay gap-sm"></div>
+							<h2 class="margin0 color-main1">API Calls & Key Parameters</h2>
+							<div class="gap-xs"></div>
+							<div class="font16">
+								<p>
+									foneverify enables you to verify whether one of your end users has access to a specific mobile number through two different mechanisms:
+								</p>
+								<ol type="a">
+									<li>
+										Challenging them with an OTP (one time password) to enter into your application or website. That OTP is sent by foneverify via SMS. End-user enters the correct OTP, server matches the OTP, and the number stands verified.
+									</li>
+									<li>
+										Challenging them with a country-specific DID number (Direct inward dialling number) to dial from their mobile phone. That DID is shared with application or website as a response to verification request. End-user makes the call to DID displayed, server disconnects the call, and the number stands verified.
+									</li>
+								</ol>
+								<p>
+									By selecting a specific verification workflow (SMS/Voice, SMS/SMS or Voice/Voice) on Foneverify website, user (account owner) chooses either of the mechanisms to kick off a verification cycle. Thus, user controls to a certain degree the end-user experience of mobile number verification.
+								</p>
+								<p>
+									SMS/SMS verification workflow utilizes “Number verification through SMS” API as the first port of call. Any API other than this, as first port of call, will result in error.
+								</p>
+								<p>
+									SMS/Voice verification workflow utilizes “Number verification through SMS” API as the first port of call. Any API other than this, as the first port of call, will result in error.
+								</p>
+								<p>
+									Voice/Voice verification workflow utilizes “Number verification through Voice” API as the first port of call.Any API other than this, as the first port of call, will result in error.
+								</p>
+								<p>
+									In the event that user (account owner) sends initial request on API other than the one assigned as per his verification workflow chosen, he will receive error code 509: WRONG_CALL_FLOW_INIT_STATE_USED
+								</p>
+								<p>
+									There are simply three API calls to effect the aforementioned two verification workflows:
+								</p>
+								<ol type="i">
+									<li>
+										Number Verification through SMS: provide the number to be verified and foneverify will send back an OTP (one time password) via SMS. A verification ID will also be sent for future reference. Some requests might be rejected outright (e.g. invalid numbers or parameters).
+									</li>
+									<li>
+										Number verification through Voice: provide the number to be verified and foneverify will assign a country-specific DID (direct inward dialling) number, and display on the application or website that made the verification request. A verification ID will also be sent for future reference. Some requests might be rejected outright (e.g. invalid numbers or parameters).
+									</li>
+									<li>
+										Verification Update Status: look up a verification request in order to know its status (In progress, Successful, Failed or Expired) and many other attributes.
+									</li>
+								</ol>
+								<p>
+									All foneverify requests must be submitted to the base URL. Responses will be made in JSON format.
+								</p>
+								<p>
+									Each API is covered in greater detail below in the section “API Description”.
+								</p>
+								<p>
+									Key Parameters
+								</p>
+								<ul>
+									<li>
+										<b>Customer ID:</b> Unique string that identifies each user registered with foneverify
+									</li>
+									<li>
+										<b>App Key:</b> Secret key specific to each app registered by foneverify user
+									</li>
+									<li>
+										<b>MSISDN:</b> Mobile number of the end-user for which verification request is made
+									</li>
+									<li>
+										<b>Verification ID:</b> Unique ID generated for each verification request, right at the beginning of verification cycle
+									</li>
+									<li>
+										<b>smsCLI:</b> Unique string that defines the service & the service provider. smsCLI denotes the sender that sends the SMS
+									</li>
+									<li>
+										<b>Timeout:</b> Time interval after which app can request for SMS delivery status
+									</li>
+									<li>
+										<b>didAssigned:</b> DID number along with country code assigned to MSISDN that initiated a verification request
+									</li>
+									<li>
+										<b>Code:</b> OTP entered by end-user in application or website
+									</li>
+								</ul>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper page-footer" id="afterloginfooter"></div>
+
+		<!-- Google Code for Remarketing Tag -->
+		<!--------------------------------------------------
+		Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+		--------------------------------------------------->
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			var google_conversion_id = 943731266;
+			var google_custom_params = window.google_tag_params;
+			var google_remarketing_only = true;
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+		<!--     <noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+		</div>
+		</noscript> -->
+
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript" src="js/fv.apis.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "code": "200",
+  "status": "success",
+  "data": [
+    {
+      "userId": "Abc123",
+      "userName": "Amit",
+      "email": "ab@com",
+      "msisdn": "",
+      "apps": [
+        {
+          "appId": "ab12",
+          "appName": "woo",
+          "rights": {
+            "create": true,
+            "update": false,
+            "delete": true,
+            "reports": true
+          }
+        }
+      ]
+    }
+  ]
+}

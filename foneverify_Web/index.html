@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Foneverify - Test Verification API</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="description" content="Use simple phone verification api to verify phone numbers. Checking and confirming mobile number is very easy using FoneVerify in 200+ countries. Click to know more.">
+		<meta name="keywords" content="Identify Genuine users, mobile Identity, prevent fraud, sms verification service, missed call verification, online phone verification, Phone Number Verification, Mobile number verification online, Authenticate users, simple phone verification API">
+
+		<link rel="shortcut icon" href="images/icon.png" />
+
+		<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/animate.css">
+
+		<!--<link rel="stylesheet" href="css/style.admin.css" />-->
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/googleanalytics.js"></script>
+
+		<script type="text/javascript" src="js/htmlJs/index.js"></script>
+		<script type="text/javascript" src="js/constants/constant.js"></script>
+		<script type="text/javascript" src="js/constants/Util.js"></script>
+		<script>
+			$(function() {
+				$('#navigateTo_Samescreen').on('click', function() {
+					FvVariables.currentScreen = "";
+					Util.hideRequestResponseDiv();
+					$("#smsUpdateScreenDiv").load("html_templates/verificationRequest.html");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="se-pre-con"></div>
+		<!-- Modal ends Here -->
+		<div id="alert_message_verificatn_req" class="modal fade" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+
+						<h4 class="modal-title">Alert</h4>
+					</div>
+					<div id="alert_message" class="modal-body">
+
+					</div>
+					<div class="modal-footer">
+						<div id="alert_btn_div1" class="disable_popup_btns_verif_req">
+							<div class="col-sm-6 padd5">
+								<button type="button" id="navigateTo_verificationUI" class="btn btn-lg btn-block color-default bg-main1" data-dismiss="modal">
+									Verify Another No.
+								</button>
+							</div>
+						</div>
+						<div >
+							<div class="col-sm-12 padd5" data-dismiss="modal">
+								<button type="button" id="navigateTo_Samescreen" class="btn btn-lg btn-block color-default bg-main1" data-dismiss="modal">
+									Ok
+								</button>
+								<div id="btn_funct_text"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- /.modal -->
+		<nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+			<div class="container">
+				<div class="col-xs 12 paddtb20 align-center">
+					<h4 class="modal-title">Verify Phone Number</h4>
+				</div>
+
+			</div>
+		</nav>
+		<div class="gap-lg"></div>
+
+		<div class="maincont mainbanner" >
+			<div class="wrapper">
+				<div class="wrap-in fullwrap padd20 clearfix">
+					<!--<div class="col-sm-12 padd0">
+					<div class="fone_panel">
+					<h3 class="fone_header">Verification Request</h3>
+					</div>
+					</div>-->
+					<div class="col-sm-12 padd5">
+
+						<div id="fallbackSmsScreenDiv"></div>
+						<div id="smsUpdateScreenDiv"></div>
+						<div id="voiceUpdateScreenDiv"></div>
+
+						<!-- <div class="col-sm-5 paddtb10" id="verification_req_resp_div">
+							<div class="col-sm-12 padd0 ">
+
+								<div class="foneVerificationRequestDiv margintop20 groupbox-in" id="verficationReqDetailsDiv">
+									<strong ><label class="margintop15">HTTP Request</label></strong>
+									<p class=" margin0 bg-default padd10">
+										<strong class="f-italic strongKey" id="verficationReqDetails" ></strong>
+									</p>
+								</div>
+
+								<div class="clearfix foneVerificationRequestDiv margintop20 groupbox-in" id="verficationRespDetailsDiv">
+									<strong ><label class="margintop15">HTTP Response</label></strong>
+									<p class="margin0 bg-default padd10">
+										<strong class="f-italic strongKey" id="verficationRespDetails" ></strong>
+									</p>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper page-footer" id="afterloginfooter"></div>
+
+		<!-- Google Code for Remarketing Tag -->
+		<!--------------------------------------------------
+		Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+		--------------------------------------------------->
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			var google_conversion_id = 943731266;
+			var google_custom_params = window.google_tag_params;
+			var google_remarketing_only = true;
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+		<!-- <noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+		</div>
+		</noscript> -->
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript"></script>
+
+	</body>
+</html>

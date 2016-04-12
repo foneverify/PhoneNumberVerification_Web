@@ -1,0 +1,16 @@
+{
+  "code": "200",
+  "status": "success",
+  "data": [
+    {
+      "userId": "134",
+      "userName": "SAd",
+      "email": "ab@xy.com",
+      "msisdn": "1234",
+      "companyName": "adobe",
+      "address": "Jmd",
+      "country": "IN",
+      "timezone": "Asia/Calcutta"
+    }
+  ]
+}

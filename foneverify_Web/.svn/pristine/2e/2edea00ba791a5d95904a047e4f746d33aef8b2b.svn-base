@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Foneverify - Test demo APIs using your 10 free trial credits</title>
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="description" content="Easy to integrate rest base APIs for any call flows">
+		<meta name="keywords" content="phone number verification software, service verification phone call, online phone verification, automated phone verification, cell phone verification, authenticate users">
+
+		<link rel="shortcut icon" href="images/icon.png" />
+
+		<link rel="Stylesheet" type="text/css" href="css/style.css" />
+		<link rel="Stylesheet" type="text/css" href="css/responsive.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/animate.css">
+
+		<!--<link rel="stylesheet" href="css/style.admin.css" />-->
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/dynamic.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+
+		<script type="text/javascript" src="js/fv.consts.js"></script>
+		<script type="text/javascript" src="js/googleanalytics.js"></script>
+		<script type="text/javascript">
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-66501278-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				Util.checkSession();
+				initDashboard();
+			});
+			$(function() {
+				$("[data-toggle='popover']").popover({
+					placement : 'left',
+					html : true,
+					trigger : "hover"
+				});
+				$("#ddmenu").text('Select');
+				$(".ddmenu li a").click(function() {
+					$("#ddmenu").text($(this).text());
+				});
+			});
+			//$('#dashboardAfter').css("display","none");
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				$("#afterLogin").append(dynamichtml.topnavafterlogin);
+				$("#afterloginfooter").append(dynamichtml.footernavdirafterlogin);
+				$("#_dashboard").addClass('activenav');
+			});
+		</script>
+
+	</head>
+	<body onload='onloadCredis();'>
+		<div class="se-pre-con"></div>
+		<!-- Modal ends Here -->
+		<div id="alert_template" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title">Alert</h4>
+					</div>
+					<div id="alert_message" class="modal-body"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Ok
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="dashboard.html"> <img src="images/logo.png" class="img-responsive" /> </a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div id="afterLogin"></div>
+				</div>
+			</div>
+		</nav>
+		<div class="gap-lg"></div>
+		<div class="maincont mainbanner">
+			<div class="wrapper">
+				<div class="wrap-in fullwrap paddlr20 clearfix">
+					<div class="col-sm-8 padd20" id="dashboardAfter" style="display:none;overflow:hidden;">
+						<div class="paddtb10">
+							<h4 class="color-main1">Start verifying in minutes!</h4>
+						</div>
+						<div class="clearfix">
+							<div class="col-sm-11 padd0">
+								<div class="clearfix">
+									<ul class="listgroup-p">
+										<li>
+											<p>
+												<i class="fa fa-check color-main1"></i>
+												We have given you 10 credits to test the API request.
+											</p>
+										</li>
+									</ul>
+								</div>
+								<div class="clearfix">
+
+									<div class="groupbox clearfix">
+										<div class="groupbox-in">
+											<span class="numblist">1</span>
+											<div class="form-group clearfix">
+												<label class="col-sm-4 f-normal paddtb5" for="callflow">Select call flow</label>
+												<div class="col-sm-6 padd0">
+													<select class="form-control selectpicker" id="callflow" >
+														<option value="select" selected></option>
+													</select>
+												</div>
+											</div>
+
+										</div>
+									</div>
+
+									<div class="groupbox">
+
+										<div class="groupbox-in">
+											<span class="numblist">2</span>
+											<p>
+												Our demo API settings
+											</p>
+											<p id="customerId" class="margin0">
+												customerId : <strong class="f-italic strongKey"></strong>
+											</p>
+											<p id="keyOnchange" class="margin0">
+												appkey : <strong class="f-italic strongKey"></strong>
+											</p>
+											<p id="secretOnChange" class="margin0">
+												appid : <strong class="f-italic strongSecret"></strong>
+											</p>
+										</div>
+									</div>
+
+									<div class="groupbox">
+										<div class="groupbox-in">
+											<span class="numblist">3</span>
+											<p>
+												Copy and paste the demo code into your terminal application
+											</p>
+											<p id="urlonchange" class="bg-default padd10 f-italic small"></p>
+										</div>
+									</div>
+									<div class="groupbox">
+										<div class="groupbox-in">
+											<span class="numblist">4</span>
+
+											<p>
+												Sample response from above request
+											</p>
+											<p class="bg-default padd10 f-italic small">
+												{
+												<b>"verificationId" : "x"</b>,
+												"mobileNumber" : "9XXXXXXXXX",
+												"responseCode" : "200",
+												"timeout" : "30",
+												"smsCLI" : "VERIFY"
+												}
+											</p>
+
+										</div>
+									</div>
+									<div class="groupbox">
+										<div class="groupbox-in">
+											<span class="numblist">5</span>
+
+											<p>
+												Copy and paste the demo code into your terminal application
+											</p>
+											<p id ="urlupdateonchange" class="bg-default padd10 f-italic small">
+
+											</p>
+
+										</div>
+									</div>
+
+								</div>
+								<p class="paddtop20">
+									Need to know more- <strong>click here.</strong>
+								</p>
+								<div class="clearfix paddtop10">
+									<div class="col-sm-7 padd0 form-group clearfix">
+										<div class="col-sm-5 paddright">
+											<a href="api-docs.html" class="btn btn-block bg-main3 btn-shadow color-main1">API Docs</a>
+										</div>
+										<div class="col-sm-5 paddright">
+											<a id="text_page_btn" class="btn btn-block bg-main3 btn-shadow color-main1">Test our APIs</a>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-8 padd20" id="dashboardBefore" style="display:none;overflow:hidden;">
+						<div class="paddtop10">
+							<h4 class="color-main1"><strong id="dashboard_userName">Congratulations </strong></h3>
+						</div>
+						<div class="clearfix" style="border-right: 1px solid #ddd;">
+							<div class="col-sm-12 paddtop5 padd0 ">
+								<p>
+									You have succesfully tested foenverify.
+									<br/>
+
+								</p>
+
+							</div>
+							<div class="col-sm-11 ">
+								<div>
+									<div class="col-sm-12 paddtop30">
+										<p>
+											Follow these 3 simple steps to start using our platform.
+										</p>
+									</div>
+									<div class="col-sm-12 paddbottom30">
+										<div class="col-sm-3 ">
+											<p class="align-center">
+												Step 1
+											</p>
+											<p class="align-center">
+												<a class="color-main1 dashboard_icon" ><i id="navigate_to_register_icon" class="font_icon fa fa-pencil-square-o dashboard_icon"></i>
+											</p>
+											<p class="align-center">
+												<a class="color-main1  underline dashboard_icon" id="navigate_to_register">Register
+												<br/>
+												your App</a>
+											</p>
+										</div>
+										<div class="col-sm-1 padd_tb_middle">
+											<p class="align-center ">
+												<i class="font_icon_medium fa fa-chevron-right"></i>
+											</p>
+										</div>
+										<div class="col-sm-3 ">
+											<p class="align-center">
+												Step 2
+											</p>
+											<p class="align-center">
+												<a class="color-main1 dashboard_icon" ><i id="naviagte_to_integrate_icon" class="font_icon fa fa-cogs dashboard_icon"></i></a>
+											</p>
+											<p class="align-center">
+												<a class="color-main1 underline dashboard_icon" id="naviagte_to_integrate">Integrate
+												<br/>
+												the APIs</a>
+											</p>
+										</div>
+										<div class="col-sm-1 padd_tb_middle">
+											<p class="align-center ">
+												<i class="font_icon_medium fa fa-chevron-right"></i>
+											</p>
+										</div>
+										<div class="col-sm-3">
+											<p class="align-center">
+												Step 3
+											</p>
+											<p class="align-center">
+												<a class="color-main1 " ><i id="naviagte_to_purchaseCredit_icon" class="font_icon fa fa-credit-card dashboard_icon"></i></a>
+											</p>
+											<p class="align-center">
+												<a class="color-main1 underline dashboard_icon"id="naviagte_to_purchaseCredit">Purchase
+												<br/>
+												Credits</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 paddtop40">
+									<span> <a class="color-main1 underline" href="verification-report.html"><i class="font_icon_medium fa fa-file-text-o"></i></a> </span>
+									<span> <a class="color-main1 underline" href="verification-report.html">Generate real time reports using our analytics dashboard</a> </span>
+								</div>
+								<div  class="col-sm-12 paddtop20">
+									<div class="col-sm-3 paddright">
+										<a id="text_page_btn" class="btn btn-block bg-main3 btn-shadow color-main1">Test our APIs</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 fright border-TB2 padd30">
+						<div class="border2main borderR10 padd10 text-center" id="promoCode">
+							<p class="color-main1">
+								On first successful verification, get
+							<p>
+							<p class="color-main1">
+								<strong>Promo Code for 7500 free successful verification.</strong>
+							</p>
+
+						</div>
+						<h4 class="color-main2 paddtb10"><a href="my-profile.html" class="nounderline pointerCursor f-bold color-main1">Manage Your Account</a></h4>
+						<div id="topUpDiv" class="">
+							<h5><a href="manage-my-app.html" class="color-main1 pointerCursor f-bold">My Apps</a></h5>
+							<p class="color-main4">
+								Easy to use interface for registering apps and manage the existing apps.
+							</p>
+						</div>
+						<div id="topUpDiv" class="paddtb5">
+							<h5><a href="pay-flow.html" class="color-main1 pointerCursor f-bold">Top-up your account</a></h5>
+							<p class="color-main4">
+								You can add more credits by topping up your account. Minimum top-up $30.
+							</p>
+							<!-- <p>choose a plan as per your requirement in our pricing page and write to <a href="mailto:support@foneverify.com" class="color-main2 underline" >support@foneverify.com</a> giving details of the selected plan.</p></p> -->
+						</div>
+
+						<div class="paddtb5">
+							<h5><a href="my-profile.html" class="color-main1 pointerCursor f-bold">Update your profile</a></h5>
+							<p class="color-main4">
+								Make sure you update your profile and give correct contact details.
+							</p>
+						</div>
+
+						<div class="paddtb5 hide">
+							<h5 class="color-main1 f-bold">API Doc</h5>
+							<p class="color-main4">
+								<a href="#" class="color-main1 pointerCursor f-bold">Click here</a>&nbsp; to learn more about our API
+							</p>
+						</div>
+
+						<div class="paddtb5">
+							<h5 class="color-main1 f-bold"><a href="support.html" class="color-main1 pointerCursor f-bold">Support</a></h5>
+							<p class="color-main4">
+								For any support assistance, <a class="color-main2 pointerCursor underline" href='support.html'>click here</a>.</br> 
+								You may even mail us at <a id="emailToSupport" class="color-main2 pointerCursor underline">support@foneverify.com</a> with your registered mail id.
+								<!-- For any support assistance, reach us on mail us at  -->
+							</p>
+							<p class="paddtop15 color-main4">
+								To chat with us, please contact us on <a href='skype:foneverify?chat' class='color-main2 pointerCursor underline'>Skype</a>.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mobidisplay gap-lg"></div>
+		</div>
+
+		<div class="wrapper page-footer" id="afterloginfooter"></div>
+
+		<!-- Google Code for Remarketing Tag -->
+		<!--------------------------------------------------
+		Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+		--------------------------------------------------->
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			var google_conversion_id = 943731266;
+			var google_custom_params = window.google_tag_params;
+			var google_remarketing_only = true;
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+		<!-- <noscript>
+		<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+		</div>
+		</noscript> -->
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript" src="js/contact.js"></script>
+		<script type="text/javascript" src="js/fv.apis.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(".se-pre-con").css("display", "block");
+				var sessionId = Util.getCookie(CookieNames()['sessionId']);
+				var userId = Util.getCookie(CookieNames()['userId']);
+				var customerId = Util.getCookie(CookieNames()['customerId']);
+				var postData = {};
+				postData['sessionId'] = sessionId;
+				postData['userId'] = userId;
+				$('select#callflow').change(function(ev) {
+					var getValue = $(this).val();
+					console.log(getValue);
+					$.ajax({
+						type : 'POST',
+						data : postData,
+						url : FvConsts.apiBaseUrl + "dashboard/getAllDemoApps",
+						success : function(data) {// callback method for further manipulations
+							var responseCode = data.code;
+							var finalData = data.data;
+							if (responseCode == '200') {
+								for (var i = 0; i < finalData.length; i++) {
+									if (finalData[i].callFlowId == getValue) {
+										$('p#keyOnchange > .strongKey').html('');
+										$('p#secretOnChange > .strongSecret').html('');
+										$('p#urlonchange').html();
+										var key = finalData[i].appSecret;
+										var secret = finalData[i].appId;
+										var endPoint = finalData[i].endPoint;
+										$('p#keyOnchange > .strongKey').html(key);
+										$('p#secretOnChange > .strongSecret').html(secret);
+										$('p#urlonchange').html('curl "' + FvConsts.trialApiBaseUrl + endPoint + '" -X POST <br> --data "appKey=' + key + '&customerId=' + customerId + '&<br>isoCountryCode=IN&msisdn=9XXXXXXXXX" <br> --header "Content-Type: application/x-www-form-urlencoded"');
+										$('p#urlupdateonchange').html('curl "' + FvConsts.trialApiBaseUrl + 'update?appKey=' + key + '&customerId=' + customerId + '&<br><b>verificationId=X</b>&code=XXXX"');
+									}
+								}
+
+							} else {
+							}
+							$(".se-pre-con").css("display", "none");
+						},
+						error : function(e) {// if error occured
+							$(".se-pre-con").css("display", "none");
+							alert('error');
+						}
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>

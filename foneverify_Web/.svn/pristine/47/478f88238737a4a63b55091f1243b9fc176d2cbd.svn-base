@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Foneverify - Privacy Policy</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="description" content="Privacy rules followed by Fonverify - Mobile verification solution">
+	<meta name="keywords" content="Identify genuine users, user verification platform, SMS and Voice based verification, Mobile Number verification">
+
+    <link rel="shortcut icon" href="../images/icon.png" />
+    <link rel="Stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/responsive.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link rel="Stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+
+    
+    <script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/dynamic.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/googleanalytics.js"></script>
+	<script type="text/javascript">
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	 
+	  ga('create', 'UA-66501278-1', 'auto');
+	  ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#beforeLogin").append(dynamichtml.topnavdirbeforelogin);
+            $("#beforeloginfooter").append(dynamichtml.footernavnotlogin);
+            $("#_privecyPolicy").addClass("footernav");
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top bg-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../images/logo.png" class="img-responsive" />
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div id="beforeLogin"></div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="gap-lg"></div>
+
+    <div class="maincont mainbanner" id="body">
+        <div class="wrapper">
+
+            <div class="wrap-sm">
+                <div class="gap-xs6"></div>
+                <h3 class="color-main1"> Privacy Policy</h3>
+
+                <div class="gap-xs6"></div>
+
+                <h4 class=" text-center color-main2 f-italic paddtb25 color-main5">
+                Please read the following privacy policy carefully before using the website
+                </h4>
+                
+                <div class="gap-xs6"></div>
+                <h3>Privacy of your personal information is of utmost importance to U2opia Mobile Private Limited ("U2opia").</h3>
+                <p class="text-justify">This Privacy Policy explains the information that U2opia collect about users of Foneverify, how we use that information, and with whom we share it. U2opia provides this privacy policy ("Privacy Policy") to ensure that you understand its information handling policies and practices.</p>
+
+                <p class="text-justify">By using this website offered by U2opia, you confirm that you have read the following Privacy Policy and agree to be bound by them. Please read these Privacy Policy carefully.</p>
+                <div class="gap-sm"></div>
+                <h3>Information You Provide To Us Or Collected By The Services.</h3>
+
+                <p class="text-justify">We receive and store any information that you provide to us. For example, through the registration process and/or through your account settings, making calls, requests for support through customer care, and otherwise using the Services, we may collect Personal Information such as your name, email address, location, phone number, and third-party account credentials (for example, your log-in credentials for PayPal or other third party sites). Certain information may be required to register with us or to take advantage of some of our features.</p>
+                <p class="text-justify">In connection with your use of the Services, we may also collect information created or provided by you, or that we otherwise receive, in connection therewith. For example, if you enable users to send SMS messages through the Services, we will collect and maintain the call data (e.g., receipts, phone numbers, size, time of transmission, confirmations, etc.) and other message transmission and conversion data, which may include Personal Information.</p>
+                <p class="text-justify">We may communicate with you if you’ve provided us the means to do so. For example, if you’ve given us your email address, we email you about your use of the Services. Also, we may receive a confirmation when you open an email from us.</p>
+
+                <div class="gap-sm"></div>
+                <h3>Information About Our Customers Users</h3>
+
+                <p class="text-justify">Our customers and other third parties may also provide us with personal information about our customers’ users and others. For example, we may receive Personal Information and other information from our customers, message senders, mobile network operators, databases with information relevant to mobile telephone numbers submitted to our Services, and other third parties. This information may include, without limitation, telephone numbers, telephone numbers’ validity, corresponding device status (e.g. whether or not it is currently available for messaging), roaming status, carrier, country of location, and whether or not the number has been ported.</p>
+                
+                <div class="gap-sm"></div>
+                <h3>Information Collected Automatically</h3>
+
+                <p class="text-justify"> Whenever you interact with our Services, we automatically receive and record information on our server logs from your browser or device, which may include your IP address, device identification, "cookie" information, the type of browser and/or device you’re using to access our Services, and the page or feature you requested. "Cookies" are identifiers we transfer to your browser or device that allow us to recognize your browser or device and tell us how and when pages and features in our Services are visited and by how many people. You may be able to change the preferences on your browser or device to prevent or limit your device’s acceptance of cookies, but this may prevent you from taking advantage of some of our features.</p>
+
+                <p class="text-justify"> Also, if you click on a link to a third party website or service, a third party may also transmit cookies to you. Again, this Privacy Policy does not cover the use of cookies by any third parties, and we aren’t responsible for their privacy policies and practices. Please be aware that cookies placed by third parties may continue to track your activities online even after you have left our Services, and those third parties may not honor "Do Not Track" requests you have set using your browser or device.</p>
+                <p class="text-justify">We may use the data described above to customize content for you that we think you might like, based on your usage patterns. We may also use it to improve the Services – for example, this data can tell us how often users use a particular feature of the Services, and we can use that knowledge to make the Services interesting to as many users as possible.</p>
+
+                <p class="text-justify">We also automatically receive information about communications sent and received using our Services. For example, when a SMS is sent, or replied to via SMS, using our Services, we automatically receive, collect and maintain information relevant to the SMS (e.g., receipts, phone numbers, size, time of transmission, confirmations, data, etc.) and other message transmission and conversion data, which may include Personal Information.</p>
+
+                <div class="gap-sm"></div>
+                <h3>Information collected from other websites and do not track policy</h3>
+
+                <p class="text-justify"> Through cookies we place on your browser or device, we may collect information about your online activity after you leave our Services. Just like any other usage information we collect, this information allows us to improve the Services and customize your online experience, and otherwise as described in this Privacy Policy. Your browser may offer you a "Do Not Track" option, which allows you to signal to operators of websites and web applications and services (including behavioral advertising services) that you do not wish such operators to track certain of your online activities over time and across different websites. Our Services do not support Do Not Track requests at this time, which means that we collect information about your online activity both while you are using the Services and after you leave our Services.</p>
+
+                <div class="gap-sm"></div>
+                <h3>Will U2opia share any of the Personal Information it receives</h3>
+
+                <p class="text-justify"> We may share your Personal Information with third parties as requested or directed by you through the Services (e.g. sharing your communications and related information to the users of the telephone numbers to which you send communications using the Services, or to which you respond to communications using the Services) and as described below or elsewhere in this Privacy Policy:</p>
+
+                <p class="text-justify"> Information That Is No Longer Personally Identifiable. We may anonymize your Personal Information so that you are not individually identified, and provide that information to our partners. We may also provide aggregate usage information to our partners, who may use such information to understand how often and in what ways people use our Services, so that they, too, can provide you with an optimal online experience. However, we never disclose aggregate usage information to a partner in a manner that would identify you personally, as an individual except as required to perform the Services or as otherwise stated in this Privacy Policy.</p>
+
+                <div class="gap-sm"></div>
+                <h3>Amendments to this Privacy Policy</h3>
+
+                <p class="text-justify">U2opia reserves the right to amend this Privacy Policy at any time. U2opia will notify you of the amendment. If you do not wish to continue under the amended Privacy Policy, you may terminate your membership.</p>
+
+                <div class="gap-sm"></div>
+                <h3>Clarifications</h3>
+
+                <p class="text-justify">If you have any queries regarding this Privacy Policy, please contact U2opia at <a target="_top" 
+				href="mailto:support@foneverify.com?Subject=Hello%20again" class="color-main2 underline">support@foneverify.com</a>. </p>
+
+            </div>
+
+            <div class="deskdisplay gap-sm"></div>
+
+        </div>
+    </div>
+
+
+    <div class="wrapper page-footer" id="beforeloginfooter"></div>
+
+   
+    <!-- Google Code for Remarketing Tag -->
+    <!--------------------------------------------------
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    --------------------------------------------------->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 943731266;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <!-- <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/943731266/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript> -->
+    
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/modernizr.js"></script>
+
+</body>
+</html>

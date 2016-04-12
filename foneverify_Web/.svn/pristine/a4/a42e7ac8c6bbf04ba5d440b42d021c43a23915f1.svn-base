@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body style="font-family:Arial; padding:0px; margin:0px; font-size:15px; color:#666">
+    <table style="max-width:800px; border-collapse:collapse; border:0px; margin:0 auto">
+        <tr>
+            <td colspan="2" style="background:#612253;">
+                <img src="../images/mailer-logo.png" style="float:left; display:block; width:100%;" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width:100%;">
+                <div style="padding:3% 1% 2% 4%; width:auto;">
+                    <h4 style="line-height:21px; margin:0px">Hi <span style="color:#612253;">&lt;name&gt;</span>,</h4>
+                    <p style="line-height:21px;">Thank you for choosing foneverify.<br/>
+					We have successfully received your payment of <span style="color:#612253;">&lt;$xx.yy&gt;</span>.</p>
+                    <p style="line-height:21px;">We will be crediting your account with <span style="color:#612253;">&lt;ZZZ&gt;</span> credits shortly.<br/>
+					You can download the invoice and see your transactions from <a class="underline">Payment History</a> section of your foneverify wallet.
+					</p>
+                    <p style="line-height:21px;">For any queries regarding the payment write to us at <a class="underline">sales@foneverify.com</a></p>
+					<p style="line-height:21px;">We hope to have a continued association with you.</p>
+                    <p style="line-height:25px;">Regards,<br />foneverify Team</p>
+                    <p style="color:#999; font-size:12px; padding-top:15px">Copyright &#169; 2014-2015, Foneverify. All right reserved</p>
+                </div>
+            </td>
+
+
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

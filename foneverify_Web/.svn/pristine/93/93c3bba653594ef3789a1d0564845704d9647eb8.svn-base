@@ -1,0 +1,90 @@
+﻿var dynamichtml =
+{
+    topnavdirbeforelogin:
+        "<ul class='nav navbar-nav navbar-right'>" +
+        "<li><a id='_homePage' href='../index.html'>Home</a></li>" +
+        "<li><a id='_aboutUs' href='../aboutus.html'>About Us</a></li>" +
+        "<li><a id='_pricing' href='../price.html'>Pricing</a></li>" +
+        "<li><a id='_apiDocs' href='api-docs.html'>API Docs</a></li>" +
+        "<li><a id='_signIn' href='../signin.html' class='signin'><strong>Sign In</strong></a></li>"+
+        "<li> <a id='_signUp' href='../signup.html' class='signin'><strong>Sign Up</strong></a></li>" +
+        "</ul>",
+     topnavbeforelogin:
+        "<ul class='nav navbar-nav navbar-right'>" +
+        "<li><a id='_homePage' href='index.html'>Home</a></li>" +
+        "<li><a id='_aboutUs' href='aboutus.html'>About Us</a></li>" +
+        "<li><a id='_pricing' href='price.html'>Pricing</a></li>" +
+        "<li><a id='_apiDocs' href='docs/api-docs.html'>API Docs</a></li>" +
+       "<li><a id='_signIn' href='signin.html' class='signin'><strong>Sign In</strong></a></li>"+
+        "<li> <a id='_signUp' href='signup.html' class='signin'><strong>Sign Up</strong></a></li>" +
+        "</ul>",
+    topnavafterlogin:
+        "<ul class='nav navbar-nav navbar-right navbarnav'>" +
+        "<li><a id='_dashboard' class='navtoggle' href='dashboard.html'>Home</a></li>" +
+        "<li><a id='_analytics' href='summary.html' class='navtoggle'>Analytics</a></li>" +
+        "<li><a id='_myApp' href='add-apps.html' class='navtoggle'>My Apps</a></li>" +
+        "<li><a id='_pricing' href='price_in.html'>Pricing</a></li>" +
+        "<li><a id='text_page_btn2' class='navtoggle pointerCursor'>Test our APIs</a></li>" +
+       "<li class='editdropdown'><a class='dropdown-toggle selector' data-toggle='dropdown' href='#'><label class='credit'>Credits:</label> <label class='creditval' id='creditval'></label></a><ul class='dropdown-menu dropdown-user'>"+
+        "<li><a href='my-wallet.html'><i class='fa fa-credit-card fa-fw'></i> My Wallet</a></li>"+
+        "<li><a href='pay-flow.html'><i class='fa fa-plus fa-fw'></i> Add More</a></li>"+
+        "</ul> "+
+        "</li>"+
+        "<li class='editdropdown'>"+
+        "<a class='dropdown-toggle' data-toggle='dropdown' href='#'>"+
+        "<div id='userlogo' class='col-sm-12 padd10 user-img'>"+
+		"<span id='dashboardUser_name'  class='dashboard_username paddright20'></span>"+
+		"<i class='fa fa-caret-down'></i>"+
+		"</div>"+
+        "</a>"+
+        "<ul class='dropdown-menu dropdown-user'>"+
+        "<li><a id='myAccount'  href='my-profile.html'><i class='fa fa-user fa-fw'></i>&nbsp;My Profile</a></li>"+
+        "<li class='divider'></li>"+
+        " <li><a id='logout' href='javascript:void(0)' onclick='logout()'><i class='fa fa-sign-out fa-fw'></i> Logout</a></li>"+
+        " </ul>"+
+        " </li>"+
+        "</ul>" +
+        "</li>" +
+        "</ul>",
+
+    footernavdirnotlogin:
+        "<div class='container footer'>" +
+            "<ul class='footer-nav'>" +
+            "<li><a id='_apidocs' href='docs/api-docs.html'>API Docs</a></li>" +
+            "<li><a id='_faq' href='docs/faq.html'>FAQ</a></li>" +
+             "<li><a id='_termsofUse' href='docs/terms-of-use.html'>Terms of Use</a></li>" +
+             "<li><a id='_privecyPolicy' href='docs/privacy-policy.html'>Privacy Policy</a></li>" +
+             "<li><a id='_contactUs' href='docs/contactus.html'>Contact Us</a></li>" +
+			"<li><a id='_media' href='media.html'>Media</a></li>" +
+            "</ul>" +
+            "<span class='copyright'>&copy; foneverify, 2015</span>" +
+        "</div>",
+
+    footernavnotlogin:
+        "<div class='container footer'>" +
+            "<ul class='footer-nav'>" +
+            "<li><a id='_apidocs' href='api-docs.html'>API Docs</a></li>" +
+            "<li><a id='_faq' href='faq.html'>FAQ</a></li>" +
+             "<li><a id='_termsofUse' href='terms-of-use.html'>Terms of Use</a></li>" +
+             "<li><a id='_privecyPolicy' href='privacy-policy.html'>Privacy Policy</a></li>" +
+             "<li><a id='_contactUs' href='contactus.html'>Contact Us</a></li>" +
+             "<li><a id='_media' href='media.html'>Media</a></li>" +
+            "</ul>" +
+            "<span class='copyright'>&copy; foneverify, 2015</span>" +
+        "</div>",
+
+    footernavdirafterlogin:
+        "<div class='container footer'>" +
+            "<ul class='footer-nav'>" +
+                "<li><a id='_apidocs' href='api-docs.html'>API Docs</a></li>" +
+                "<li><a id='_faq' href='faq.html'>FAQ</a></li>" +
+                "<li><a id='_termsofUse' href='terms-of-use.html'>Terms of Use</a></li>" +
+                "<li><a id='_privecyPolicy' href='privacy-policy.html'>Privacy Policy</a></li>" +
+                "<li><a id='_contactUs' href='contactus.html'>Contact Us</a></li>" +
+                "<li><a id='_media' href='media_after_login.html'>Media</a></li>" +
+            "</ul>" +
+            "<span class='copyright'>&copy; foneverify, 2015</span>" +
+        "</div>",
+}
+
+

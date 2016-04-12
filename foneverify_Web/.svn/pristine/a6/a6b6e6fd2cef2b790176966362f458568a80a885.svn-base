@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body style="font-family:Arial; padding:0px; margin:0px; font-size:15px; color:#666">
+    <table style="max-width:800px; border-collapse:collapse; border:0px; margin:0 auto">
+        <tr>
+            <td style="background:#612253;">
+                <img src="../images/mailer-logo.png" style="float:left; display:block; width:100%;" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="width:100%;">
+                <div style="padding:3% 1% 2% 4%; width:auto;">
+                    <h4 style="line-height:21px; margin-top:0px">Hi <span style="color:#612253;">&lt;name&gt;</span>,</h4>
+                    <p style="line-height:21px;"><strong style="color:#612253;">Congratulations on your 1st successful verification.</strong></p>
+                    <p style="line-height:21px;">
+                        Your promo code for Free 7500 successful verification is:<span style="color:#612253;"> XXXXXX@7500</span>.
+                    </p>
+                    <p style="line-height:21px;">
+                        <strong style="color:#612253;">How to redeem?</strong>
+                        <br />
+                        Click on <a href="http://www.foneverify.com/my-wallet.html" style="font-weight:bold; color:#612253;" target="_blank">
+                        My wallet</a>, 
+                        select any one of the subscription plan to avail 7500 successful verification.  </p>
+                        
+                    <p style="line-height:21px;">
+                        This promo code is valid till <span style="color:#612253;">&lt;XXX&gt;</span>  days
+
+
+                    </p>
+                    <p style="line-height:25px;">Regards,<br />Foneverify Team</p>
+                    <p style="color:#999; font-size:12px; padding-top:15px">Copyright &#169; 2014-2015, Foneverify. All right reserved</p>
+
+                </div>
+            </td>
+
+
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

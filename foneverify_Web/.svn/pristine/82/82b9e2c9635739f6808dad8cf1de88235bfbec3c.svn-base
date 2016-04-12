@@ -1,0 +1,47 @@
+﻿$(function() {
+	var mediaPanel = '';
+	var mediaPanelDocs = '';
+	$.getJSON('js/media.json', function(json) {
+		for (var i = 0; i < json.length; ++i) {
+			FvMedia = json[i];
+			mediaPanel = mediaPanel + "<div class='col-sm-3 padd20'><div class='mediabox'>";
+			mediaPanel = mediaPanel + '<div class="col-sm-12 presslogo"><img src="images/logos/' + FvMedia.imageName + '" class="img-responsive paddtb10" alt=""></div>';
+			mediaPanel = mediaPanel + '<p class="col-sm-12 paddtop30 "><span class="">' + FvMedia.topLine + '</span></p><p class="col-sm-12 readmorebg"><strong><a href="' + FvMedia.alink + '" target="_blank" class="underline color-main1 pointerCursor">Read more</a></strong></p>';
+			mediaPanel = mediaPanel + "</div></div>";
+		}
+		$('#media_panel_div').html(mediaPanel);
+	});
+	$.getJSON('media.json', function(json) {
+		for (var i = 0; i < json.length; ++i) {
+			FvMedia = json[i];
+			mediaPanelDocs = mediaPanelDocs + "<div class='col-sm-3 padd20'><div class='mediabox'>";
+			mediaPanelDocs = mediaPanelDocs + '<div class="col-sm-12 presslogo"><img src="../images/logos/' + FvMedia.imageName + '" class="img-responsive paddtb10" alt=""></div>';
+			mediaPanelDocs = mediaPanelDocs + '<p class="col-sm-12 paddtop30 "><span class="">' + FvMedia.topLine + '</span></p><p class="col-sm-12 readmorebg"><strong><a href="' + FvMedia.alink + '" target="_blank" class="underline color-main1 pointerCursor">Read more</a></strong></p>';
+			mediaPanelDocs = mediaPanelDocs + "</div></div>";
+		}
+		$('#media_panel_div1').html(mediaPanelDocs);
+	});
+	var articlePanel = '';
+	$.getJSON('js/article.json', function(json) {
+		for (var i = 0; i < json.length; ++i) {
+			FvMedia = json[i];
+			articlePanel = articlePanel + "<div class='col-sm-3 padd20'><div class='mediabox'>";
+			articlePanel = articlePanel + '<div class="col-sm-12 presslogo"><img src="images/logos/' + FvMedia.imageName + '" class="img-responsive paddtb10" alt=""></div>';
+			articlePanel = articlePanel + '<p class="col-sm-12 paddtop30 "><span class="">' + FvMedia.topLine + '</span></p><p class="col-sm-12 readmorebg"><strong><a href="' + FvMedia.alink + '" target="_blank" class="underline color-main1 pointerCursor">Read more</a></strong></p>';
+			articlePanel = articlePanel + "</div></div>";
+		}
+		$('#article_panel_div').html(articlePanel);
+	});
+	var articlePanel1 = '';
+	$.getJSON('article.json', function(json) {
+		for (var i = 0; i < json.length; ++i) {
+			FvMedia = json[i];
+			articlePanel1 = articlePanel1 + "<div class='col-sm-3 padd20'><div class='mediabox'>";
+			articlePanel1 = articlePanel1 + '<div class="col-sm-12 presslogo"><img src="../images/logos/' + FvMedia.imageName + '" class="img-responsive paddtb10" alt=""></div>';
+			articlePanel1 = articlePanel1 + '<p class="col-sm-12 paddtop30 "><span class="">' + FvMedia.topLine + '</span></p><p class="col-sm-12 readmorebg"><strong><a href="' + FvMedia.alink + '" target="_blank" class="underline color-main1 pointerCursor">Read more</a></strong></p>';
+			articlePanel1 = articlePanel1 + "</div></div>";
+		}
+		$('#article_panel_div1').html(articlePanel1);
+	});
+	$("#_media").addClass('footernav');
+});

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<title>Button Example Code</title>
+
+<!-- START META TAG SECTION -->
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta http-equiv="Content-Language" content="en">
+<!-- END META TAG SECTION -->
+
+</head>
+
+<body>
+
+<!-- START SAMPLE CODE SECTION -->
+
+<!-- PARAGRAPH 1 -->
+Buy Foneverify Credits Here
+
+<br><br>
+
+Buy Now - Enters Amountfor which you require
+
+<br><br>
+<hr align="left" width="50%" noshade>
+<br><br>
+
+<!-- START CONTENTS -->
+
+<!-- START BUTTON EXAMPLES -->
+<div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<!-- If using a Business or Company Logo Graphic, include the "cpp_header_image" variable in your View Cart code. -->
+<input type="hidden" name="cpp_header_image" value="https://www.yourwebsite.com/logo.jpg">
+<input type="hidden" name="on0" value="Customer Number">Please Enter Your Customer Number:&nbsp;&nbsp;
+<br><br>
+<input type="text" name="os0" value="customerId" readonly="true">
+<br><br>
+<input type="hidden" name="on1" value="Invoice Number">Please Enter Your Invoice Number:&nbsp;&nbsp;
+<br><br>
+<input type="text" name="os1" value="invoiceId" readonly="true">
+<br><br>
+Enter Amount Due :&nbsp;&nbsp;
+<br>
+<input type="text" name="amount">
+<br><br>
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="charset" value="utf-8">
+<!-- Replace "business" value with your PayPal Email Address or Account ID -->
+<input type="hidden" name="business" value="bintoo.yadav@u2opiamobile.com">
+<input type="hidden" name="item_name" value="Online Payment">
+<input type="hidden" name="item_number" value="OLP-00001">
+<input type="hidden" name="no_shipping" value="1">
+<input type="hidden" name="shipping" value="0.00">
+<input type="hidden" name="tax" value="0.00">
+<!-- Replace value with the web page you want the customer to return to after a successful transaction -->
+<!-- <input type="hidden" name="return" value="http://52.7.158.185:8080/FVPayment/payend"> -->
+<!-- Replace value with the web page you want the customer to return to after item cancellation -->
+<!-- <input type="hidden" name="cancel_return" value="http://52.7.158.185:8080/FVPayment/cancel"> -->
+<!--<input type="hidden" name="button_subtype" value="services">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="cn" value="Add special instructions to the seller:">
+<input type="hidden" name="country" value="US">-->
+<input type="hidden" name="currency_code" value="USD">
+<!--<input type="hidden" name="lc" value="US">
+<input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynowCC_LG.gif:NonHosted">-->
+<input type="hidden" name="address_override" value="1">
+<!-- Set variables that override the address stored with PayPal. -->
+<input type="hidden" name="first_name" value="Reena">
+<input type="hidden" name="last_name" value="Kariyal">
+<input type="hidden" name="address1" value="Unit 101, JMD Pacific Square Mall, Sector-15">
+<input type="hidden" name="city" value="Gurgaon">
+<input type="hidden" name="state" value="Haryana">
+<input type="hidden" name="zip" value="122002">
+<input type="hidden" name="country" value="IN">
+<!-- Set of variables passed back by PayPal via IPN -->
+<input type="hidden" name="custom" value="sessionId,customerId,Amount,invoiceId">
+</form>
+</div>
+
+<!-- END BUTTON EXAMPLES -->
+
+
+
+<!-- END SAMPLE CODE SECTION -->
+
+<br><br><br><br>
+<hr align="left" width="50%" noshade>
+<br><br>
+
+</body>
+</html>

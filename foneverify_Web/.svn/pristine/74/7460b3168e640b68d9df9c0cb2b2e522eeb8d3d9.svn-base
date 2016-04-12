@@ -1,0 +1,114 @@
+﻿<div class="col-sm-7 paddtb10">
+	<div class="col-sm-11">
+		<h3 id="fone_title" class="color-main1 paddtb20">Fall back - Update Request</h3>
+		<form id="fallbackSmsForm" class="form-horizontal form-group-lg">
+
+			<div class="form-group clearfix">
+				<div class="col-sm-6 paddright">
+					<strong><label>Customer Id</label></strong>
+					<input type="text" id="customerIdFallback" class="form-control" placeholder="Customer Id" disabled/>
+				</div>
+				<div class="col-sm-6 paddleft" id="otpForSMSDivID">
+					<strong><label>OTP</label></strong>
+					<input type="text" id="enterOtpFallback" class="form-control" placeholder="Enter OTP"/>
+				</div>
+				<div class="col-sm-6 paddleft" id="didForVoiceDivID">
+					<strong><label>DID</label></strong>
+					<input type="text" id="didFallback" class="form-control" placeholder="" disabled/>
+				</div>
+			</div>
+			<div class="form-group clearfix">
+				<div class="col-sm-6 paddright">
+					<strong><label>App Secret</label></strong>
+					<input type="text" id="appSecretFallback" class="form-control" placeholder="App Secret" disabled/>
+					<strong ><label class="margintop15">Verification Id</label></strong>
+					<input type="text" id="verificationIdFallBack" class=" form-control" placeholder="Verification Id" disabled/>
+				</div>
+				<div class="col-sm-6 paddleft">
+					<div class="silver-border1 borderR5 clearfix padd20">
+						<div class="col-xs-3 text-center padd0"><img src="images/phone-small.png" class="img-responsive" />
+						</div>
+
+						<div class="col-xs-9 padd0 clearfix">
+							<div class="clearfix form-group-lg">
+								<div class="mobidisplay gap-xs6"></div>
+								<div class="col-sm-11 padd0"></div>
+								<div class="col-sm-11 padd0">
+									<div class="text-center padd0" id="fallback_counter">
+										<label id="countDownFallBack" class="timer_css farial btn-block"></label>
+									</div>
+								</div>
+							</div>
+
+							<!--<div class="">
+								<div class="height20">
+									<br />
+								</div>
+								<p>
+									If code not received, press
+									<span id="resendOtp" class="color-main1 nounderline f-bold">Resend OTP.</span>
+								</p>
+
+								<div id="msisdnVerStatus" class="">
+									<p><img src="images/check-tick.png" class="paddright" />Mobile number successfully verified
+									</p>
+								</div>
+							</div>-->
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group clearfix paddtb10">
+				<div class="col-sm-12 padd5">
+					<button type="button" class="btn btn-lg btn-block color-default bg-main1" id="fallBackSmsBtn">
+						Submit
+					</button>
+				</div>
+
+			</div>
+		</form>
+
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var sessionId = Util.getCookie(CookieNames()['sessionId']);
+		var userId = Util.getCookie(CookieNames()['userId']);
+		// populate customer id on screen
+		var customerId = Util.getCookie(CookieNames()['customerId']);
+		$('#customerIdFallback').val(customerId);
+		$('#verificationIdFallBack').val(FvVariables.verificationId);
+		$('#appSecretFallback').val(FvVariables.appSecretKey);
+		initTimerForVerificationReq();
+		fetchAllDemoApps(sessionId, userId, customerId);
+		$("#beforeLogin").append(dynamichtml.topnavbeforelogin);
+		$("#beforeloginfooter").append(dynamichtml.footernavnotlogin);
+		if(FvVariables.isDidCheck==true){
+			$('#otpForSMSDivID').css('display','none');
+			$('#didFallback').val(FvVariables.didToBeDisplayed);
+		}else{
+			$('#didForVoiceDivID').css('display','none');
+		}
+		$('#fallBackSmsBtn').on('click',verifySMSRequest);
+		$("#text_page_btn2").addClass('activenav');
+	});
+
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] ||
+		function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+	ga('create', 'UA-66501278-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
