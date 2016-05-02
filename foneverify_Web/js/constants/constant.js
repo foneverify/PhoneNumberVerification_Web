@@ -1,7 +1,7 @@
 FvVariables = function() {
 	return {
 		messageRegrex : new RegExp("_", "g"),
-		otpUpdateTimer : ZZZZ,
+		otpUpdateTimer : 5,
 		intervalTimer : null,
 		intervalForTimeout : null,
 		isDidCheck : false,
@@ -20,7 +20,7 @@ FvVariables = function() {
 		headerConfiguration : {},
 		appSecretKey : 'xxxx',
 		customerId : 'yyy',
-		endpoint : 'voice or sms'
+		endpoint : 'sms'
 	};
 }();
 // For SMS/VOICE
